@@ -6,7 +6,7 @@ function App() {
   return (
     <>
 
-      {leevar}
+      <i className='xi-bars'></i> {leevar}
       <div>hhhdsdsdsdsdxdsdsdsdghghg</div>
       <Header />
     </>
