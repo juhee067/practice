@@ -1,0 +1,85 @@
+.Wrap {}
+
+.top_banner {
+  position: relative;
+  background: #f1f1f1;
+}
+
+.top_banner .container {
+  width: 1200px;
+  margin: 0 auto;
+  height: 100px;
+  overflow: hidden;
+  transition: height 0.5s;
+}
+
+.top_banner .container.on {
+  height: 0;
+}
+
+.top_banner h2 {
+  font-size: 21px;
+  font-weight: 700;
+  margin: 30px 0 10px 0;
+}
+
+.top_banner p {
+  font-size: 15px;
+  font-weight: 300;
+  margin: 0 0 10px 0;
+}
+
+.top_banner i {
+  position: absolute;
+  left: 50%;
+  bottom: -16px;
+  margin: 0 0 0 600px;
+  transform: translateX(-100%);
+}
+
+.top_banner i.on {
+  transform: translateX(-100%) rotate(180deg);
+}
+
+.mainVisual figure {
+  position: relative;
+  height: 600px;
+}
+
+.mainVisual .itm01 {
+  background: url(./img/mainvisual01.jpg) no-repeat center center/cover;
+}
+
+.mainVisual .itm02 {
+  background: url(./img/mainvisual02.jpg) no-repeat center center/cover;
+}
+
+.mainVisual .itm03 {
+  background: url(./img/mainvisual03.jpg) no-repeat center center/cover;
+}
+
+.mainVisual .inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1200px;
+  color: #fff;
+  text-shadow: 0 0 3px #000;
+}
+
+.mainVisual .inner h2 {
+  font-size: 50px;
+  font-weight: 700;
+  margin: 0 0 15px 0;
+}
+
+.mainVisual .inner p {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.mainVisual .slick-active h2 {
+  color: #333;
+}
