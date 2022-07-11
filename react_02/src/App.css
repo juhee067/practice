@@ -129,3 +129,14 @@
 .mainVisual .slick-dots li.slick-active button {
   background: #333;
 }
+
+.customer {
+  padding: 100px 0;
+}
+
+.customer>ul {
+  display: flex;
+  gap: 30px;
+  width: 1200px;
+  margin: 0 auto;
+}
