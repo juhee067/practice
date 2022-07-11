@@ -35,6 +35,8 @@
   bottom: -16px;
   margin: 0 0 0 600px;
   transform: translateX(-100%);
+  background: #fff;
+  z-index: 999;
 }
 
 .top_banner i.on {
@@ -68,18 +70,62 @@
   text-shadow: 0 0 3px #000;
 }
 
-.mainVisual .inner h2 {
+.mainVisual figure .inner h2 {
   font-size: 50px;
   font-weight: 700;
   margin: 0 0 15px 0;
+  transform: translateY(100px);
+  opacity: 0;
 }
 
-.mainVisual .inner p {
+.mainVisual figure.on .inner h2 {
+  transform: translateY(0);
+  opacity: 1;
+  transition: 0.5s;
+}
+
+.mainVisual figure .inner p {
   font-size: 15px;
   font-weight: 300;
   line-height: 1.4;
+  transform: translateY(100px);
+  opacity: 0;
 }
 
-.mainVisual .slick-active h2 {
-  color: #333;
+.mainVisual figure.on .inner p {
+  transform: translateY(0);
+  opacity: 1;
+  transition: 0.5s 0.5s;
+}
+
+.mainVisual {
+  position: relative;
+}
+
+.mainVisual .slick-dots {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.mainVisual .slick-dots li {
+  display: inline-block;
+  margin: 0 4px;
+}
+
+.mainVisual .slick-dots button {
+  font-size: 12px;
+  background: #f00;
+  color: #fff;
+  width: 20px;
+  height: 20px;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  line-height: 0;
+}
+
+.mainVisual .slick-dots li.slick-active button {
+  background: #333;
 }
