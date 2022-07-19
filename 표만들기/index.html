@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section>
+      <h1>행 그룹 관련 요소</h1>
+      <table
+        border="1"
+        cellpadding="0"
+        cellspacing="0"
+        summary="본사의 종합 상황실, 비서실, 홍보실의 전화번호 및 팩스번호 안내"
+      >
+        <caption>
+          본사 부서별 연락처
+        </caption>
+        <thead>
+          <tr>
+            <th id="org" colspan="2">부서명</th>
+            <th id="tel">전화번호(02+)</th>
+            <th id="fax">팩스번호(02+)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th colspan="2" id="a">종합상황실</th>
+            <td headers="tel a">310-1300-1304</td>
+            <td headers="fax a">310-1300</td>
+          </tr>
+
+          <tr>
+            <th rowspan="2" id="b">비서실</th>
+            <th id="b1">비서실장</th>
+            <td headers="tel b b1" id="b1">314-8184</td>
+            <td headers="fax b b1" rowspan="2">
+              314-8184 <br />
+              312-1952
+            </td>
+          </tr>
+          <tr>
+            <th id="b2">비서실</th>
+            <td headers="tel b b2">310-112 <br />310-1113</td>
+          </tr>
+
+          <tr>
+            <th rowspan="3" id="c">홍보실</th>
+            <th id="c1">홍보실장</th>
+            <td header="tel c c1">310-1220</td>
+            <td rowspan="3">313-3109</td>
+          </tr>
+          <tr>
+            <th id="c2">홍보부</th>
+            <td header="tel c c2">310-1220,310-1220</td>
+          </tr>
+          <tr>
+            <th id="c3">국제협력부</th>
+            <td header="tel c c3">310-1220,310</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </body>
+</html>
