@@ -1,67 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <section>
-      <h1>행 그룹 관련 요소</h1>
-      <table
-        border="1"
-        cellpadding="0"
-        cellspacing="0"
-        summary="본사의 종합 상황실, 비서실, 홍보실의 전화번호 및 팩스번호 안내"
-      >
-        <caption>
-          본사 부서별 연락처
-        </caption>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table 만들기</title>
+    <style>
+        table {
+            border: 1px solid #fff;
+        }
+
+        * {
+            text-align: center;
+            line-height: 25px;
+
+        }
+
+        caption {
+            margin: 0 0 10px 0;
+            text-align: center;
+        }
+
+        th {
+            border-top: 1px solid rgb(103, 137, 110);
+            border-right: 1px solid rgb(103, 137, 110);
+            border-bottom: 1px solid #fff;
+            border-left: 1px solid #fff;
+            background: rgb(103, 137, 110);
+            padding: 5px 35px;
+            color: #fff;
+
+        }
+
+        td {
+            border-bottom: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+            padding: 5px 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <table cellpadding="0" cellspacing="0">
+
+        <caption>사이즈 표</caption>
         <thead>
-          <tr>
-            <th id="org" colspan="2">부서명</th>
-            <th id="tel">전화번호(02+)</th>
-            <th id="fax">팩스번호(02+)</th>
-          </tr>
+            <tr>
+                <th id="a" rowspan="2" colspan="2">크기 호칭</th>
+                <th id="a1" colspan="6"> 치수(mm)</th>
+                <th headers="weight a a1" rowspan="2" colspan="2"> 최대 사용 하중 kN</th>
+            </tr>
+            <tr>
+                <th headers="a2"> B</th>
+                <th headers="a2"> t</th>
+                <th headers="a2"> M1</th>
+                <th headers="a2"> M</th>
+                <th headers="a2"> H</th>
+                <th headers="a2"> D기준치수</th>
+            </tr>
         </thead>
         <tbody>
-          <tr>
-            <th colspan="2" id="a">종합상황실</th>
-            <td headers="tel a">310-1300-1304</td>
-            <td headers="fax a">310-1300</td>
-          </tr>
-
-          <tr>
-            <th rowspan="2" id="b">비서실</th>
-            <th id="b1">비서실장</th>
-            <td headers="tel b b1" id="b1">314-8184</td>
-            <td headers="fax b b1" rowspan="2">
-              314-8184 <br />
-              312-1952
-            </td>
-          </tr>
-          <tr>
-            <th id="b2">비서실</th>
-            <td headers="tel b b2">310-112 <br />310-1113</td>
-          </tr>
-
-          <tr>
-            <th rowspan="3" id="c">홍보실</th>
-            <th id="c1">홍보실장</th>
-            <td header="tel c c1">310-1220</td>
-            <td rowspan="3">313-3109</td>
-          </tr>
-          <tr>
-            <th id="c2">홍보부</th>
-            <td header="tel c c2">310-1220,310-1220</td>
-          </tr>
-          <tr>
-            <th id="c3">국제협력부</th>
-            <td header="tel c c3">310-1220,310</td>
-          </tr>
+            <tr>
+                <th colspan="2" id="b">50</th>
+                <td id="b1">30</td>
+                <td id="b1">2.0</td>
+                <td headers="m1" rowspan="3">10</td>
+                <td headers="m" rowspan="3">6</td>
+                <td headers="H" rowspan="3">80</td>
+                <td id="b b1">61</td>
+                <td id="b kN">2.74</td>
+            </tr>
+            <tr>
+                <th colspan="2" id="c">50</th>
+                <td rowspan="2" headers="B">40</td>
+                <td rowspan="2" headers="t">2.3</td>
+                <td id="c b1">90</td>
+                <td rowspan="2" headers="c kN">4.41</td>
+            </tr>
+            <tr>
+                <th colspan="2" id="d">100</th>
+                <td id="d b1">115</td>
+            </tr>
         </tbody>
-      </table>
-    </section>
-  </body>
+    </table>
+
+</body>
+
 </html>
