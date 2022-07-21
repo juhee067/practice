@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>table 01 - 만들어보기</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        line-height: 30px;
+        font-size: 14px;
+      }
+
+      caption {
+        margin-bottom: 10px;
+      }
+      table {
+        border-collapse: collapse;
+        /*table은 border사이의 간격이 생겨서 벌어짐 - 기본 separate, 따라서 합쳐줘야함*/
+        /*
+        https://www.codingfactory.net/10616  참조 ★★★ 중요함!
+        */
+      }
+      table,
+      th,
+      td {
+        border: 1px solid #efefef;
+        /*collapse성질을 쓰면 이렇게 border을 한번만 적어도됨!*/
+      }
+      th {
+        /* text-align: center; */ /*th는 원래 중앙정렬임*/
+        padding: 0 30px;
+        background: #ddd;
+      }
+
+      td {
+        text-align: center;
+        padding: 5px 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <table>
+      <!--
+        cellpadding="0"
+        cellspacing="0"
+        cellspacing 요게 border-collapse: collapse; 요걸로 대체 됬구 
+      summary="미선이 언니가 알려주는 테이블 태그" 요거는 안적어도돼!
+       html5 부터는 summary 속성이 비표준이 되었고 속성만되어서 적어도되고 안적어도되공
+      -->
+      <caption>
+        <!-- 캡션은 추후에 안보이게 처리 많이해!-->
+        미선이 언니가 알려주는 테이블 태그
+      </caption>
+
+      <thead>
+        <tr>
+          <th id="name" rowspan="2">크기 호칭</th>
+          <th id="size" colspan="6">치수(mm)</th>
+          <th id="max_kN" rowspan="2">최대 사용하중 kN</th>
+        </tr>
+        <tr>
+          <th id="B">B</th>
+          <th id="t">t</th>
+          <th id="M1">M1</th>
+          <th id="M">M</th>
+          <th id="H">H</th>
+          <th id="Default">D기준치수</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th id="01">50</th>
+          <td headers="size B 01">30</td>
+          <td headers="size t 01">2.0</td>
+          <td headers="size M1 01" rowspan="3">10</td>
+          <td headers="size M 01" rowspan="3">6</td>
+          <td headers="size H 01" rowspan="3">80</td>
+          <td headers="size Default 01">61</td>
+          <td headers="max_kN 01">2.74</td>
+        </tr>
+        <tr>
+          <th id="02">50</th>
+          <td headers="size B 02" rowspan="2">40</td>
+          <td headers="size t 02" rowspan="2">2.3</td>
+          <td headers="size Default 02">90</td>
+          <td headers="max_kN 02" rowspan="2">4.41</td>
+        </tr>
+        <tr>
+          <th id="03">100</th>
+          <td headers="size Default 03">115</td>
+        </tr>
+      </tbody>
+    </table>
+    <!--
+        https://rgy0409.tistory.com/2898 참고
+        보통 id는 잘 안써 쓸려면 headers를 추천해
+        보통 백엔드 영역이 아닌이상 아이디 거의 안씀! 
+        그리고 scope를 많이 써!ㅎㅎ
+        https://webclub.tistory.com/264 이거 참조해서 scope를 추가해봐!
+    -->
+  </body>
+</html>
