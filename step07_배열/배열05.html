@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="UL"></ul>
+    <script>
+
+        const DATA = [
+            { id: 1, content: '나는 메로나다.', date: "2022년7월 21일" },
+            { id: 2, content: '나는 바밤바다.', date: "2022년7월 21일" },
+            { id: 3, content: '나는 월드콘다.', date: "2022년7월 21일" },
+            { id: 4, content: '나는 비비빅다.', date: "2022년7월 21일" },
+            { id: 5, content: '나는 거북이다.', date: "2022년7월 21일" },
+        ]
+        // const A = DATA.map(data => { return '<li>' + data.id + '</li>' })
+        // ``(백틱) 쓰는 것이 좋음 
+        // `<li>${data.content}</li>` 매개변수 안에 넣은 거라 콜백 함수라고 함
+        // .join('')-> 배열을 합쳐주는 함수, 아직은 중요하지 않다.
+        const RESULT = DATA.map(data => `<li>${data.content}</li>`).join('');
+        console.log(RESULT);
+        document.querySelector('#UL').innerHTML = RESULT;
+
+        // <ul id="UL">
+        //     {DATA.map(
+        //         <li>{data.content}</li>
+        //     )}
+        // </ul>
+
+
+    </script>
+</body>
+
+</html>

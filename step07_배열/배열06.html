@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="UL"></ul>
+    <script>
+
+        const DATA = [
+            { id: 1, content: '나는 메로나다.', date: "2022년7월 21일" },
+            { id: 2, content: '나는 바밤바다.', date: "2022년7월 21일" },
+            { id: 3, content: '나는 월드콘다.', date: "2022년7월 21일" },
+            { id: 4, content: '나는 비비빅다.', date: "2022년7월 21일" },
+            { id: 5, content: '나는 거북이다.', date: "2022년7월 21일" },
+        ]
+
+        const RESULT = DATA.filter(el => el.content == '나는 메로나다.');
+        const NEWLIST = RESULT.map(data => `<li>${date.content}<small>${data.date}</small><button>삭제</button></li>`).join('');
+        console.log(NEWLIST);
+
+        UL.innerHTML = NEWLIST;
+        const BTN = document.querySelectorAll('button');
+
+        BTN.forEach((button, ink) => {
+            button.addEventListener('click', () => { console, log(idx) })
+        })
+    </script>
+</body>
+
+</html>
