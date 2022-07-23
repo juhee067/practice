@@ -8,22 +8,70 @@
   <title>Document</title>
   <style>
     @charset "utf-8";
+* { margin:0;
+    outline: 1px solid #f00;
+}
+
+body{background:#f5f6f7;
+padding:15px 0;}
 
     .container {
+position:relative;
       width: 768px;
       margin: 0 auto;
+
     }
+    .container .list{
+position:absolute;
+     top:0;
+right:0;
+transform:translateX(50%)
+
+    }
+
+   .container h1 {
+padding: 60px 0 0 54px;
+    }
+
+
+   .container img {
+ position:absolute;
+top:50%;
+left:50%;
+transform:translateX(-50%);
+width:35%
+    }
+
+
+
+
   </style>
 </head>
 
 <body>
+
   <header>
     <div class="container">
-      <div class="list"></div>
-      <h1>dd</h1>
+<div class="list">
+<nav>
+<ul>
+<li>한국어</li>
+</ul>
+</nav>
+</div>
+      <h1><img src="img/m_logo_naver.png"></h1>
     </div>
   </header>
-  <main></main>
+  <main>
+<form action="" id="agree">
+
+<ul>
+<li>네이버 이용약관, 개인정보 수집 및 이용, 위치기반서비스 이용약관(선택), 
+프로모션 정보 수신(선택)에 모두 동의합니다.</li>
+</ul>
+</form>
+
+</main>
   <footer></footer>
 </body>
 
