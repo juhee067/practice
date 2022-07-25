@@ -7,7 +7,7 @@ const App = () => {
     <>
 
       <Test />
-      <h1>호호호하하하하하하glglglgllglglg</h1>
+      <h1>최승지sdfsfddsf</h1>
       <Nav />
       <Test />
       <Test />
