@@ -33,12 +33,40 @@
                 <i class="xi-close"></i>
             </div>
         </div>
+
+        <header class="header">
+            <div class="container">
+                <h1>
+                    <a href="/">
+                        <img src="./img/grafflogo.png" alt="">
+                    </a>
+                </h1>
+
+                <nav class="gnb">
+                    <ul>
+                        <li><a href="">하이주얼리</a></li>
+                        <li><a href="">주얼리 컬렉션</a></li>
+                        <li><a href="">컬렉션 &amp; 브라이덜</a></li>
+                        <li><a href="">웨딩주얼리</a></li>
+                        <li><a href="">특별한 솔리테어</a></li>
+                    </ul>
+                </nav>
+                <form action="javascript:search()">
+                    <input type="text" name="search">
+                    <button>
+                        <i class="xi-search"></i>
+                    </button>
+                </form>
+            </div>
+
+
+        </header>
     </div>
-    <div class="pop pop01">pop01<button>close</button></div>
-    <div class="pop pop02">pop02<button>close</button></div>
-    <div class="pop pop03">pop03<button>close</button></div>
-    <div class="pop pop04">pop04<button>close</button></div>
-    <div class="pop pop05">pop05<button>close</button></div>
+    <script>
+        function search() {
+            console.log(document.search)
+        }
+    </script>
 </body>
 
 </html>
