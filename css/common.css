@@ -9,4 +9,5 @@ transition: color .5s ease-in-out;}
 /* 3.8 */
 .hidden{
     display: none;
+    
 }

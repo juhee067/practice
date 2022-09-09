@@ -1,21 +1,21 @@
+const inputForm=document.querySelector('#login-form input')
+const greeting=document.querySelector('#greeting')
 
-const loginForm = document.querySelector('#login-form');
-const loginInput = document.querySelector('#login-form input');
-const greeting = document.getElementById('greeting')
-const  HIDDEN_CLASSNAME = "hidden";
+function onSubmit(event){
+event.preventdefault;
+inputForm.classList.add('hidden');
+localStorage.setItem('user',greeting.value)
 
-function onLoginSubmit(event){
-event.preventDefault();
-loginForm.classList.add(HIDDEN_CLASSNAME);
+} 
 
-const username=loginInput.value;
-
-localStorage.setItem("username",username);
-console.log(username);
-
-greeting.innerText= `Hello ${username}`;
-greeting.classList.remove(HIDDEN_CLASSNAME);
+if(localStorage.getItem === null){
+    inputForm.classList.remove('hidden');
+    button.addEventListener('submit',onSubmit)
 }
+else{
+    greeting.classList.remove('hidden');
+    greeting.innerText=`hello ${localStorage.getItem}`
 
-loginForm.addEventListener('submit',onLoginSubmit)
+
+}
 
