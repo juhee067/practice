@@ -17,7 +17,14 @@ function deleteTodo(event){
     
 // 14. 다다른 리스트를 삭제해야하기 때문에 부모를 찾아가야함
 const li=event.target.parentElement;
+
 li.remove();
+//26. toDo의 id가 li의 id와 다른 걸 남기고 싶어함-> 우리가 클릭한 li.id와 다른 toDo는 남겨두고싶어.
+// toDo.id!==li.id 두개의 타입이 달라 아무것도 지워지지않느다.
+// toDos=toDos.filter(toDo=>toDo.id!==li.id);,parsetInt: 문자열을 숫자로 바꿔주기
+toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
+//27.toDos DB에서 todo를 지운 뒤에  saveToDos를 한번 더 불러야한다.
+saveToDos();
 }
 
 
@@ -25,9 +32,11 @@ li.remove();
 // 7. 추가 함수 만들어주기
 function paintToDo(newTodo){
 const li=document.createElement("li");
+//25. li에 id를 지정해줘야한다.
+li.id=newTodo.id;
 const span=document.createElement("span");
-// 9. span에 input에 작성한 거 대입
-span.innerText =newTodo;
+// 9. span에 input에 작성한 거 대입, text를 받는게 아니라 object를 받는 것이기 때문에 보여주는 것이 .text인걸 지정해줘야함
+span.innerText =newTodo.text;
 const button=document.createElement("button");
 button.innerText="x"
 // 12. button 눌렀을때 리스트 삭제 되어야함
@@ -50,9 +59,17 @@ const newTodo=toDoInput.value;
 toDoInput.value="";
 // 16. newTodo가 그려질때 array에 push해준다. 
 //그래서 newTodo그리기전에 toDos array를 가지고 와서 newTodo를 push할것이다
-toDos.push(newTodo);
-// 8. 전송됐을 때 (7)함수로 html에 tag 추가
-paintToDo(newTodo);
+
+// 24. text말고 object로 가지고 싶다. 이것을 toDos array에 넣을 거다
+const newTodoObj={
+text:newTodo,
+id:Date.now()
+
+}
+// toDos.push(newTodo)->24. 후에 (newTodoObj)
+toDos.push(newTodoObj);
+// 8. 전송됐을 때 (7)함수로 html에 tag 추가,(newTodo)->24. 후에 (newTodoObj)
+paintToDo(newTodoObj);
 // 18. toDo들을 저장
 saveToDos();
 }
@@ -64,7 +81,7 @@ toDoForm.addEventListener("submit",handleToDoSubmit);
 const savedToDos=localStorage.getItem(TODOS_KEY)
 
 // 22. 어떨 땐 savedToDos가 null이 될때가 있다
-if(saveToDos!== null){
+if(savedToDos!== null){
     // 23. localStorage에 있는 string을 object로 변경
     const parsedToDos = JSON.parse(savedToDos);
     toDos=parsedToDos;
@@ -80,3 +97,6 @@ if(saveToDos!== null){
 // ** localStorage에 array를 저장할 수 없다, 오직 텍스트만 저장할 수 있다
 // JSON.stringify()를 사용하면 array든 object든 string으로 변경가능
 // JSON.parse()를 사용하면 string을 array로 변경가능
+// 밀리초를 주는 함수->랜덤 숫자 주는 것 같음 : Date.now()
+// filter는 기존의 array에서 제외할 item을 빼고 새로운 array만든다. 반드시 true 리턴이 필요
+// const arr=[1,2,3,4] , arr.filter(item=>item>2) [3,4]
