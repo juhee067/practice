@@ -1,0 +1,157 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>write</title>
+        <link rel="stylesheet" href="css/write.css">
+        <link rel="stylesheet" href="css/common.css">
+        <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+        <script src="./js/write.js"></script>
+    </head>
+    <body>
+        <div class="wrap">
+            <div class="container"> 
+                <header>
+              <h2>WRITE</h2>
+             </header>
+             <main>
+             <!-- 작성자 정보 -->
+            <section id="myInfo">
+                
+            <form action="" class="info">
+    <table>
+        <tr ><td class="writer Info">작성자 정보</td>
+            <td class="essential">"<span class="star">＊</span>" 필수 사항입니다.</td></tr>
+        <tr >
+            <td class="title">작성자</td>
+            <td > 최주희</td>
+        </tr>
+        <tr>
+            <td class="title">아이디</td>
+            <td>juhee067</td>
+        </tr>
+        <tr>
+            <td class="title">연락처<span class="star" >＊</span></td>
+            <td> <input type="radio" name="tel" value="m" id="phone" checked>
+                <label for="phone">휴대폰</label>
+               <input type="radio" name="tel" value="m" id="call"> 
+                <label for="call">일반전화</label>
+                
+                <input type="text" id="callNumber" placeholder="-를 제외한 숫자만 입력">
+                <input type="checkbox" id="message">
+                <label for="message">SNS 수신</label>
+                
+
+        </td>
+    </tr>
+    <tr>
+        <td class="title">주소</td>
+        <td class="address">
+            <input type="text" id="sample4_postcode" placeholder="우편번호">
+            <input type="text" id="sample4_roadAddress" placeholder="도로명주소">
+            <input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기">
+            <span id="guide" style="color:#999;display:none"></span>
+        </td>
+    </tr>
+    </table>
+
+            </form>
+            </section>
+            <!-- 작성 내용 -->
+            <section id="content">
+
+                <form action="" class="info">
+                    <table>
+                        <tr ><td class="writer Content">작성 내용</td>
+                            <td class="essential">"<span class="star">＊</span>" 필수 사항입니다.</td></tr>
+                        <tr >
+                            <td class="title" >제목<span class="star">＊</span></td>
+                            <td > <input type="text" id="blank"></td>
+                        </tr>
+                        <tr>
+                            <td class="title">분야</td>
+                            <td><select id="sblank">
+                                <option value="answer">질문분야를 선택해주세요</option>
+                                <option value="trainning">실업자계좌제훈련/훈련상담/실업자국기직종훈련/국민내일배움카드/k-디지털트레이닝</option>
+                                <option value="business">사업주지원훈련/지역실업자/지산일</option>
+                            </select>
+                        </tr>
+                        <tr>
+                            <td class="title">공개여부</td>
+                            <td>
+                                <label for="Public">공개</label>
+                                <input type="radio" name="Public" value="m" id="Public" checked>
+                                <label for="noPublic">비공개</label>
+                                <input type="radio" name="Public" value="m" id="noPublic"> 
+                        </td>
+                      
+                    </tr>
+                    <tr>
+    <td class="title">
+        내용<span class="star">＊</span>
+    </td>
+    <td>
+    <textarea name="" id="" cols="80" rows="10" placeholder="문의하실 내용을 입력해주세요"></textarea>
+    <span>한글 1500자, 영문 3000자 까지 입력 가능합니다.</span>
+
+    </td>
+
+                    </tr>
+                    <tr>
+                        <td class="title">파일첨부</td>
+                        <td class="filebox"> 
+                            <div class="imageBox">
+                                <figure class="itm01"><img src="./img/img_default.png">
+                                <label for="ex_file"><img src="./img/btn-imgadd.png"></label></figure>
+                            <figure class="itm02"><img src="./img/img_default.png">
+                                <label for="ex_file"><img src="./img/btn-imgadd.png"></label></figure>
+                            <figure class="itm03"><img src="./img/img_default.png">
+                                <label for="ex_file"><img src="./img/btn-imgadd.png"></label></figure>
+                            </div>
+                            
+                          
+                            
+                            <input type="file" id="ex_file" onchange="getImage(this.value)" > 
+                        <div class="inner">   
+                            <p>이미지 가능 확장자 : jpg, gif, bmp</p>
+                     
+                        <p> 첨부파일은 세개까지 등록 가능하며 사이즈를 10M로 제한 합니다.</p></td>
+                    
+                         
+                    </tr>
+
+                    </table>
+            </section>
+            <section id="information">
+
+                <h2 class="writer collection">개인정보 수집 및 이용에 대한 동의</h2>
+                <div class="box">
+                    <p>HRD-Net 서비스 민원 상담을 위해 성명, 연락처를 수집 및 이용합니다.</p>
+                    <p>( 수집목적 : HRD-Net 서비스 민원상담, 보유기간:5년 )</p>
+                    <p> 개인정보 수집 및 취급 위탁에 동의하시지 않는 경우 개선 및 제안요청 작성이 불가능합니다.</p></div>
+                    <div class="assignCheck">
+                        <p>개인정보 수집 및 이용에 동의 하십니까?</p>
+                        <div class="check">
+                            <label for="assign">동의합니다.</label>
+                            <input type="radio" name="assign" value="m" id="yes" >
+                            <label for="noassign">동의하지 않습니다.</label>
+                            <input type="radio" name="assign" value="m" id="no"checked>
+                        </div>
+                    </div></section>
+               <div class="submit">
+                <span><a href="/">뒤로가기</a></span>
+                <span><a href="./view.html">저장</a></span>
+               </div>
+            </section>
+
+        </div>
+        </main>
+    </div>
+    </div>
+        </div>
+       
+
+    </body>
+    </html>

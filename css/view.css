@@ -1,0 +1,98 @@
+
+.container{
+    max-width: 768px;
+    width: 100%;
+    margin: 0 auto;
+    
+}
+.container form{
+margin: 0 auto;
+    
+}
+
+
+/* 필수사항 별 */
+.star{
+    font-size: 15px;
+    color: #f00;
+  
+}
+/* 작성자 정보 */
+
+header h2 {
+    font-size: 50px;
+    text-align: center;
+    padding: 50px 0;
+}
+form{ width: 768px;}
+.writer{font-size: 20px;}
+table .essential{
+    text-align: right;
+    font-size: 15px;
+}
+
+
+form tr~tr{
+   border-bottom: 1px solid rgb(234, 234, 234);
+}
+form .title{
+    background-color: rgb(244, 244, 244);
+    width: 30%;
+}
+form td{
+padding: 20px 0 20px 20px; 
+}
+.address input{
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+/* 작성내용 */
+
+#content .Content{
+    padding-top: 50px;
+}
+#content .Content{
+    padding-top: 50px;
+}
+#content #blank {
+    width: 100%;
+    padding: 10px 0;
+    border: 1px solid #ddd;
+}
+#content #sblank {
+    width: 100%;
+    padding: 10px 0;
+    border: 1px solid #ddd;
+}
+
+#content textarea{
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    resize: none;
+}
+#content img {
+  
+    cursor: pointer;
+}
+
+
+/*  답변 내용 */
+
+.submit{
+   text-align: center;
+   margin-bottom: 100px;
+  
+}
+.submit span:first-child{
+  border:1px solid #ddd;
+  padding: 8px 20px 9px 20px;
+  margin-right: 20px;
+}
+.submit span:last-child{
+    display: inline-block;
+ background-color: rgb(102, 102, 255);
+ color: #fff;
+  padding: 12px 35px 13px 35px;
+
+}
