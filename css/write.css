@@ -1,153 +1,155 @@
-.container{
-    max-width: 768px;
-    width: 100%;
-    margin: 0 auto;
-    
+.container {
+  max-width: 768px;
+  width: 100%;
+  margin: 0 auto;
 }
-.container form{
-margin: 0 auto;
-    
+.container form {
+  margin: 0 auto;
 }
-
 
 /* 필수사항 별 */
-.star{
-    font-size: 15px;
-    color: #f00;
-  
+.star {
+  font-size: 15px;
+  color: #f00;
 }
 /* 작성자 정보 */
 
 header h2 {
-    font-size: 50px;
-    text-align: center;
-    padding: 50px 0;
+  font-size: 50px;
+  text-align: center;
+  padding: 50px 0;
 }
-form{ width: 768;}
-.writer{font-size: 20px;}
-table .essential{
-    text-align: right;
-    font-size: 15px;
+form {
+  width: 768;
+}
+.writer {
+  font-size: 20px;
+}
+table .essential {
+  text-align: right;
+  font-size: 15px;
 }
 
-
-form tr~tr{
-   border-bottom: 1px solid rgb(234, 234, 234);
+form tr ~ tr {
+  border-bottom: 1px solid rgb(234, 234, 234);
 }
-form .title{
-    background-color: rgb(244, 244, 244);
-    width: 30%;
+form .title {
+  background-color: rgb(244, 244, 244);
+  width: 30%;
 }
-form td{
-padding: 20px 0 20px 20px; 
+form td {
+  padding: 20px 0 20px 20px;
 }
 #callNumber {
-    border: 1px solid #ddd;
-    cursor: pointer;
-    padding: 5px ;
-    margin-right: 10px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  padding: 5px;
+  margin-right: 10px;
 }
-.address input{
-    border: 1px solid #ddd;
-    cursor: pointer;
-    padding: 5px ;
+.address input {
+  border: 1px solid #ddd;
+  cursor: pointer;
+  padding: 5px;
 }
-
 
 /* 작성내용 */
 
-#content .Content{
-    padding-top: 50px;
+#content .Content {
+  padding-top: 50px;
 }
-#content .Content{
-    padding-top: 50px;
+#content .Content {
+  padding-top: 50px;
 }
 #content #blank {
-    width: 97%;
-    padding: 10px 0;
-    border: 1px solid #ddd;
+  width: 97%;
+  padding: 10px 0;
+  border: 1px solid #ddd;
 }
 #content #sblank {
-    width: 97%;
-    padding: 10px 0;
-    border: 1px solid #ddd;
+  width: 97%;
+  padding: 10px 0;
+  border: 1px solid #ddd;
 }
 
-#content textarea{
-    width: 97%;
-    border: 1px solid #ddd;
-    margin-bottom: 20px;
-    resize: none;
-    padding: 10px;
+#content textarea {
+  width: 97%;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  resize: none;
+  padding: 10px;
 }
 #content img {
-  
-    cursor: pointer;
+  cursor: pointer;
 }
-#ex_file{
-    display: none;
-    visibility: none;
+#click {
+  display: none;
+  visibility: none;
+}
+.filebox .image_preview {
+  position: relative;
+  display: inline-block;
+  position: relative;
+  border: 1px solid #ddd;
+}
+.filebox figure > img {
+  width: 100px;
+  height: 100px;
+}
+.filebox figure > label {
+  padding: 0;
+}
+.filebox figure > label > img {
+  position: absolute;
+  bottom: -15px;
+  right: -15px;
+}
+.filebox .imageBox {
+  display: flex;
+  gap: 30px;
 }
 
-
-.filebox .imageBox{
-   display: flex;
-   gap: 30px;
+.filebox .inner {
+  margin-top: 20px;
 }
-.filebox figure {
-   position: relative;
-   border: 1px solid #ddd;
-}
-.filebox figure label {
-   position: absolute;
-   right: -15px;
-   bottom: -15px;
-   
-}
-.filebox .inner  {
-   margin-top: 20px;
-}
-.filebox .inner>p  {
-   margin-top: 10px;
+.filebox .inner > p {
+  margin-top: 10px;
 }
 /* 개인정보 수집 */
-#information{
-    padding: 80px 0;
+#information {
+  padding: 80px 0;
 }
-.collection{
-    margin-bottom: 20px;
+.collection {
+  margin-bottom: 20px;
 }
-.box{
-    border: 3px solid #ddd;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    color: rgb(98, 98, 98);
-    margin-bottom: 10px;
+.box {
+  border: 3px solid #ddd;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: rgb(98, 98, 98);
+  margin-bottom: 10px;
 }
-.assignCheck{
-    display: flex;
-    justify-content: space-between;
+.assignCheck {
+  display: flex;
+  justify-content: space-between;
 }
-.assignCheck .check{
-    display: flex;
-    align-items: center;
+.assignCheck .check {
+  display: flex;
+  align-items: center;
 }
-.submit{
-   text-align: center;
-   margin-bottom: 100px;
-  
+.submit {
+  text-align: center;
+  margin-bottom: 100px;
 }
-.submit span:first-child{
-  border:1px solid #ddd;
+.submit span:first-child {
+  border: 1px solid #ddd;
   padding: 8px 20px 9px 20px;
   margin-right: 20px;
 }
-.submit span:last-child{
-    display: inline-block;
- background-color: rgb(102, 102, 255);
- color: #fff;
+.submit span:last-child {
+  display: inline-block;
+  background-color: rgb(102, 102, 255);
+  color: #fff;
   padding: 12px 35px 13px 35px;
-
 }

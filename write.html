@@ -107,17 +107,29 @@
                         <td class="title">파일첨부</td>
                         <td class="filebox"> 
                             <div class="imageBox">
-                                <figure class="itm01 image_preview"><img src="./img/img_default.png">
-                                <label for="ex_file"><img src="./img/btn-imgadd.png"></label></figure>
-                            <figure class="itm02 image_preview"><img src="./img/img_default.png">
-                                <label for="ex_file"><img src="./img/btn-imgadd.png"></label></figure>
-                            <figure class="itm03 image_preview"><img src="./img/img_default.png">
-                                <label for="ex_file"><img src="./img/btn-imgadd.png"></label></figure>
+                            <figure class="itm01 image_preview ">
+      <img id="preview" src="./img/img_default.png" />
+      <label for="click"><img src="./img/btn-imgadd.png" /></label>
+    </figure>
+    <input type="file" id="click" onchange="readURL(this);" />
+                            <figure class="itm02 image_preview">
+      <img id="preview" src="./img/img_default.png" />
+      <label for="click"><img src="./img/btn-imgadd.png" /></label>
+    </figure>
+    <input type="file" id="click" onchange="readURL(this);" />
+                            <figure class="itm03 image_preview">
+      <img id="preview" src="./img/img_default.png" />
+      <label for="click"><img src="./img/btn-imgadd.png" /></label>
+    </figure>
+    <input type="file" id="click" onchange="readURL(this);" />
+
+
+                          
                             </div>
                             
                           
                             
-                            <input type="file" id="ex_file" onchange="getImage(this.value)" > 
+                           
                         <div class="inner">   
                             <p>이미지 가능 확장자 : jpg, gif, bmp</p>
                      
