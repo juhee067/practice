@@ -8,27 +8,24 @@
 </head>
 
 <body>
-
-      <textarea id="text">DelftStack</textarea>
-      <br />
-      <input type="button" id="btn" value="Download" />
-      <script>
-            function download(filename, textInput) {
-
-                  var element = document.createElement('a');
-                  element.setAttribute('href','data:text/plain;charset=utf-8, ' + encodeURIComponent(textInput));
-                  element.setAttribute('download', filename);
-                  document.body.appendChild(element);
-                  element.click();
-                 // document.body.removeChild(element);
-            }
-            document.getElementById("btn")
-                  .addEventListener("click", function () {
-
-                        var filename = "file";
-                        download(filename);
-                  }, false);
-      </script>
+    <!-- <input type="file" onchange="readURL(this);"> 
+<img id="preview" /> -->
+<label for="preview"><img src="./img/btn-imgadd.png"></label>
+<input type="file" id="preview" onchange="readURL(this);"> 
+<img id="preview" src="./img/img_default.png">
+   <script>
+    function readURL(input) {
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      document.getElementById('preview').src = e.target.result;
+    };
+    reader.readAsDataURL(input.files[0]);
+  } else {
+    document.getElementById('preview').src = "";
+  }
+}
+</script>
 </body>
 
 </html>

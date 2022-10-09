@@ -208,3 +208,66 @@ span {
 [type="radio"]:checked {
   border: 0.3em solid rgb(70, 138, 255);
 }
+/* check */
+
+.sns {
+ 
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 12px;
+  cursor: pointer;
+
+
+}
+
+.sns input {
+  position: absolute;
+ 
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+
+.checkmark {
+  position: absolute;
+  
+  top: 7px;
+  left: 0;
+ width: 1em;
+  height: 1em;
+  border: 2px solid gray;
+}
+
+
+
+
+.container input:checked ~ .checkmark {
+  background-color: rgb(70, 138, 255);
+  border: none;
+}
+
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+
+.container .checkmark:after {
+  left:6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: 1px solid white;
+  border-width: 0 2px 2px 0;
+
+  transform: rotate(45deg);
+}

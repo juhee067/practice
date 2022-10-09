@@ -41,10 +41,18 @@ form .title{
 form td{
 padding: 20px 0 20px 20px; 
 }
+#callNumber {
+    border: 1px solid #ddd;
+    cursor: pointer;
+    padding: 5px ;
+    margin-right: 10px;
+}
 .address input{
     border: 1px solid #ddd;
     cursor: pointer;
+    padding: 5px ;
 }
+
 
 /* 작성내용 */
 

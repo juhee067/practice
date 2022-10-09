@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="css/write.css">
         <link rel="stylesheet" href="css/common.css">
         <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+       <script src="./js/jquery-1.12.4.min.js"></script>
         <script src="./js/write.js"></script>
     </head>
     <body>
@@ -40,8 +41,11 @@
                 <label for="call">일반전화</label>
                 
                 <input type="text" id="callNumber" placeholder="-를 제외한 숫자만 입력">
-                <input type="checkbox" id="message">
-                <label for="message">SNS 수신</label>
+                
+                <label for="message" class="sns">SNS 수신
+                    <input type="checkbox" id="message">
+                <span class="checkmark"></span>
+                </label>
                 
 
         </td>
@@ -103,11 +107,11 @@
                         <td class="title">파일첨부</td>
                         <td class="filebox"> 
                             <div class="imageBox">
-                                <figure class="itm01"><img src="./img/img_default.png">
+                                <figure class="itm01 image_preview"><img src="./img/img_default.png">
                                 <label for="ex_file"><img src="./img/btn-imgadd.png"></label></figure>
-                            <figure class="itm02"><img src="./img/img_default.png">
+                            <figure class="itm02 image_preview"><img src="./img/img_default.png">
                                 <label for="ex_file"><img src="./img/btn-imgadd.png"></label></figure>
-                            <figure class="itm03"><img src="./img/img_default.png">
+                            <figure class="itm03 image_preview"><img src="./img/img_default.png">
                                 <label for="ex_file"><img src="./img/btn-imgadd.png"></label></figure>
                             </div>
                             

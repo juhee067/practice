@@ -47,9 +47,11 @@ form td {
 /* 분류 */
 
 .info table {
+    
     border-spacing: 30px;
     border: 2px solid #ddd;
     margin-bottom: 50px;
+ 
 }
 
 .info #ablank {
@@ -86,11 +88,25 @@ form td {
 }
 
 /* 리스트 */
+
 .top {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
     align-items: center
+}
+.head{
+    font-size: 14px;
+}
+.condition{
+    width: 15%;
+}
+.writer{
+    width: 15%;
+}
+.date{width: 20%;}
+.view{
+    width: 15%;
 }
 
 .right #select_btn {
@@ -130,10 +146,33 @@ form td {
 #list tbody td~td {
     border-left: 1px solid #ddd;
 }
+/* 번호 */
 
 #list tfoot {
 
     text-align: center;
+
+}
+#list tfoot .Num{
+
+    padding: 30px 0;
+
+}
+#list tfoot .Num a{
+
+    margin: 0 10px;
+
+}
+
+#list tfoot .Num .leftBtn{
+
+ display: inline;
+}
+#list tfoot .Num .txt_point{
+
+   color:rgb(102, 102, 255);
+ border-bottom:2px solid rgb(102, 102, 255);
+
 
 }
 
@@ -146,4 +185,17 @@ form td {
 }
 #list tfoot .radius-left{
   border-radius: 0 10px 10px 0;
+}
+
+/* 질문 등록 */
+.quest_btn { 
+    display: block;
+    background-color: rgb(102, 102, 255);
+    color: #fff;
+    padding: 10px 40px;
+    cursor: pointer;
+margin: 40px auto;
+text-align: center;
+padding: 20px 0;
+width: 20%;
 }

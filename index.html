@@ -28,7 +28,7 @@
                                     <label for="phone">전체</label>
                                     <input type="radio" name="tel" value="m" id="call">
                                     <label for="call">공개</label>
-                                    <input type="radio" id="message">
+                                    <input type="radio" name="tel" id="message">
                                     <label for="message">비공개</label>
                                 </td>
                             </tr>
@@ -73,6 +73,8 @@
                         <div class="right">
                             <select id="select_btn">
                                 <option value="">10개씩 보기</option>
+                                <option value="">15개씩 보기</option>
+                                <option value="">20개씩 보기</option>
                             </select>
 
                         </div>
@@ -86,10 +88,10 @@
 
                                 <th>번호</th>
                                 <th>제목</th>
-                                <th>처리상태</th>
-                                <th>작성자</th>
-                                <th>등록일</th>
-                                <th>조회수</th>
+                                <th class="condition">처리상태</th>
+                                <th class="writer">작성자</th>
+                                <th class="date">등록일</th>
+                                <th class="view">조회수</th>
 
                             </tr>
                         </thead>
@@ -157,31 +159,42 @@
                                 <td class="">1</td>
 
                             </tr>
+
                         </tbody>
                         <tfoot class="foot">
                             <tr>
-                                <td colspan="9">
-                                    <span class="arrow radius-right">≪</span>
+
+                                <td colspan="9" class="Num">
+                                 
+                                        <span class="arrow radius-right">≪</span>
                                     <span class="arrow radius-left">＜</span>
+                               
+                                   
+                                  
+                                        <a href="" class="num_box txt_point">1</a>
+                                        <a href="" class="num_box ">2</a>
+                                        <a href="" class="num_box ">3</a>
+                                        <a href="" class="num_box ">4</a>
+                                        <a href="" class="num_box ">5</a>
+                                        <a href="" class="num_box ">6</a>
+                                        <a href="" class="num_box ">7</a>
+                                        <a href="" class="num_box ">8</a>
+                                        <a href="" class="num_box ">9</a>
+                                        <a href="" class="num_box ">10</a>
+                                   
 
-                                    <a href="javascript:;" class="num_box txt_point">1</a>
-                                    <a href="javascript:;" class="num_box ">2</a>
-                                    <a href="javascript:;" class="num_box ">3</a>
-                                    <a href="javascript:;" class="num_box ">4</a>
-                                    <a href="javascript:;" class="num_box ">5</a>
-                                    <a href="javascript:;" class="num_box ">6</a>
-                                    <a href="javascript:;" class="num_box ">7</a>
-                                    <a href="javascript:;" class="num_box ">8</a>
-                                    <a href="javascript:;" class="num_box ">9</a>
-                                    <a href="javascript:;" class="num_box ">10</a>
 
-                                    <span class="arrow radius-right">＞</span>
-                                    <span class="arrow radius-left">≫</span>
+    <span class="arrow radius-right">
+        ＞</span>
+                                    
+        <span class="arrow radius-left">≫</span>
+  
+                                    
                                 </td>
                             </tr>
                         </tfoot>
                     </table>
-
+                    <a href="./write.html"><span class="quest_btn">질문등록</span></a>
                 </section>
         </div>
         </main>
