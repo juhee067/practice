@@ -1,12 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>list</title>
+    <link rel="stylesheet" href="css/list.css">
+    <link rel="stylesheet" href="css/common.css">
 </head>
+
 <body>
-    
+    <div class="wrap">
+        <div class="container">
+            <header>
+                <h2>LIST</h2>
+            </header>
+            <main>
+                <!-- 작성자 정보 -->
+                <section id="myInfo">
+
+                    <form action="" class="info">
+                        <table>
+                            <tr>
+                                <td class="title">공개여부</td>
+                                <td> <input type="radio" name="tel" value="m" id="phone" checked>
+                                    <label for="phone">전체</label>
+                                    <input type="radio" name="tel" value="m" id="call">
+                                    <label for="call">공개</label>
+                                    <input type="radio" id="message">
+                                    <label for="message">비공개</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="title">구분</td>
+                                <td>
+                                    <select id="ablank">
+                                        <option value="answer">질문분야를 선택해주세요</option>
+                                        <option value="trainning">실업자계좌제훈련/훈련상담/실업자국기직종훈련/국민내일배움카드/k-디지털트레이닝</option>
+                                        <option value="business">사업주지원훈련/지역실업자/지산일</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="title">검색</td>
+                                <td class="sc">
+                                    <select id="sblank">
+                                        <option value="answer"> 전체</option>
+                                        <option value="trainning">제목</option>
+                                        <option value="business">작성자</option>
+                                    </select>
+                                    <input type="search" id="search" placeholder="검색어를 입력하세요.">
+                                    <button id="btn">검색</button>
+                                </td>
+
+                                <td>
+
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+
+
+
+                </section>
+                <section id="list">
+                    <div class="top">
+                        <div class="left">
+                            <span>전체 5,054건</span>
+
+                        </div>
+                        <div class="right">
+                            <select id="select_btn">
+                                <option value="">10개씩 보기</option>
+                            </select>
+
+                        </div>
+                    </div>
+
+
+                    <table summary="질문과 답변">
+                        <!-- <caption>질문과 답변</caption> -->
+                        <thead class="head">
+                            <tr>
+
+                                <th>번호</th>
+                                <th>제목</th>
+                                <th>처리상태</th>
+                                <th>작성자</th>
+                                <th>등록일</th>
+                                <th>조회수</th>
+
+                            </tr>
+                        </thead>
+                        <tbody class="body">
+                            <tr>
+                                <td class="">5054</td>
+                                <td class=""> 배움카드 우편수령 신청했지만 너무 안와서 빠르게 은행 가서 수령받고 싶어요.</td>
+                                <td class="">접수</td>
+                                <td class="">우*형</td>
+                                <td class="">2022-10-08</td>
+                                <td class="">1</td>
+
+                            </tr>
+                            <tr>
+                                <td class="">5054</td>
+                                <td class=""> 배움카드 우편수령 신청했지만 너무 안와서 빠르게 은행 가서 수령받고 싶어요.</td>
+                                <td class="">접수</td>
+                                <td class="">우*형</td>
+                                <td class="">2022-10-08</td>
+                                <td class="">1</td>
+
+                            </tr>
+                            <tr>
+                                <td class="">5054</td>
+                                <td class=""> 배움카드 우편수령 신청했지만 너무 안와서 빠르게 은행 가서 수령받고 싶어요.</td>
+                                <td class="">접수</td>
+                                <td class="">우*형</td>
+                                <td class="">2022-10-08</td>
+                                <td class="">1</td>
+
+                            </tr>
+                            <tr>
+                                <td class="">5054</td>
+                                <td class=""> 배움카드 우편수령 신청했지만 너무 안와서 빠르게 은행 가서 수령받고 싶어요.</td>
+                                <td class="">접수</td>
+                                <td class="">우*형</td>
+                                <td class="">2022-10-08</td>
+                                <td class="">1</td>
+
+                            </tr>
+                            <tr>
+                                <td class="">5054</td>
+                                <td class=""> 배움카드 우편수령 신청했지만 너무 안와서 빠르게 은행 가서 수령받고 싶어요.</td>
+                                <td class="">접수</td>
+                                <td class="">우*형</td>
+                                <td class="">2022-10-08</td>
+                                <td class="">1</td>
+
+                            </tr>
+                            <tr>
+                                <td class="">5054</td>
+                                <td class=""> 배움카드 우편수령 신청했지만 너무 안와서 빠르게 은행 가서 수령받고 싶어요.</td>
+                                <td class="">접수</td>
+                                <td class="">우*형</td>
+                                <td class="">2022-10-08</td>
+                                <td class="">1</td>
+
+                            </tr>
+                            <tr>
+                                <td class="">5054</td>
+                                <td class=""> 배움카드 우편수령 신청했지만 너무 안와서 빠르게 은행 가서 수령받고 싶어요.</td>
+                                <td class="">접수</td>
+                                <td class="">우*형</td>
+                                <td class="">2022-10-08</td>
+                                <td class="">1</td>
+
+                            </tr>
+                        </tbody>
+                        <tfoot class="foot">
+                            <tr>
+                                <td colspan="9">
+                                    <span class="arrow radius-right">≪</span>
+                                    <span class="arrow radius-left">＜</span>
+
+                                    <a href="javascript:;" class="num_box txt_point">1</a>
+                                    <a href="javascript:;" class="num_box ">2</a>
+                                    <a href="javascript:;" class="num_box ">3</a>
+                                    <a href="javascript:;" class="num_box ">4</a>
+                                    <a href="javascript:;" class="num_box ">5</a>
+                                    <a href="javascript:;" class="num_box ">6</a>
+                                    <a href="javascript:;" class="num_box ">7</a>
+                                    <a href="javascript:;" class="num_box ">8</a>
+                                    <a href="javascript:;" class="num_box ">9</a>
+                                    <a href="javascript:;" class="num_box ">10</a>
+
+                                    <span class="arrow radius-right">＞</span>
+                                    <span class="arrow radius-left">≫</span>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+
+                </section>
+        </div>
+        </main>
+    </div>
+    </div>
+    </div>
 </body>
+
 </html>
