@@ -18,11 +18,13 @@
               <h2>WRITE</h2>
              </header>
              <main>
-             <!-- 작성자 정보 -->
-            <section id="myInfo">
-                
-            <form action="" class="info">
-    <table>
+       
+     
+            <!-- 작성자 -->
+            <section id="content">
+
+                 <form name="frm"  class="info" onsubmit="return check();"action="./view.html">
+   <table summary="작성자 정보와 내용">
         <tr ><td class="writer Info">작성자 정보</td>
             <td class="essential">"<span class="star">＊</span>" 필수 사항입니다.</td></tr>
         <tr >
@@ -61,18 +63,13 @@
     </tr>
     </table>
 
-            </form>
-            </section>
-            <!-- 작성 내용 -->
-            <section id="content">
 
-                <form action="" class="info">
                     <table>
                         <tr ><td class="writer Content">작성 내용</td>
                             <td class="essential">"<span class="star">＊</span>" 필수 사항입니다.</td></tr>
                         <tr >
                             <td class="title" >제목<span class="star">＊</span></td>
-                            <td > <input type="text" id="blank"></td>
+                            <td > <input type="text" id="blank" ></td>
                         </tr>
                         <tr>
                             <td class="title">분야</td>
@@ -97,7 +94,7 @@
         내용<span class="star">＊</span>
     </td>
     <td>
-    <textarea name="" id="" cols="80" rows="10" placeholder="문의하실 내용을 입력해주세요"></textarea>
+    <textarea name="" id="content" cols="80" rows="10" placeholder="문의하실 내용을 입력해주세요"></textarea>
     <span>한글 1500자, 영문 3000자 까지 입력 가능합니다.</span>
 
     </td>
@@ -121,7 +118,7 @@
       <img id="preview" src="./img/img_default.png" />
       <label for="click"><img src="./img/btn-imgadd.png" /></label>
     </figure>
-    <input type="file" id="click" onchange="readURL(this);" />
+         
 
 
                           
@@ -157,9 +154,11 @@
                         </div>
                     </div></section>
                <div class="submit">
-                <span><a href="/">뒤로가기</a></span>
-                <span><a href="./view.html">저장</a></span>
+                <span><a href="./index.html">뒤로가기</a></span>
+                <div class="joinn"><input type="submit" class="joinn" value="등록하기" /></div>
+               
                </div>
+               
             </section>
 
         </div>

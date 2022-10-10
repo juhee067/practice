@@ -7,6 +7,9 @@
   margin: 0 auto;
 }
 
+th {
+  text-align: left;
+}
 /* 필수사항 별 */
 .star {
   font-size: 15px;
@@ -147,9 +150,10 @@ form td {
   padding: 8px 20px 9px 20px;
   margin-right: 20px;
 }
-.submit span:last-child {
+.joinn {
   display: inline-block;
   background-color: rgb(102, 102, 255);
   color: #fff;
-  padding: 12px 35px 13px 35px;
+  padding: 4px 10px 5px 10px;
+  border: none;
 }

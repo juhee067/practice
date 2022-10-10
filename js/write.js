@@ -66,3 +66,31 @@ function readURL(input) {
     document.getElementById("preview").src = "";
   }
 }
+
+// 유효성검사
+
+function check() {
+  var frm = document.frm;
+  var reg_call = /^(01[016789]{1})[0-9]{4}[0-9]{4}$/;
+  if (!frm.callNumber.value) {
+    alert("연락처를 입력해주세요!");
+    frm.callNumber.focus();
+    return false;
+  }
+  if (!reg_call.test(frm.callNumber.value)) {
+    alert("핸드폰 번호 형식을 맞춰주세요.");
+    frm.callNumber.focus();
+    return false;
+  }
+
+  if (!frm.blank.value) {
+    alert("제목을 입력해주세요!");
+    frm.blank.focus();
+    return false;
+  }
+  if (!frm.content.value) {
+    alert("내용을 입력해주세요!");
+    frm.content.focus();
+    return false;
+  }
+}
