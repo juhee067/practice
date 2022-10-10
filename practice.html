@@ -2,50 +2,42 @@
 <html>
   <head>
     <title>How to Download files Using JavaScript</title>
-    <style>
-      /* * {
-        outline: 1px solid #f00;
-      } */
-      .image_preview {
-        position: relative;
-        display: inline-block;
-      }
-      figure > img {
-        width: 100px;
-        height: 100px;
-      }
-      figure > label > img {
-        position: absolute;
-        bottom: -15px;
-        right: -15px;
-      }
-      input {
-        display: none;
-      }
-    </style>
+    <style></style>
   </head>
 
   <body>
-    <!-- <input type="file" onchange="readURL(this);" />
-    <img id="preview" /> -->
-    <figure class="image_preview">
-      <img id="preview" src="./img/img_default.png" />
-      <label for="click"><img src="./img/btn-imgadd.png" /></label>
-    </figure>
-    <input type="file" id="click" onchange="readURL(this);" />
-
+    <h1>Instagram Comments</h1>
+    <form action="/dogs" id="instaForm">
+      <input type="text" name="username" placeholder="username" />
+      <input type="text" name="comment" placeholder="comment" />
+      <button>댓글 달기</button>
+    </form>
+    <h2>댓글:</h2>
+    <ul id="comments">
+      <li>I AM LI!!!</li>
+      <li>I AM LI!!!</li>
+    </ul>
     <script>
-      function readURL(input) {
-        if (input.files && input.files[0]) {
-          var reader = new FileReader();
-          reader.onload = function (e) {
-            document.getElementById("preview").src = e.target.result;
-          };
-          reader.readAsDataURL(input.files[0]);
-        } else {
-          document.getElementById("preview").src = "";
-        }
-      }
+      const instaForm = document.querySelector("#instaForm");
+      const commentsContainer = document.querySelector("#comments");
+
+      instaForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const usernameInput = instaForm.elements.username;
+        const commentInput = instaForm.elements.comment;
+        addComment(usernameInput.value, commentInput.value);
+        usernameInput.value = "";
+        commentInput.value = "";
+      });
+
+      const addComment = (username, comment) => {
+        const newComment = document.createElement("li");
+        const bTag = document.createElement("b");
+        bTag.append(username);
+        newComment.append(bTag);
+        newComment.append(`- ${comment}`);
+        commentsContainer.append(newComment);
+      };
     </script>
   </body>
 </html>

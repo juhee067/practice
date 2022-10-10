@@ -1,118 +1,113 @@
-
-.container{
-    max-width: 768px;
-    width: 100%;
-    margin: 0 auto;
-    
+.container {
+  max-width: 768px;
+  width: 100%;
+  margin: 0 auto;
 }
-.container form{
-margin: 0 auto;
-    
+.container form {
+  margin: 0 auto;
 }
-
 
 /* 필수사항 별 */
-.star{
-    font-size: 15px;
-    color: #f00;
-  
+.star {
+  font-size: 15px;
+  color: #f00;
 }
 /* 작성자 정보 */
 
 header h2 {
-    font-size: 50px;
-    text-align: center;
-    padding: 50px 0;
+  font-size: 50px;
+  text-align: center;
+  padding: 50px 0;
 }
-form{ width: 768px;}
-.writer{font-size: 20px;}
-table .essential{
-    text-align: right;
-    font-size: 15px;
+form {
+  width: 768px;
+}
+.writer {
+  font-size: 20px;
+}
+table .essential {
+  text-align: right;
+  font-size: 15px;
 }
 
-
-form tr~tr{
-   border-bottom: 1px solid rgb(234, 234, 234);
+form tr ~ tr {
+  border-bottom: 1px solid rgb(234, 234, 234);
 }
-form .title{
-    background-color: rgb(244, 244, 244);
-    width: 30%;
+form .title {
+  background-color: rgb(244, 244, 244);
+  width: 30%;
 }
-form td{
-padding: 20px 0 20px 20px; 
+form td {
+  padding: 20px 0 20px 20px;
 }
-.address input{
-    border: 1px solid #ddd;
-    cursor: pointer;
+.address input {
+  border: 1px solid #ddd;
+  cursor: pointer;
 }
 
 /* 작성내용 */
 
-.Content{
-    padding-top: 50px;
+.Content {
+  padding-top: 50px;
 }
-
-
-
-
 
 /*  답변 내용 */
-#answer{
-    padding: 50px 0;
+#answer {
+  padding: 50px 0;
 }
-#answer .title{
-    background-color: rgb(244, 244, 244);
-    width: 30%;
+#answer .title {
+  background-color: rgb(244, 244, 244);
+  width: 30%;
 }
-#answer tr~tr{
-    border-bottom: 1px solid rgb(234, 234, 234);
+#answer tr ~ tr {
+  border-bottom: 1px solid rgb(234, 234, 234);
 }
-#answer td{
-    padding: 20px 0 20px 20px; 
+#answer td {
+  padding: 20px 0 20px 20px;
 }
 
 /* 댓글등록 */
-#comments{
-    border-top: 1px solid #ddd;
-    padding: 30px 0;
+#comments {
+  border-top: 1px solid #ddd;
+  padding: 30px 0;
 }
-#comments .box{
-    display: flex;
-    justify-content: space-between;
+#comments .box {
+  display: flex;
+  justify-content: space-between;
 }
-#comments #commentBox{border: 1px solid #ddd;
-width: 84%;
-height: 5em;
-resize: none;
-padding: 10px;
+#comments #commentBox {
+  border: 1px solid #ddd;
+  width: 84%;
+  height: 5em;
+  resize: none;
+  padding: 10px;
 }
 
-#comments .commentBtn{
-    border: 1px solid rgb(16, 15, 62);
-width: 15%;
-height: 5em;
-text-align: center;
-background: none;
-cursor: pointer;
-margin-bottom: 50px;}
-
-
-.submit{
-   text-align: center;
-   margin-bottom: 100px;
-  
+#comments .commentBtn {
+  border: 1px solid rgb(16, 15, 62);
+  width: 15%;
+  height: 5em;
+  text-align: center;
+  background: none;
+  cursor: pointer;
+  margin-bottom: 50px;
 }
-.submit span:first-child{
-  border:1px solid #ddd;
+
+.submit {
+  text-align: center;
+  margin-bottom: 100px;
+}
+.submit span:first-child {
+  border: 1px solid #ddd;
   padding: 12px 35px 13px 35px;
   margin-right: 20px;
 }
-.submit span:last-child{
-    display: inline-block;
- background-color: rgb(102, 102, 255);
- color: #fff;
+.submit span:last-child {
+  background-color: rgb(102, 102, 255);
+  color: #fff;
   padding: 12px 35px 13px 35px;
-
 }
 
+#comments #comment {
+  margin-bottom: 30px;
+}
