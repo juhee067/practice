@@ -7,6 +7,7 @@
     <title>view</title>
     <link rel="stylesheet" href="./css/view.css">
     <link rel="stylesheet" href="css/common.css">
+    <script  src="./js/jquery-1.12.4.min.js"></script>
     <script src="./js/view.js"></script>
 </head>
 <body>
@@ -19,7 +20,7 @@
          <!-- 작성자 정보 -->
         <section id="myInfo">
             
-        <form action="" class="info">
+        
 <table>
     
     <tr ><td class="writer Info">작성자 정보</td>
@@ -31,12 +32,12 @@
    
 </table>
 
-        </form>
+        
         </section>
         <!-- 작성 내용 -->
         <section id="content">
 
-            <form action="" class="info">
+           
                 <table>
                     <tr ><td class="writer Content">작성 내용</td>
                       
@@ -115,8 +116,8 @@
           
          
         </section>
- <section id="comments">
-    
+ <section id="commento">
+<!--     
     <form action="" id="instaForm">
         <ul id="comment">
   <li>I AM LI!!!</li>
@@ -137,7 +138,18 @@
 
 
            </div>
-           </form>
+           </form> -->
+
+    <ul id="comments">
+      <li>댓글 작성하기!</li>
+     
+    </ul>
+<form action="" id="instaForm">
+   <div class="user"><input type="text" name="username" placeholder="username" /></div>
+     <div class="qna"><input type="text" name="comment" placeholder="comment"  /></div>
+      
+      <button class="commentBtn">댓글 달기</button>
+    </form>
            </section>
            
        

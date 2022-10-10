@@ -2,7 +2,24 @@
 <html>
   <head>
     <title>How to Download files Using JavaScript</title>
-    <style></style>
+    <style>
+      /* * {
+        outline: 1px solid #f00;
+      } */
+      .image_preview {
+        position: relative;
+        display: inline-block;
+      }
+      figure > img {
+        width: 100px;
+        height: 100px;
+      }
+      figure > label > img {
+        position: absolute;
+        bottom: -15px;
+        right: -15px;
+      }
+    </style>
   </head>
 
   <body>
@@ -21,7 +38,8 @@
       const instaForm = document.querySelector("#instaForm");
       const commentsContainer = document.querySelector("#comments");
 
-      instaForm.addEventListener("submit", (e) => {
+      // 댓글 작성
+      instaForm.addEventListener("submit", function (e) {
         e.preventDefault();
         const usernameInput = instaForm.elements.username;
         const commentInput = instaForm.elements.comment;
@@ -38,6 +56,11 @@
         newComment.append(`- ${comment}`);
         commentsContainer.append(newComment);
       };
+
+      // 댓글 삭제
+      commentsContainer.addEventListener("click", (e) => {
+        e.target.nodeName === "LI" && e.target.remove();
+      });
     </script>
   </body>
 </html>

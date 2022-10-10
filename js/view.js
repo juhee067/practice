@@ -1,8 +1,7 @@
 const instaForm = document.querySelector("#instaForm");
-const commentsContainer = document.querySelector("#commentBox");
+const commentsContainer = document.querySelector("#comments");
 
-// 댓글 작성
-instaForm.addEventListener("submit", function (e) {
+instaForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const usernameInput = instaForm.elements.username;
   const commentInput = instaForm.elements.comment;
@@ -19,8 +18,3 @@ const addComment = (username, comment) => {
   newComment.append(`- ${comment}`);
   commentsContainer.append(newComment);
 };
-
-// 댓글 삭제
-commentsContainer.addEventListener("click", (e) => {
-  e.target.nodeName === "LI" && e.target.remove();
-});

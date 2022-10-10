@@ -30,14 +30,14 @@ table .essential {
   font-size: 15px;
 }
 
-form tr ~ tr {
+tr ~ tr {
   border-bottom: 1px solid rgb(234, 234, 234);
 }
-form .title {
+.title {
   background-color: rgb(244, 244, 244);
   width: 30%;
 }
-form td {
+td {
   padding: 20px 0 20px 20px;
 }
 .address input {
@@ -67,47 +67,50 @@ form td {
 }
 
 /* 댓글등록 */
-#comments {
+#commento {
   border-top: 1px solid #ddd;
   padding: 30px 0;
 }
-#comments .box {
+
+#commento .box {
   display: flex;
   justify-content: space-between;
 }
-#comments #commentBox {
+#commento .qna {
   border: 1px solid #ddd;
-  width: 84%;
+  width: 100%;
   height: 5em;
   resize: none;
   padding: 10px;
 }
+#commento .user {
+  border: 1px solid #ddd;
+  width: 35%;
+  height: 2em;
+  padding-left: 10px;
 
-#comments .commentBtn {
+  margin-bottom: 10px;
+}
+#commento .qna > input {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+#commento .user > input {
+  border: none;
+}
+
+#commento .commentBtn {
   border: 1px solid rgb(16, 15, 62);
   width: 15%;
-  height: 5em;
+  height: 3em;
   text-align: center;
   background: none;
   cursor: pointer;
-  margin-bottom: 50px;
+  margin: 50px 0;
+  float: right;
 }
 
-.submit {
-  text-align: center;
-  margin-bottom: 100px;
-}
-.submit span:first-child {
-  border: 1px solid #ddd;
-  padding: 12px 35px 13px 35px;
-  margin-right: 20px;
-}
-.submit span:last-child {
-  background-color: rgb(102, 102, 255);
-  color: #fff;
-  padding: 12px 35px 13px 35px;
-}
-
-#comments #comment {
+#commento #comments {
   margin-bottom: 30px;
 }
