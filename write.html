@@ -22,7 +22,7 @@
             <main>
 
 
-                <!-- 작성자 -->
+                <!-- 작성자 정보 -->
                 <section id="content">
 
                     <form name="frm" class="info" onsubmit="return check();" action="./view.html">
@@ -66,7 +66,7 @@
                                 </td>
                             </tr>
                         </table>
-
+                        <!-- 작성정보 -->
 
                         <table>
                             <tr>
@@ -107,25 +107,43 @@
                                 </td>
 
                             </tr>
+                            <!-- 파일첨부 -->
                             <tr>
                                 <td class="title">파일첨부</td>
                                 <td class="filebox">
                                     <div class="imageBox">
-                                        <figure class="itm01 image_preview ">
-                                            <img id="preview" src="./img/img_default.png" />
-                                            <label for="click"><img src="./img/btn-imgadd.png" /></label>
-                                        </figure>
-                                        <input type="file" id="click" onchange="readURL(this);" />
-                                        <figure class="itm02 image_preview">
-                                            <img id="preview" src="./img/img_default.png" />
-                                            <label for="click"><img src="./img/btn-imgadd.png" /></label>
-                                        </figure>
-                                        <input type="file" id="click" onchange="readURL(this);" />
-                                        <figure class="itm03 image_preview">
-                                            <img id="preview" src="./img/img_default.png" />
-                                            <label for="click"><img src="./img/btn-imgadd.png" /></label>
-                                        </figure>
+                                        <div class="fileUpload01">
+                                            <figure class="itm01 image_preview ">
+                                                <img id="preview" src="./img/img_default.png" />
+                                                <input type="file" id="click" onchange="readURL(this);" />
+                                                <label for="click"><img id="clickdel"
+                                                        src="./img/btn-imgadd.png" /></label>
+                                                <!-- <button type="button" class="btn-del btn-del1" name="imageDel1"
+                                                id="imageDel1"><span class="blind">삭제</span></button> -->
 
+                                            </figure>
+                                            <div class="fileInput">
+                                                <p id="fileName">파일선택</p>
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="fileUpload01">
+                                            <figure class="itm02 image_preview">
+                                                <img id="preview" src="./img/img_default.png" />
+                                                <input type="file" id="click" onchange="readURL(this);" />
+                                                <label for="click"><img src="./img/btn-imgadd.png" /></label>
+
+                                            </figure>
+                                        </div>
+
+                                        <div class="fileUpload01">
+                                            <figure class="itm03 image_preview">
+                                                <img id="preview" src="./img/img_default.png" />
+                                                <label for="click"><img src="./img/btn-imgadd.png" /></label>
+                                            </figure>
+                                        </div>
 
 
 
@@ -145,6 +163,7 @@
 
                         </table>
                 </section>
+                <!-- 동의 -->
                 <section id="information">
 
                     <h2 class="writer collection">개인정보 수집 및 이용에 대한 동의</h2>

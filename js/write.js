@@ -60,12 +60,24 @@ function readURL(input) {
     var reader = new FileReader();
     reader.onload = function (e) {
       document.getElementById("preview").src = e.target.result;
+
+
     };
     reader.readAsDataURL(input.files[0]);
+    var file = input.files[0];	//선택된 파일 가져오기
+
+    // 파일이름 변경
+    document.getElementById('fileName').textContent = null;
+    var name = document.getElementById('fileName');
+    name.textContent = file.name;
+
+    document.getElementById('clickdel').src = "./img/btn-imgdel.png"
+
   } else {
     document.getElementById("preview").src = "";
   }
 }
+
 
 // 유효성검사
 

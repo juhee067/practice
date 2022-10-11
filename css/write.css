@@ -3,6 +3,7 @@
   width: 100%;
   margin: 0 auto;
 }
+
 .container form {
   margin: 0 auto;
 }
@@ -10,11 +11,13 @@
 th {
   text-align: left;
 }
+
 /* 필수사항 별 */
 .star {
   font-size: 15px;
   color: #f00;
 }
+
 /* 작성자 정보 */
 
 header h2 {
@@ -22,33 +25,40 @@ header h2 {
   text-align: center;
   padding: 50px 0;
 }
+
 form {
   width: 768;
 }
+
 .writer {
   font-size: 20px;
 }
+
 table .essential {
   text-align: right;
   font-size: 15px;
 }
 
-form tr ~ tr {
+form tr~tr {
   border-bottom: 1px solid rgb(234, 234, 234);
 }
+
 form .title {
   background-color: rgb(244, 244, 244);
   width: 30%;
 }
+
 form td {
   padding: 20px 0 20px 20px;
 }
+
 #callNumber {
   border: 1px solid #ddd;
   cursor: pointer;
   padding: 5px;
   margin-right: 10px;
 }
+
 .address input {
   border: 1px solid #ddd;
   cursor: pointer;
@@ -60,14 +70,17 @@ form td {
 #content .Content {
   padding-top: 50px;
 }
+
 #content .Content {
   padding-top: 50px;
 }
+
 #content #blank {
   width: 97%;
   padding: 10px 0;
   border: 1px solid #ddd;
 }
+
 #content #sblank {
   width: 97%;
   padding: 10px 0;
@@ -81,31 +94,41 @@ form td {
   resize: none;
   padding: 10px;
 }
+
 #content img {
   cursor: pointer;
 }
+
+/* 파일구현 */
 #click {
   display: none;
   visibility: none;
 }
+
 .filebox .image_preview {
   position: relative;
   display: inline-block;
   position: relative;
   border: 1px solid #ddd;
 }
-.filebox figure > img {
+
+.filebox figure>img {
   width: 100px;
   height: 100px;
 }
-.filebox figure > label {
+
+.filebox figure>label {
   padding: 0;
 }
-.filebox figure > label > img {
+
+.filebox figure>label>img {
   position: absolute;
   bottom: -15px;
   right: -15px;
 }
+
+
+
 .filebox .imageBox {
   display: flex;
   gap: 30px;
@@ -114,16 +137,35 @@ form td {
 .filebox .inner {
   margin-top: 20px;
 }
-.filebox .inner > p {
+
+.filebox .inner>p {
   margin-top: 10px;
+
 }
+
+.fileInput p {
+  text-align: center;
+
+}
+
+/* 파일 삭제 */
+.btn-del {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: url(../img/btn-imgdel.png) no-repeat;
+
+}
+
 /* 개인정보 수집 */
 #information {
   padding: 80px 0;
 }
+
 .collection {
   margin-bottom: 20px;
 }
+
 .box {
   border: 3px solid #ddd;
   padding: 20px;
@@ -133,23 +175,28 @@ form td {
   color: rgb(98, 98, 98);
   margin-bottom: 10px;
 }
+
 .assignCheck {
   display: flex;
   justify-content: space-between;
 }
+
 .assignCheck .check {
   display: flex;
   align-items: center;
 }
+
 .submit {
   text-align: center;
   margin-bottom: 100px;
 }
+
 .submit span:first-child {
   border: 1px solid #ddd;
   padding: 8px 20px 9px 20px;
   margin-right: 20px;
 }
+
 .joinn {
   display: inline-block;
   background-color: rgb(102, 102, 255);

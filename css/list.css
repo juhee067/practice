@@ -21,9 +21,6 @@ form {
     width: 768px;
 }
 
-.writer {
-    font-size: 20px;
-}
 
 table .essential {
     text-align: right;
@@ -47,12 +44,23 @@ form td {
 /* 분류 */
 
 .info table {
-    
+
     border-spacing: 30px;
     border: 2px solid #ddd;
     margin-bottom: 50px;
- 
+
 }
+
+
+
+.info table td {
+    padding-right: 30px;
+
+}
+
+
+
+
 
 .info #ablank {
     border: 1px solid #ddd;
@@ -95,18 +103,29 @@ form td {
     margin-bottom: 20px;
     align-items: center
 }
-.head{
+
+.head {
     font-size: 14px;
 }
-.condition{
+
+.condition {
     width: 15%;
 }
-.writer{
+
+.writer {
     width: 15%;
 }
-.date{width: 20%;}
-.view{
+
+.date {
+    width: 20%;
+}
+
+.view {
     width: 15%;
+}
+
+thead th {
+    font-size: 15px;
 }
 
 .right #select_btn {
@@ -138,7 +157,7 @@ form td {
 
 #list tbody td {
     padding: 10px;
-    border-bottom:1px solid #ddd;
+    border-bottom: 1px solid #ddd;
 
     ;
 }
@@ -146,6 +165,7 @@ form td {
 #list tbody td~td {
     border-left: 1px solid #ddd;
 }
+
 /* 번호 */
 
 #list tfoot {
@@ -153,49 +173,54 @@ form td {
     text-align: center;
 
 }
-#list tfoot .Num{
+
+#list tfoot .Num {
 
     padding: 30px 0;
 
 }
-#list tfoot .Num a{
+
+#list tfoot .Num a {
 
     margin: 0 10px;
 
 }
 
-#list tfoot .Num .leftBtn{
+#list tfoot .Num .leftBtn {
 
- display: inline;
-}
-#list tfoot .Num .txt_point{
-
-   color:rgb(102, 102, 255);
- border-bottom:2px solid rgb(102, 102, 255);
-
-
+    display: inline;
 }
 
-#list tfoot .arrow{
+#list tfoot .Num .txt_point {
+
+    color: rgb(102, 102, 255);
+    border-bottom: 2px solid rgb(102, 102, 255);
+
+
+}
+
+#list tfoot .arrow {
     border: 1px solid #ddd;
     padding: 5px;
 }
-#list tfoot .radius-right{
-  border-radius: 10px 0 0 10px;
+
+#list tfoot .radius-right {
+    border-radius: 10px 0 0 10px;
 }
-#list tfoot .radius-left{
-  border-radius: 0 10px 10px 0;
+
+#list tfoot .radius-left {
+    border-radius: 0 10px 10px 0;
 }
 
 /* 질문 등록 */
-.quest_btn { 
+.quest_btn {
     display: block;
     background-color: rgb(102, 102, 255);
     color: #fff;
     padding: 10px 40px;
     cursor: pointer;
-margin: 40px auto;
-text-align: center;
-padding: 20px 0;
-width: 20%;
+    margin: 40px auto;
+    text-align: center;
+    padding: 20px 0;
+    width: 20%;
 }
