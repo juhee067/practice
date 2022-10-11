@@ -65,7 +65,27 @@
                 </tr>
                 <tr>
                     <td class="title">파일첨부</td>
-                    <td></td>
+                    <td>
+                        <fieldset>
+                            
+                            <div class="file itm01">
+                                    <a href="./img/file01.jpeg" download><img id="preview" src="./img/file01.jpeg" /></a>
+                            </div>
+                            
+                            <div class="file itm02">
+                                    <a href="./img/file02.jpeg" download><img id="preview" src="./img/file02.jpeg" /></a>
+                            </div>
+                            
+                            <div class="file itm03">
+                                    <a href="./img/file03.jpeg" download><img id="preview" src="./img/file03.jpeg" /></a>
+                            </div>
+                           
+                            <div>
+                                <input type="button" value="전체 다운로드" onclick="suffix=1;downloadAll(this.form);return false">
+
+                            </div>
+                        </fieldset>
+                    </td>
                 </tr>
 
                 </table>

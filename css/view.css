@@ -65,7 +65,17 @@ td {
 #answer td {
   padding: 20px 0 20px 20px;
 }
+/* 파일구현 */
 
+fieldset{
+  display: flex;
+  gap: 10px;
+}
+
+.file img {
+  width: 100px;
+  height: 100px;
+}
 /* 댓글등록 */
 #commento {
   border-top: 1px solid #ddd;
