@@ -35,7 +35,19 @@
     <div class="black-bg">
       <div class="white-bg">
         <h4>로그인하세요</h4>
-        <button class="btn btn-danger" id="close">닫기</button>
+        <form action="success.html">
+          <!--form은 서버로 유저정보를 전송하려고 쓰는 것임-->
+          <div class="my-3">
+            <input type="text" class="form-control" id="email" />
+          </div>
+          <div class="my-3">
+            <input type="password" class="form-control" id="password" />
+          </div>
+          <button type="submit" class="btn btn-primary" id="submit">
+            전송
+          </button>
+          <button type="button" class="btn btn-danger" id="close">닫기</button>
+        </form>
       </div>
     </div>
     <ul class="list-group">
@@ -45,8 +57,10 @@
       <li class="list-group-item">A fourth item</li>
       <li class="list-group-item">And a fifth one</li>
     </ul>
-
-    <button class="login">로그인</button>
+    <div class="main-bg">
+      <h4>Shirts on Sale</h4>
+      <button id="login" class="btn btn-danger">로그인</button>
+    </div>
 
     <!-- one-way UI 애니메이션
 A 상태 -> B 상태
@@ -54,12 +68,6 @@ A 상태 -> B 상태
 2. 최종스타일
 3. 시작 스타일에다가 transition추가
 -->
-
-    <script>
-      $(".login").on("click", function () {
-        $(".black-bg").addClass("show-modal");
-      });
-    </script>
 
     <script>
       //document.querySelector(".list-group");
@@ -81,6 +89,48 @@ A 상태 -> B 상태
       //   $("navbar-toggler").on("click", function () {
       //     $("list-group")[0].classList.toggle("show");
       //   });
+    </script>
+
+    <script>
+      // 모달창 띄우기
+      $("#login").on("click", function () {
+        $(".black-bg").addClass("show-modal");
+      });
+
+      // input에 입력된게 없으면 alert 띄우기
+      // 유저가 input에 입력한 값
+      // js표현 document.getElementById().value
+      // jquery 표현 $('').val()
+
+      // (1)
+      // document.getElementById("submit").addEventListener("click", function () {
+      //   if ($("#email").val() == "") {
+      //     alert("아이디를 입력해주세요");
+      //   }
+      // (2)
+      document.querySelector("form").addEventListener("submit", function (e) {
+        if ($("#email").val() == "") {
+          alert("아이디를 입력해주세요");
+        }
+        if ($("#password").val() == "") {
+          alert("비번을 입력해주세요");
+        }
+        if ($("#password").val().length < 6) {
+          alert("비번을 7자 이상으로해주세요");
+        }
+      });
+
+      // input에서 일어나는 input 이벤트
+      // document
+      //   .getElementById("email")
+      //   .addEventListener("??", function () {});
+      //   ?? : input (여기 유저가 입력한 값이 변할 때 실행됨)
+      //    : change (input에 입력한 값이 바뀌고 포커스를 잃을 때 발생)
+
+      // 비교 연산자
+      // != 다름
+      // === 엄격한 비교(타입까지 동일해야함), == 느슨한 비교
+      // && 둘 다참이면 참, || 둘 중에 하나만 참이어도 참
     </script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"

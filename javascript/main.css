@@ -42,3 +42,10 @@
   border-radius: 5px;
   padding: 30px;
 }
+
+/*03 form*/
+
+.main-bg {
+  padding: 100px 20px;
+  background: lightgrey;
+}

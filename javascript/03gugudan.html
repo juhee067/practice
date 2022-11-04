@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>369게임</title>
+  </head>
+  <body>
+    <form>
+      <input type="text" id="fake" />
+      <button type="button" id="btn">제출</button>
+    </form>
+    <script>
+      // Q1
+      function three(a) {
+        if (a % 3 == 0) {
+          console.log("박수");
+        } else {
+          console.log("통과");
+        }
+      }
+      three(6);
+      three(12);
+      three(11);
+      // Q2
+      function threeUp(a) {
+        if (a % 9 == 0) {
+          console.log("박수X2");
+        } else if (a % 3 == 0) {
+          console.log("박수");
+        } else {
+          console.log("통과");
+        }
+      }
+      threeUp(6);
+      threeUp(9);
+      threeUp(11);
+
+      //Q3
+
+      function test(a, b) {
+        if (a > 40 && b > 40 && a + b >= 120) {
+          console.log("합격");
+        } else {
+          console.log("불합격");
+        }
+      }
+      test(70, 70);
+      test(30, 100);
+      test(50, 50);
+
+      // 응용 Q4
+      // 응용 Q5
+      function fake(num) {
+        if (a > 40 && b > 40 && a + b >= 120) {
+          alert("장난치지마세요");
+        }
+      }
+      test(70, 70);
+    </script>
+  </body>
+</html>
