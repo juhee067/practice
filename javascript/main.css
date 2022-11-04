@@ -1,0 +1,17 @@
+/* 01 */
+.alert-box {
+  display: none;
+  background-color: skyblue;
+  padding: 20px;
+  color: white;
+  border-radius: 5px;
+}
+
+/* 02 */
+.list-group {
+  display: none;
+}
+
+.show {
+  display: block;
+}
