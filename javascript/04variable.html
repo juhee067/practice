@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>태조 이성계가 태어난 년도는?</p>
+    <input type="text" id="answer" />
+    <button id="send-answer">제출</button>
+    <script>
+      //나이는 맨날 변하니 재할당가능한 변수,
+
+      // Q1출신지역은 바뀌지 않으니 재할당불가능한 변수에 저장해보십시오
+      //   let age = 24;
+      //   const location = yangsan;
+
+      // Q2
+      function money(num) {
+        if (num < 50000) {
+          console.log(num * 1.15 * 1.15);
+        } else {
+          console.log(num * 1.2 * 1.2);
+        }
+      }
+      money(60000);
+      money(10000);
+
+      //Q3
+      function coffee(num) {
+        console.log(num + (num / 3) * 2 + (((num / 3) * 2) / 3) * 2);
+      }
+      coffee(360);
+
+      //Q4
+      function age(num) {
+        const answer = 1335;
+        const chance = 3;
+        let text = document.getElementById("answer").value();
+        if (text == answer) {
+          alert("성공");
+        } else if (count == 3) {
+          alert("멍청아");
+        }
+      }
+      coffee(360);
+    </script>
+  </body>
+</html>

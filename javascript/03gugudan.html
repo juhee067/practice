@@ -49,15 +49,16 @@
 
       // 응용 Q4
       function testLast(num) {
-        let last = num;
+        let last = String(num);
         let lastNum = last.charAt(last.length - 1);
-        if (lastNum == 3 || lastNum == 6 || lastNum == 9) {
+        if (lastNum == "3" || lastNum == "6" || lastNum == "9") {
           console.log("박수");
         } else {
           console.log("pass");
         }
       }
-      testLast(13);
+      testLast(14);
+      testLast(19);
 
       // 응용 Q5
       function testAlert(num) {
