@@ -7,10 +7,7 @@
     <title>369게임</title>
   </head>
   <body>
-    <form>
-      <input type="text" id="fake" />
-      <button type="submit" id="btn">제출</button>
-    </form>
+    <form></form>
     <script>
       // Q1
       function three(a) {
@@ -51,7 +48,26 @@
       test(50, 50);
 
       // 응용 Q4
+      function testLast(num) {
+        let last = num;
+        let lastNum = last.charAt(last.length - 1);
+        if (lastNum == 3 || lastNum == 6 || lastNum == 9) {
+          console.log("박수");
+        } else {
+          console.log("pass");
+        }
+      }
+      testLast(13);
+
       // 응용 Q5
+      function testAlert(num) {
+        if (0 < num && num < 100) {
+          alert("잘했어");
+        } else if (num >= 100) {
+          alert("장난치지마");
+        }
+      }
+      // testAlert(90);
     </script>
   </body>
 </html>
