@@ -35,17 +35,17 @@
       coffee(360);
 
       //Q4
-      function age(num) {
-        const answer = 1335;
-        const chance = 3;
-        let text = document.getElementById("answer").value();
-        if (text == answer) {
-          alert("성공");
-        } else if (count == 3) {
-          alert("멍청아");
-        }
-      }
-      coffee(360);
+
+      document
+        .getElementById("send-answer")
+        .addEventListener("click", function (num) {
+          const answer = 1335;
+
+          let text = document.getElementById("answer").value();
+          if (text == answer) {
+            alert("성공");
+          }
+        });
     </script>
   </body>
 </html>
