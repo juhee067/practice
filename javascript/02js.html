@@ -69,7 +69,30 @@ A 상태 -> B 상태
 2. 최종스타일
 3. 시작 스타일에다가 transition추가
 -->
+    <!-- level02 -->
+    <div class="alert alert-danger">
+      <span class="ms">5</span>초 이내 구매시 사은품 증정!
+    </div>
+    <div style="overflow: hidden">
+      <div class="slide-container">
+        <div class="slide-box">
+          <img src="../img/car1.png" alt="" />
+        </div>
+        <div class="slide-box">
+          <img src="../img/car2.png" alt="" />
+        </div>
+        <div class="slide-box">
+          <img src="../img/car3.png" alt="" />
+        </div>
+      </div>
+    </div>
+    <button class="slide-1">1</button>
+    <button class="slide-2">2</button>
+    <button class="slide-3">3</button>
+    <button class="next">다음</button>
+    <button class="previous">이전</button>
 
+    <!-- level01 -->
     <script>
       //document.querySelector(".list-group");
       // 맨위에 나오는 한개만 찾아줌
@@ -90,9 +113,6 @@ A 상태 -> B 상태
       //   $("navbar-toggler").on("click", function () {
       //     $("list-group")[0].classList.toggle("show");
       //   });
-    </script>
-
-    <script>
       // 모달창 띄우기
       $("#login").on("click", function () {
         $(".black-bg").addClass("show-modal");
@@ -110,14 +130,27 @@ A 상태 -> B 상태
       //   }
       // (2)
       document.querySelector("form").addEventListener("submit", function (e) {
-        if ($("#email").val() == "") {
+        var enter = document.getElementById("email").value;
+        var pwenter = document.getElementById("password").value;
+        const regExp =
+          /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+        const pwExp = /[A-Z]/;
+        if (enter == "") {
           alert("아이디를 입력해주세요");
+          e.preventDefault();
         }
-        if ($("#password").val() == "") {
-          alert("비번을 입력해주세요");
-        }
-        if ($("#password").val().length < 6) {
-          alert("비번을 7자 이상으로해주세요");
+        // if (regExp.test(enter) = false) {
+        //   alert("아이디를 형식에 맞게 입력해주세요");
+        //   e.preventDefault();
+        // }
+        // if ($("#password").val() == "") {
+        //   alert("비번을 입력해주세요");
+        // }
+        // if ($("#password").val().length < 6) {
+        //   alert("비번을 7자 이상으로해주세요");
+        // }
+        if (pwExp.test(pwenter) == false) {
+          alert("대문자 포함해주세요");
         }
       });
 
@@ -132,9 +165,7 @@ A 상태 -> B 상태
       // != 다름
       // === 엄격한 비교(타입까지 동일해야함), == 느슨한 비교
       // && 둘 다참이면 참, || 둘 중에 하나만 참이어도 참
-    </script>
 
-    <script>
       //darkmode
       var count = 0;
       document
@@ -150,10 +181,7 @@ A 상태 -> B 상태
           } else {
             $(".badge").html("light");
           }
-        });
-    </script>
-    <script>
-      // 변수 개념 심화
+        }); // 변수 개념 심화
       var name = "kim";
       // 선언 : 변수를 만들어 쓰겠습니다 var name
       // 할당 : 변수에 자료 넣기 = "kim"
@@ -163,6 +191,55 @@ A 상태 -> B 상태
       // const는 재 선언/ 재 할당 불가능
     </script>
 
+    <!-- level02 -->
+    <script>
+      // setTimeout(function(){실행할코드},ms) : x초 후에 코드 실행
+      // setTimeout(function () {
+      //   // document.querySelector(".alert").hide;
+      //   $(".alert").hide();
+      // }, 5000);
+      //setInterval(function(){실행할코드},ms) : x초 마다 코드 실행
+      let countNum = 5;
+      setInterval(function () {
+        countNum--;
+        if (countNum >= 0) {
+          document.querySelector(".ms").innerHTML = countNum;
+        } else {
+          $(".alert").hide();
+        }
+      }, 1000);
+
+      // if var function 자바스크립트 문법
+      // document.querySelector(), setTimeout(),alert() 브라우저 사용법
+      // 다른 함수를 콜백함수에도 넣을 수 있음
+      //function 함수(){} -> setTimeout(함수,ms)
+
+      // 문자 검사하는 쉬운방법
+      // (1) includes
+      //'abc'.includes('a') -> 있으면  true
+      // (2) 정규식
+      // /a/.test('abcde') -> 있으면 true
+      // 장점 : 범위 가능 /[a-z]/, /\s/(아무문자하나,특수기호 포함)
+      // : 시작/끝 문자 검사 /^a/(a로 시작), /a$/(a가 끝),/a|b/(a또는b 포함)
+      // aaa@bbb.ccc 이메일 정규식 표현 /\S+@\S+\.\S+/
+
+      $(".slide-1").on("click", function () {
+        $(".slide-container").css("transform", "translateX(0)");
+      });
+      $(".slide-2").on("click", function () {
+        $(".slide-container").css("transform", "translateX(-100vw)");
+      });
+
+      $(".slide-3").on("click", function () {
+        $(".slide-container").css("transform", "translateX(-200vw)");
+      });
+      var now = 1;
+
+      $(".next").on("click", function () {
+        $(".slide-container").css("transform", "translateX(-" + now + "00vw)");
+        now += 1;
+      });
+    </script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"

@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <p>태조 이성계가 태어난 년도는?</p>
@@ -19,31 +24,52 @@
 
       // Q2
       function money(num) {
+        let yearUp = 1.2;
+        let yearDown = 1.15;
         if (num < 50000) {
-          console.log(num * 1.15 * 1.15);
+          console.log(num * (yearDown **= 2));
         } else {
           console.log(num * 1.2 * 1.2);
+          console.log(num * (yearUp **= 2));
+          console.log(num * Math.pow(1.2, 2));
         }
       }
-      money(60000);
       money(10000);
+      money(60000);
+
+      //응용 Q2
+      let a = 1.2;
+      console.log((a **= 10));
 
       //Q3
       function coffee(num) {
-        console.log(num + (num / 3) * 2 + (((num / 3) * 2) / 3) * 2);
+        let refeel = 2 / 3;
+        // console.log(num + (num / 3) * 2 + (((num / 3) * 2) / 3) * 2);
+        console.log(num + 360 * refeel + 360 * (refeel **= 2));
       }
       coffee(360);
 
-      //Q4
+      //응용 Q3
 
+      function coffee02(num) {
+        let refeel = 2 / 3;
+
+        console.log(360 / (1 - 2 / 3));
+      }
+      coffee02(360);
+
+      //Q4
+      let count = 0;
       document
         .getElementById("send-answer")
-        .addEventListener("click", function (num) {
-          const answer = 1335;
+        .addEventListener("click", function () {
+          count++;
+          let text = document.getElementById("answer").value;
 
-          let text = document.getElementById("answer").value();
-          if (text == answer) {
+          if (text == "1335") {
             alert("성공");
+          } else if (count >= 3 && text != "1335") {
+            alert("멍청아");
           }
         });
     </script>
