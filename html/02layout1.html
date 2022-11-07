@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="../css/main.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- float 사용 -->
+    <div class="container">
+      <div class="header"></div>
+      <!-- div:block은 가로행을 모두 차지한다. 그래서 다른 박스가 옆으로 오지않음-->
+      <div class="leftMenu"></div>
+      <div class="right">
+        <!-- 이 박스가 inline-block 되어있어서 위치가 이상해진다 
+            이유 : baseline 이 존재 할 경우, 박스들이 baseline 위에 오려고함
+        왼쪽에 있는 박스를 vertical-align: top 해주면 해결
+        -->
+        <p>안녕하세요</p>
+      </div>
+      <div class="footer"></div>
+    </div>
+  </body>
+</html>

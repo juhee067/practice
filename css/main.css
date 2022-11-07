@@ -1,0 +1,105 @@
+.profile {
+  width: 100px;
+  display: block;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+}
+#special {
+  text-align: center;
+}
+.point {
+  color: red;
+}
+
+.box {
+  width: 300px;
+  background-color: aqua;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 10px;
+  box-shadow: 5px 5px black;
+}
+
+/* layout */
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.header {
+  width: 100%;
+  height: 50px;
+  background-color: red;
+}
+
+.leftMenu {
+  display: inline-block;
+  width: 20%;
+  height: 400px;
+  background-color: cornflowerblue;
+  /* 상하 정렬 : va는 inline-block이나 inline 요소에만 적용가능 */
+  vertical-align: top;
+  /* float: left; */
+}
+.right {
+  display: inline-block;
+  width: 80%;
+  height: 400px;
+  background-color: coral;
+  /* float: left; */
+}
+.footer {
+  width: 100%;
+  height: 100px;
+  background-color: grey;
+  /* clear: both; */
+}
+
+/* 03layout1_pt */
+body {
+  outline: 1px solid red;
+}
+.aside {
+  width: 60%;
+  height: 200px;
+  float: left;
+}
+
+.aside .profileImg .img {
+  float: left;
+}
+.aside .profileImg .name {
+  float: left;
+  margin-left: 20px;
+}
+.aside .profileImg .name h3 {
+  margin: 0;
+  font-size: 15px;
+}
+.aside .profileImg .name p {
+  margin: 0;
+  font-size: 12px;
+}
+.aside .profileImg img {
+  width: 50px;
+  border-radius: 50%;
+}
+.aside .intro {
+  clear: both;
+  padding-top: 5px;
+}
+.article {
+  width: 30%;
+  height: 200px;
+  float: right;
+}
+.article img {
+  /* article에 width가 있기 때문에 그 넓이를 상속받으면 된다 */
+  width: 100%;
+  height: 100%;
+}
