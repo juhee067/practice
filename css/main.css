@@ -1,3 +1,7 @@
+div {
+  box-sizing: border-box;
+}
+
 .profile {
   width: 100px;
   display: block;
@@ -7,9 +11,11 @@
 .title {
   text-align: center;
 }
+
 #special {
   text-align: center;
 }
+
 .point {
   color: red;
 }
@@ -31,6 +37,7 @@
   max-width: 800px;
   margin: 0 auto;
 }
+
 .header {
   width: 100%;
   height: 50px;
@@ -46,6 +53,7 @@
   vertical-align: top;
   /* float: left; */
 }
+
 .right {
   display: inline-block;
   width: 80%;
@@ -53,6 +61,7 @@
   background-color: coral;
   /* float: left; */
 }
+
 .footer {
   width: 100%;
   height: 100px;
@@ -64,6 +73,7 @@
 body {
   outline: 1px solid red;
 }
+
 .aside {
   width: 60%;
   height: 200px;
@@ -73,33 +83,122 @@ body {
 .aside .profileImg .img {
   float: left;
 }
+
 .aside .profileImg .name {
   float: left;
   margin-left: 20px;
 }
+
 .aside .profileImg .name h3 {
   margin: 0;
   font-size: 15px;
 }
+
 .aside .profileImg .name p {
   margin: 0;
   font-size: 12px;
 }
+
 .aside .profileImg img {
   width: 50px;
   border-radius: 50%;
 }
+
 .aside .intro {
   clear: both;
   padding-top: 5px;
 }
+
 .article {
   width: 30%;
   height: 200px;
   float: right;
 }
+
 .article img {
   /* article에 width가 있기 때문에 그 넓이를 상속받으면 된다 */
   width: 100%;
   height: 100%;
+}
+
+/* navBar */
+.navBar li {
+  display: inline-block;
+  width: 60px;
+  text-align: center;
+  background-color: #eee;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.navBar li a {
+  font-size: 16px;
+  text-decoration: none;
+}
+
+/* 04layout2 */
+
+.mainBg {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background-image: url(../img/shoes.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 1px;
+  text-align: center;
+  /* 배경 채워지는 위치 */
+}
+
+.mainTitle {
+  color: white;
+  font-size: 40px;
+
+  /* margin이 text에 안붙고 배경에 붙어 내려온다
+  margin collapse 현상 : 박스 2개가 위쪽 테두리에 겹쳐짐
+  이런 경우에는 margin도 합쳐짐-> 부모박스에 패딩을 주면됨
+  */
+}
+
+.mainContent {
+  color: #fff;
+}
+
+.mainBtn {
+  /* position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  가운데 오게 하는 공식
+  */
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 150px;
+  padding: 10px;
+}
+
+.subBg {
+  position: relative;
+  top: -100px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 80%;
+  max-width: 600px;
+  background-color: #ddd;
+  padding: 20px;
+  text-align: center;
+  /* padding, border 포함 width가 조정됨 */
+
+}
+
+.subBg .subTitle {
+  font-size: 20px;
+}
+
+.subBg .subContent {
+  font-size: 15px;
 }
