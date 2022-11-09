@@ -29,7 +29,7 @@ function App() {
       {/* 데이터를 꽂아넣는다 : 데이터 바인딩 */}
       <button
         onClick={() => {
-          title[0] = "여자코트추천";
+          let copy = title;
           titleChange(title);
         }}
       >
