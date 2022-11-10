@@ -100,7 +100,7 @@ ul.list {
 }
 
 ul.list::after {
-  content: '';
+  content: "";
   display: block;
   clear: both;
 }
@@ -132,4 +132,11 @@ ul.list::after {
 
 .show {
   display: block;
+}
+
+/* table */
+.tableBg {
+  width: 500px;
+  height: 500px;
+  background-color: aquamarine;
 }

@@ -192,7 +192,6 @@ body {
   padding: 20px;
   text-align: center;
   /* padding, border 포함 width가 조정됨 */
-
 }
 
 .subBg .subTitle {
@@ -205,7 +204,6 @@ body {
 
 /* input */
 .formpt {
-
   width: 100%;
   max-width: 700px;
   margin: 0 auto;
@@ -232,7 +230,6 @@ input[type=email] {
   padding: 10px;
   font-size: 20px;
   border: 1px solid ddd;
-
 }
 
 .formpt .w100 {
@@ -245,27 +242,24 @@ input[type=email] {
   padding: 10px;
 }
 
-input[type=email] {
-
+input[type="email"] {
   width: 100%;
 }
 
-input[type=text] {
+input[type="text"] {
   display: inline-block;
   width: 100%;
-
 }
 
 .check {
   margin-top: 30px;
 }
 
-input[type=checkbox] {
+input[type="checkbox"] {
   margin-top: 10px;
 }
 
-input[type=submit] {
-
+input[type="submit"] {
   float: right;
   border: none;
   background-color: rgb(255, 191, 0);
@@ -274,7 +268,6 @@ input[type=submit] {
 }
 
 .formpt h4 {
-
   font-size: 15px;
   font-weight: 300;
 }
@@ -295,5 +288,45 @@ table {
 }
 
 td {
-  border: 1px solid black;
+  border-bottom: 2px solid #ddd;
+  padding: 20px;
+}
+/* table */
+.tableBg {
+  width: 80%;
+  padding: 30px;
+  background-color: rgb(147, 203, 218);
+}
+
+.shop {
+  background-color: #fff;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  border-radius: 5px;
+  /*  가끔 radius 안먹을 때가 있다 그것은 border-collapse 와 함께하면 그렇다
+  top과 left에만 radius를 넣던지 그림자를 이용하든지
+   */
+}
+.shop thead {
+  border-bottom: 2px solid #ddd;
+}
+.tableBg h2 {
+  font-size: 25px;
+  font-weight: 500;
+  color: rgb(3, 77, 77);
+}
+
+.tableBg .title th {
+  font-size: 15px;
+  padding: 10px;
+}
+
+.total {
+  text-align: right;
+}
+
+.cellLong {
+  width: 700px;
+  /* 최대한 이만큼 차지해주세요 */
 }
