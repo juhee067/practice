@@ -37,6 +37,8 @@
       <h4>로그인하세요</h4>
       <form action="success.html">
         <!--form은 서버로 유저정보를 전송하려고 쓰는 것임-->
+        <!-- 모든 브라우저는 이벤트 버블링이 일어남 
+        이벤트 버블링 : 이벤트가 상위 html로 퍼지는 현상-->
         <div class="my-3">
           <input type="text" class="form-control" id="email" />
         </div>
@@ -132,6 +134,25 @@ A 상태 -> B 상태
     $("#login").on("click", function () {
       $(".black-bg").addClass("show-modal");
     });
+    // 모달창 닫기
+    $(".black-bg").on("click", function (e) {
+      // 제이쿼리는  e.target == $(".black-bg") 이렇게 비교하면 구조가 달라 결과값이 다르게 나온다
+      // $(e.target) == $(".black-bg") 
+      if (e.target == document.querySelector('.black-bg')) { $(".black-bg").removeClass("show-modal"); }
+
+    });
+    //js 버전 모달창 닫기
+    // document.querySelector('.black-bg').addEventListener('click', function () {
+    //   document.querySelector('.black-bg').classList.remove('show-modal')
+    // })
+
+    //이벤트 버블링 해결 책 :콜백함수에 e넣기
+    // e.target : 유저가 실제로 누른거
+    // e.currentTarget : 이벤트리스너 달린 곳 -> this
+    // e.preventDefalut() : 기본동작 막아주세요
+    // e.stopPropagation() : 내 상위요소로 이벤트 버블링 막아주세요
+
+
 
     // input에 입력된게 없으면 alert 띄우기
     // 유저가 input에 입력한 값
