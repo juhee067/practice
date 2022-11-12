@@ -113,6 +113,9 @@ function App() {
 //컴포넌트의 단점 : state 가져쓸 때 문제 생김
 
 // 동적인 UI만드는 step : 1. html,css로 미리 디자인 완성 2. ui의 현재 상태를 state로 저장 3. state에 따라 ui가 어떻게 보일지 작성
+  <!--        여기서 부터          -->
+    <button class="btn">구매하기</button>
+    <input class="input-test">
 function Modal() {
   return (
     <div className="modal">
