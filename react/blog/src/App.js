@@ -78,28 +78,33 @@ function App() {
         <p>2월 17일 발행</p>
       </div> */}
       {/* {}사이에는 if문을 사용하면 안된다
-      삼항연사자르 사용 -> {조건식 ? 참 일때 실행할 코드 : 거짓을 때 실행할 코드}*/}
+      삼항연사자를 사용 -> {조건식 ? 참 일때 실행할 코드 : 거짓을 때 실행할 코드}*/}
       {/* {modal == true ? < Modal /> : null
         // null 비어있는 상태
       } */}
-      {title.map((a, i) => {
-        return (<div className="list" key={i}>
-          <h4 onClick={() => { setModal(!modal) }}>{title[i]}</h4>
-          <span
-            onClick={() => {
-              let copy = [...goodjob]
-              copy[i] = copy[i] + 1
-              change(copy);
-            }}
-          >
-            👍
-          </span>{" "}
-          {goodjob[i]}
-          {modal == true ? <Modal /> : null}
-          <p>2월 17일 발행</p>
-        </div>)
+      {
+        // a:파라미터 -> array안에 있던 데이터
+        // i:반복문 돌 때마다 0부터 1씩 증가하는 정수
+        title.map((a, i) => {
+          return (<div className="list" key={i}>
+            <h4 onClick={() => { setModal(!modal) }}>{title[i]}</h4>
+            <span
+              onClick={() => {
+                let copy = [...goodjob]
+                copy[i] = copy[i] + 1
+                change(copy);
+              }}
+            >
+              👍
+            </span>{" "}
+            {goodjob[i]}
+            {modal == true ? <Modal /> : null}
+            <p>2월 17일 발행</p>
+          </div>
+          )
 
-      })}
+        })
+      }
     </div>
   );
 }
@@ -113,9 +118,6 @@ function App() {
 //컴포넌트의 단점 : state 가져쓸 때 문제 생김
 
 // 동적인 UI만드는 step : 1. html,css로 미리 디자인 완성 2. ui의 현재 상태를 state로 저장 3. state에 따라 ui가 어떻게 보일지 작성
-  <!--        여기서 부터          -->
-    <button class="btn">구매하기</button>
-    <input class="input-test">
 function Modal() {
   return (
     <div className="modal">
