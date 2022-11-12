@@ -330,3 +330,22 @@ td {
   width: 700px;
   /* 최대한 이만큼 차지해주세요 */
 }
+
+/* 상태에 따라 스타일을 줄 수 있는 pseudo-class 
+순서가 중요함*/
+.btn:hover {
+  background-color: chocolate
+}
+
+.btn:focus {
+  background-color: grey
+}
+
+.btn:active {
+  background-color: brown
+}
+
+.input-test {
+  font-size: 20px;
+}
+
