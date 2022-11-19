@@ -12,14 +12,24 @@ function App() {
     "강남 우동맛집",
     "파이썬독학",
   ]);
-  let [good, setGood] = useState(0);
-
+  let [good, setGood] = useState([0, 0, 0]);
+  let [modal, setModal] = useState(0);
+  let [modalTitle, setModalTitle] = useState(0);
   return (
     <div className="App">
       <div className="black-nav">
         <h4>logo</h4>
       </div>
-      <button>가나다순 정렬</button>
+      <button
+        onClick={() => {
+          let copy = [...title];
+          copy.sort();
+          setTitle(copy);
+        }}
+      >
+        {" "}
+        정렬버튼{" "}
+      </button>
       <button
         onClick={() => {
           // state변경함수 특징 : 기존state == 신규 state의 경우 변경안해줌
@@ -34,14 +44,14 @@ function App() {
       >
         글수정
       </button>
-      <div className="list">
+      {/* <div className="list">
         <h4>
-          {title[0]}
-          {/* onClick={함수명만, 함수 만드는 문법 전체를 바로 넣어도 됨} 
+          {title[0]} */}
+      {/* onClick={함수명만, 함수 만드는 문법 전체를 바로 넣어도 됨} 
           state 변경 시에는 등호로 변경하면 안된다 ex)  good=good+1
          바꾸는 방법 :  state변경함수(새로운 state) ex) setGood(1)
           */}
-          <span
+      {/* <span
             onClick={() => {
               setGood(good + 1);
             }}
@@ -59,10 +69,83 @@ function App() {
         <p>2월 17일 발행</p>
       </div>
       <div className="list">
-        <h4>{title[2]}</h4>
+        <h4
+          onClick={() => {
+            setModal(!modal);
+          }}
+        >
+          {title[2]}
+        </h4>
         <p>2월 17일 발행</p>
-      </div>
+      </div> */}
+
+      {/* function(a,i) a-> 안에 들어가는 내용 i-> 반복문 돌 때마다 0부터 1씩 증가하는 함수 */}
+      {title.map(function (a, i) {
+        return (
+          // 반복문을 돌릴때 html는 key라는 값을 가져야한다
+          <div className="list" key={i}>
+            <h4
+              onClick={() => {
+                setModal(!modal);
+                setModalTitle(i);
+              }}
+            >
+              {title[i]}
+            </h4>
+            <span
+              onClick={() => {
+                let copy = [...good];
+                copy[i] = good[i] + 1;
+                setGood(copy);
+              }}
+            >
+              👍
+            </span>{" "}
+            {good[i]}
+            <p>2월 17일 발행</p>
+          </div>
+        );
+      })}
+
+      {/* if문 대신 삼항연산자 사용 */}
+      {/* {조건식 ? 참일 때 실행할 코드 : 거짓일 때 실행할 코드} */}
+      {/* 내가 쓴 풀이식 -> 
+       <h4
+          onClick={() => {
+            setModal(modal + 1);
+          }}
+        >
+
+      {modal % 2 == 1 ? <Modal /> : null} */}
+      {/* 애플 코딩 정답 */}
+      {modal == true ? (
+        <Modal setTitle={setTitle} title={title} modalTitle={modalTitle} />
+      ) : null}
     </div>
   );
 }
+
+// 컴포넌트 만드는 방법 1
+// props 전송은 부모 -> 자식만 가능 app -> modal
+function Modal(props) {
+  return (
+    <div className="modal">
+      {/* state가 Modal,App에서 필요하면 App에 만들어야함(최상위 컨포넌트) */}
+      <h4>{props.title[props.modalTitle]}</h4>
+      <p>날짜</p>
+      <p>상세내용</p>
+      {/* <button
+        onClick={() => {
+          let copy = [...props.title];
+          copy[0] = "여자코트추천";
+          props.setTitle(copy);
+        }}
+      >
+        글수정
+      </button> */}
+    </div>
+  );
+}
+// 컴포넌트 만드는 방법 2
+//let Modal = ()=>{}
 export default App;
