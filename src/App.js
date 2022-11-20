@@ -1,5 +1,5 @@
 // eslint-disable : lint 끄는 기능
-import { useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
 
 function App() {
@@ -15,6 +15,7 @@ function App() {
   let [good, setGood] = useState([0, 0, 0]);
   let [modal, setModal] = useState(0);
   let [modalTitle, setModalTitle] = useState(0);
+  let [text, setText] = useState("");
   return (
     <div className="App">
       <div className="black-nav">
@@ -78,7 +79,6 @@ function App() {
         </h4>
         <p>2월 17일 발행</p>
       </div> */}
-
       {/* function(a,i) a-> 안에 들어가는 내용 i-> 반복문 돌 때마다 0부터 1씩 증가하는 함수 */}
       {title.map(function (a, i) {
         return (
@@ -90,23 +90,55 @@ function App() {
                 setModalTitle(i);
               }}
             >
-              {title[i]}
+              {title[i]}{" "}
+              {/* 상위 html로 퍼지는 이벤트 버블링을 막고싶으면 e.stopPropagation(); */}
+              <span
+                onClick={(e) => {
+                  e.stopPropagation();
+                  let copy = [...good];
+                  copy[i] = good[i] + 1;
+                  setGood(copy);
+                }}
+              >
+                👍
+              </span>{" "}
+              {good[i]}
             </h4>
-            <span
-              onClick={() => {
-                let copy = [...good];
-                copy[i] = good[i] + 1;
-                setGood(copy);
+
+            <p>2월 17일 발행</p>
+            <button
+              onClick={(e) => {
+                let copy = [...title];
+                // splice : 배열 삭제
+                copy.splice(i, 1);
+                setTitle(copy);
               }}
             >
-              👍
-            </span>{" "}
-            {good[i]}
-            <p>2월 17일 발행</p>
+              삭제
+            </button>
           </div>
         );
       })}
+      {/* input에 뭔가 입력시 코드실행하고 싶으면 onChange/onInput */}
+      {/* input에 입력한 값 가져오는 방법 : 파라미터에 e(event객체)라고 적음/ e.target이라고 적으면 이벤트 발생한 html태그*/}
+      <input
+        onChange={(e) => {
+          // 늦게 처리됨 (비동기처리)
+          setText(e.target.value);
+          console.log(text);
+        }}
+      />
+      <button
+        onClick={() => {
+          let copy = [...title];
+          // unshift : array 앞자리에 자료 넣기
+          copy.unshift(text);
 
+          setTitle(copy);
+        }}
+      >
+        글발행
+      </button>
       {/* if문 대신 삼항연산자 사용 */}
       {/* {조건식 ? 참일 때 실행할 코드 : 거짓일 때 실행할 코드} */}
       {/* 내가 쓴 풀이식 -> 
@@ -148,4 +180,8 @@ function Modal(props) {
 }
 // 컴포넌트 만드는 방법 2
 //let Modal = ()=>{}
+
+// class로 컴포넌트 만들기
+//constructor,super,render 채워넣어야함
+
 export default App;
