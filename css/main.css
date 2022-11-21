@@ -1,6 +1,11 @@
 * {
   box-sizing: border-box;
 }
+body {
+  margin: 0;
+  font-family: "gulim";
+  transform: rotate(0.03deg);
+}
 
 .profile {
   width: 100px;
@@ -70,9 +75,6 @@
 }
 
 /* 03layout1_pt */
-body {
-  outline: 1px solid red;
-}
 
 .aside {
   width: 60%;
@@ -329,4 +331,108 @@ td {
 .cellLong {
   width: 700px;
   /* 최대한 이만큼 차지해주세요 */
+}
+
+/* flex */
+.flex-item {
+  width: 100px;
+  height: 100px;
+  background: grey;
+  margin: 5px;
+}
+.flex-item:nth-child(2) {
+  /* 배수를 차지해주세요 */
+  /* nav만들때 사용 */
+  flex-grow: 2;
+}
+
+.flex-container {
+  display: flex;
+  /* width가 크면 밑으로 보내고 싶을때 */
+  /* flex-wrap: wrap; */
+  /* 상하정렬 */
+  align-items: center;
+  /* 좌우정렬 */
+  justify-content: space-between;
+}
+.flex-container .logo {
+  background: grey;
+}
+.flex-container .item {
+  background: grey;
+}
+.flex-container ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+/* 반응형웹 */
+.test {
+  /* vw:브라우저 폭에 비례 */
+  /* rem: html태그 폰트 사이즈에 비례 ex)10rem 기본폰트사이즈의 10배 */
+  /* rem 사용이유 : rem으로 크기지정하면 기본 font-size커져도 모든게 같이 커짐 */
+  /* em : 내폰트사이즈의 x배 */
+  width: 100rem;
+  /* vh:브라우저 높이에 비례 */
+
+  background-color: grey;
+}
+/* 미디어쿼리 문법 사용 : 항상 밑에있어야 작동 잘됨*/
+/* 단위 :
+1200,992,768,576px 사용 */
+@media screen and (max-width: 1200px) {
+  .mainTitle {
+    font-size: 30px;
+  }
+  .flex-container {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .mainTitle {
+    font-size: 20px;
+  }
+  .flex-container {
+    font-size: 8px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .mainTitle {
+    font-size: 20px;
+  }
+  .flex-container {
+    font-size: 8px;
+  }
+}
+
+/* 반응형 숙제 */
+.explain-container {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.explain-container div {
+  width: 25%;
+}
+
+@media screen and (max-width: 1200px) {
+  .explain-container div {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 576px) {
+  .explain-container div {
+    width: 100%;
+  }
+}
+
+/* icon */
+.explain-container i {
+  background-color: burlywood;
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  padding-top: 25px;
+  color: #fff;
 }
