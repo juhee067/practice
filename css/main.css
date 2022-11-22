@@ -436,3 +436,46 @@ td {
   padding-top: 25px;
   color: #fff;
 }
+
+/* transiton  */
+
+.shop-bg {
+  background-color: #eee;
+  padding: 20px;
+}
+.shop-bg .shop-container {
+  display: flex;
+  width: 90%;
+  margin: auto;
+}
+
+.shop-item {
+  width: 33%;
+  padding: 15px;
+}
+.shop-item img {
+  width: 100%;
+}
+.over {
+  overflow: hidden;
+}
+.overlay {
+  position: absolute;
+  bottom: -50%;
+  width: 100%;
+  height: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 50px;
+  transition: all 1s;
+  /* transition-timing-function: ; 내가 속도 조절 가능*/
+}
+.overlay p {
+  font-size: 50px;
+  color: #fff;
+}
+/* 띄어쓰기는 내 자식에서만 해당된다
++는 형제 요소 선택
+img:hover .overlay는 안되지만 img:hover+.overlay 가능 */
+.over:hover .overlay {
+  bottom: 0;
+}
