@@ -1,5 +1,5 @@
 * {
-  /* outline: 1px solid #fd0202; */
+  outline: 1px solid #fd0202;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -141,5 +141,17 @@ footer .icon {
   margin-bottom: 30px;
 }
 
-@media screen (max-width: "768px") {
+@media screen and(max-width: 768px) {
+  .main .container {
+    flex-direction: column;
+  }
+  .main .title {
+    width: 50%;
+    color: #fff;
+  }
+
+  .main .phone_img {
+    width: 50%;
+    padding-top: 100px;
+  }
 }
