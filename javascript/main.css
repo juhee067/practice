@@ -140,3 +140,8 @@ ul.list::after {
   height: 500px;
   background-color: aquamarine;
 }
+
+/* select */
+.select-hide {
+  display: none;
+}
