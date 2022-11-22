@@ -75,12 +75,12 @@ span {
 .offer .pic {
   margin: auto;
   color: #fff;
-  display: flex;
 }
 .offer .pic h4 {
   margin-bottom: 5px;
 }
-.offer .pic > div {
+.offer .pic .service {
+  float: left;
   width: 25%;
   text-align: center;
 }
@@ -141,17 +141,25 @@ footer .icon {
   margin-bottom: 30px;
 }
 
-@media screen and(max-width: 768px) {
+@media screen and (max-width: 768px) {
   .main .container {
     flex-direction: column;
   }
   .main .title {
-    width: 50%;
-    color: #fff;
+    text-align: center;
+    width: 100%;
   }
-
+  .main p {
+    width: 100%;
+  }
   .main .phone_img {
+    width: 70%;
+    margin: 0 auto;
+  }
+  .offer .pic p {
+    margin-bottom: 20px;
+  }
+  .offer .pic .service {
     width: 50%;
-    padding-top: 100px;
   }
 }
