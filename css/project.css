@@ -1,5 +1,4 @@
 * {
-  outline: 1px solid #fd0202;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -29,7 +28,7 @@ span {
 
 /* main */
 .main {
-  padding: 50px;
+  padding-top: 50px;
   display: flex;
   background: linear-gradient(rgb(137, 164, 255), rgb(134, 69, 255));
 }
@@ -108,6 +107,7 @@ figure {
 .Doimg figure {
   position: relative;
   color: #fff;
+  width: 50%;
 }
 .Doimg figure img {
   display: block;
@@ -161,5 +161,30 @@ footer .icon {
   }
   .offer .pic .service {
     width: 50%;
+  }
+  .Doimg figure {
+    position: relative;
+    color: #fff;
+    width: 100%;
+   
+  }
+  .Doimg figure .do_title {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  .Doimg figure .do_title h3 {
+  font-size: 30px;
+  }
+  .Doimg figure .do_title p {
+  font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .offer .pic .service {
+    width: 100%;
   }
 }
