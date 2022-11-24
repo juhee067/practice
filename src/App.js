@@ -6,6 +6,7 @@ import Product from "./routes/Product.js";
 import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
 import Detail from "./routes/Detail";
 import About from "./About";
+import Event from "./routes/Event";
 function App() {
   let [shoes] = useState(data);
   // page 이동을 도와주는 함수
@@ -48,7 +49,7 @@ function App() {
                 <div className="container">
                   <div className="row">
                     {shoes.map((a, i) => {
-                      return <Product shoes={shoes[i]} i={i} />;
+                      return <Product shoes={shoes[i]} i={i} key={i} />;
                     })}
                   </div>
                 </div>
@@ -56,14 +57,21 @@ function App() {
             </div>
           }
         />
-        <Route path="/detail" element={<Detail />} />
+
+        <Route path="/detail/:id" element={<Detail shoes={shoes} />} />
         {/* Nested Routes : 태그안에 태그 넣기
         장점 : element가 2개 동시에 보임*/}
         <Route path="/about" element={<About />}>
           <Route path="member" element={<h4>멤버임</h4>} />
           <Route path="location" element={<h4>지역임</h4>} />
         </Route>
-
+        <Route path="/Event" element={<Event />}>
+          <Route
+            path="one"
+            element={<div>첫주문시 양배추즙 서비스</div>}
+          ></Route>
+          <Route path="two" element={<div>생일 기념 쿠폰받기</div>}></Route>
+        </Route>
         {/* 없는 페이지 (404page) */}
         <Route path="*" element={<div>없는페이지에요</div>} />
       </Routes>
