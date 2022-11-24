@@ -1,7 +1,15 @@
 import { Button, Navbar, Container, Nav } from "react-bootstrap";
+import { useState } from "react";
 import "./App.css";
-
+import data from "./data.js";
+import Product from "./routes/Product.js";
+import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
+import Detail from "./routes/Detail";
+import About from "./About";
 function App() {
+  let [shoes] = useState(data);
+  // page 이동을 도와주는 함수
+  let navigate = useNavigate();
   return (
     <div className="App">
       <Button variant="primary">Primary</Button>{" "}
@@ -9,43 +17,56 @@ function App() {
         <Container>
           <Navbar.Brand href="#home">Navbar</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
+            {/* 링크태그를 사용하면 그냥 a태그 같은 개념 */}
+            {/*  onClick={() => {navigate(1);}} :숫자 적으면 앞으로 한페이지 이동 -1은 뒤로 */}
+            <Nav.Link
+              onClick={() => {
+                navigate("/");
+              }}
+            >
+              Home
+            </Nav.Link>
+            <Nav.Link
+              onClick={() => {
+                navigate("/detail");
+              }}
+            >
+              Features
+            </Nav.Link>
             <Nav.Link href="#pricing">Pricing</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
-      <div className="main-bg"></div>
-      <div className="container">
-        <div className="row">
-          <div className="col-md-4">
-            <img
-              src="https://codingapple1.github.io/shop/shoes1.jpg"
-              width="80%"
-            />
-            <h4>상품명</h4>
-            <p>상품설명</p>
-          </div>
-          <div className="col-md-4">
-            {" "}
-            <img
-              src="https://codingapple1.github.io/shop/shoes2.jpg"
-              width="80%"
-            />
-            <h4>상품명</h4>
-            <p>상품설명</p>
-          </div>
-          <div className="col-md-4">
-            {" "}
-            <img
-              src="https://codingapple1.github.io/shop/shoes3.jpg"
-              width="80%"
-            />
-            <h4>상품명</h4>
-            <p>상품설명</p>
-          </div>
-        </div>
-      </div>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <div>
+              {" "}
+              <div>
+                <div className="main-bg"></div>
+                <div className="container">
+                  <div className="row">
+                    {shoes.map((a, i) => {
+                      return <Product shoes={shoes[i]} i={i} />;
+                    })}
+                  </div>
+                </div>
+              </div>
+            </div>
+          }
+        />
+        <Route path="/detail" element={<Detail />} />
+        {/* Nested Routes : 태그안에 태그 넣기
+        장점 : element가 2개 동시에 보임*/}
+        <Route path="/about" element={<About />}>
+          <Route path="member" element={<h4>멤버임</h4>} />
+          <Route path="location" element={<h4>지역임</h4>} />
+        </Route>
+
+        {/* 없는 페이지 (404page) */}
+        <Route path="*" element={<div>없는페이지에요</div>} />
+      </Routes>
     </div>
   );
 }
