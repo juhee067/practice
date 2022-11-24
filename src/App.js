@@ -7,10 +7,12 @@ import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
 import Detail from "./routes/Detail";
 import About from "./About";
 import Event from "./routes/Event";
+import axios from "axios";
 function App() {
-  let [shoes] = useState(data);
+  let [shoes, setShoes] = useState(data);
   // page 이동을 도와주는 함수
   let navigate = useNavigate();
+
   return (
     <div className="App">
       <Button variant="primary">Primary</Button>{" "}
@@ -43,17 +45,38 @@ function App() {
           path="/"
           element={
             <div>
-              {" "}
-              <div>
-                <div className="main-bg"></div>
-                <div className="container">
-                  <div className="row">
-                    {shoes.map((a, i) => {
-                      return <Product shoes={shoes[i]} i={i} key={i} />;
-                    })}
-                  </div>
+              <div className="main-bg"></div>
+              <div className="container">
+                <div className="row">
+                  {shoes.map((a, i) => {
+                    return <Product shoes={shoes[i]} i={i} key={i} />;
+                  })}
                 </div>
               </div>
+              <button
+                onClick={() => {
+                  axios
+                    .get("https://codingapple1.github.io/shop/data2.json")
+                    .then((a) => {
+                      // [...]알맹이벗기기
+                      // 배열추가 concat()사용
+                      let copy = [...shoes, ...a.data];
+                      // 핵심 데이터만 뽑으려면 .data하면됨
+
+                      setShoes(copy);
+                    })
+                    // 동시에 ajax요청 여러개하려면
+                    // Promise.all([axios.get('/url주소),axios.get('/url주소2)])
+                    // ** 원래는 서버와 문자만 주고 받을 수 있다.
+                    // "{"name":"kim"}" 따옴표쳐놓으면 object,array주고받기 가능(json문법)
+                    // ajax요청에 실패할 경우
+                    .catch(() => {
+                      console.log("실패함ㅅㄱ");
+                    });
+                }}
+              >
+                버튼
+              </button>
             </div>
           }
         />

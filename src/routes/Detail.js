@@ -43,7 +43,13 @@ const Detail = (props) => {
   let [count, setCount] = useState(0);
   let [alert, setAlert] = useState(true);
   // input 과제
-  useEffect(() => {}, []);
+
+  let [num, setNum] = useState("");
+  useEffect(() => {
+    if (isNaN(num) == true) {
+      console.log("그러지마세요");
+    }
+  }, [num]);
   return (
     <div className="container">
       <YellowBox className="timeOut"> styled-component</YellowBox>
@@ -57,7 +63,11 @@ const Detail = (props) => {
         <YellowBtn bg="yellow">버튼</YellowBtn>
       </Box> */}
       {count}
-      <input type="text"></input>
+      <input
+        onChange={(e) => {
+          setNum(e.target.value);
+        }}
+      ></input>
       <button
         onClick={() => {
           setCount(count + 1);
