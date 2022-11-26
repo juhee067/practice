@@ -137,20 +137,21 @@ const Detail = (props) => {
 };
 // conponent는 return문이 없으면 제 기능을 못한다
 // props를 쓰기가 귀찮으면 props라는 단어없이 {tap}사용하면된다
-function TabContent({ tap }) {
-  if (tap == 0) {
-    return <div>내용0</div>;
-  } else if (tap == 1) {
-    return <div>내용1</div>;
-  } else if (tap == 2) {
-    return <div>내용2</div>;
-  }
-}
-// if문 없이 만들기
+//if문으로 만들기
 // function TabContent({ tap }) {
-//    array로 만들고,tap이라는 state 집어넣기
-//   return [<div>내용0</div>, <div>내용1</div>, <div>내용2</div>][tap];
+//   if (tap == 0) {
+//     return <div>내용0</div>;
+//   } else if (tap == 1) {
+//     return <div>내용1</div>;
+//   } else if (tap == 2) {
+//     return <div>내용2</div>;
+//   }
 // }
+//if문 없이 만들기
+function TabContent({ tap }) {
+  //  array로 만들고,tap이라는 state 집어넣기
+  return [<div>내용0</div>, <div>내용1</div>, <div>내용2</div>][tap];
+}
 
 // 전환 애니메이션 만들기
 // 1.애니메이션 동작 전 claaName만들기
