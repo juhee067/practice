@@ -53,6 +53,19 @@
         });
       }
       productArray();
+
+      //   구매정보 저장
+      $(".buy").click(function (e) {
+        let title = $(e.target).siblings("h5").text();
+        let titleJson = JSON.stringify([title]);
+        if (localStorage.getItem("cart") !== null) {
+          let exit = JSON.parse(localStorage.cart);
+          exit.push(title);
+          localStorage.setItem("cart", JSON.stringify(exit));
+        } else {
+          localStorage.setItem("cart", titleJson);
+        }
+      });
     </script>
 
     <script
