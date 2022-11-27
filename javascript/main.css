@@ -149,6 +149,8 @@ ul.list::after {
 .btn.hide {
   display: none;
 }
+
+/* sticky */
 .grey {
   background: lightgrey;
   height: 2000px;
@@ -164,4 +166,25 @@ ul.list::after {
   position: -webkit-sticky;
   position: sticky;
   top: 100px;
+}
+
+/* stickyAppleUi */
+
+.card-background {
+  height: 3000px;
+  margin-top: 800px;
+  margin-bottom: 1600px;
+}
+
+.card-box img {
+  display: block;
+  margin: auto;
+  max-width: 80%;
+}
+
+.card-box {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 400px;
+  margin-top: 200px;
 }
