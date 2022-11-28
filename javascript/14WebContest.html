@@ -11,7 +11,11 @@
       integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
       crossorigin="anonymous"
     />
-
+    <script
+    src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+    crossorigin="anonymous"
+  ></script>
     <style>
       body {
         background-color: #ddd;
@@ -23,13 +27,31 @@
       .d-flex {
         margin: 30px 0;
       }
+      .cardBox{
+        display: flex;
+       justify-content:space-between;
+      
+      }
       .card {
         padding: 10px;
+        margin-bottom: 50px;
+      
       }
       .card img {
         width: 50%;
         margin: 0 auto;
       }
+      .cart{
+  width: 100%;
+  height: 400px;
+  background-color: rgb(175, 175, 175);
+  padding: 20px;
+}
+.bB{
+  width: 100%;
+  height: 300px;
+  background-color: black;
+}
     </style>
   </head>
   <body>
@@ -74,37 +96,90 @@
           type="search"
           placeholder="Search"
           aria-label="Search"
+          id="search"
         />
       </form>
       <!-- card box-->
       <div class="cardBox">
-        <div class="card" style="width: 18rem">
-          <img src="../img/pr1.JPG" class="card-img-top" alt="..." />
-          <div class="card-body">
-            <h5 class="card-title">식기세척기</h5>
-            <p class="card-text">세척나라</p>
-            <p class="card-price">가격 : 10000</p>
-            <a href="#" class="btn btn-primary">담기</a>
-          </div>
+        
         </div>
       </div>
+      <div class="cart">
+        <h3>장바구니</h3>
+        <div class="bB"></div>
+      </div>
     </div>
-    <script src="../img/store.json"></script>
+    
     <script>
-      function dataImport() {
+      let products=[]
+  //  상대 경로의 경우 get에 그냥 상대경로 작성하면 된다
         $.get("../img/store.json")
-          .done(function () {
-            // 할일
+          .then((data)=>{ products=data.products;
+      products.forEach((a,i)=>{
+             let info= `
+             <div class="card" style="width: 18rem">
+             <img src="../img/${a.photo}" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">${a.title}</h5>
+            <p class="card-text">${a.brand}</p>
+            <p class="card-price"> 가격 : ${a.price}</p>
+            <button class="btn btn-primary" id="${a.id}">담기</button>
+            </div>`
+
+            $('.cardBox').append(info);
+          }) 
+          
           })
           .fail(function () {
             console.log("실패");
           });
-      }
+      
+          // 검색기능01
+//           function search (){
+// let search = document.getElementById('search').value.toLowerCase();
+// let list= document.getElementsByClassName('card');
+// console.log(list.length)
+// for(let i =0; i<list.length; i++){
+//   title=list[i].getElementsByClassName('card-title');
+//   text=list[i].getElementsByClassName('card-text');
+//   if(title[0].innerHTML.toLowerCase().indexOf(search)!=-1||
+//   text[0].innerHTML.toLowerCase().indexOf(search)!=-1
+//   ){
+//     list[i].style.display="block"
+//   }else{
+//     list[i].style.display='none'
+//   }
+
+// }
+//        }
+
+// 검색기능02
+$('#search').on('input',function(){
+  let searchValue=$('#search').val();
+
+  let newProducts= products.filter((a)=>{
+    return a.title.includes(searchValue)|| a.brand.includes(searchValue)
+  })
+  $('.cardBox').html('');
+  newProducts.forEach((a,i)=>{
+             let info= `
+             <div class="card" style="width: 18rem">
+             <img src="../img/${a.photo}" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">${a.title}</h5>
+            <p class="card-text">${a.brand}</p>
+            <p class="card-price"> 가격 : ${a.price}</p>
+            <button class="btn btn-primary" id="${a.id}">담기</button>
+            </div>`
+
+            $('.cardBox').append(info);
+          }) 
+
+$('.card-body h5').each
+
+
+})
     </script>
-    <script
-      src="https://code.jquery.com/jquery-3.6.1.min.js"
-      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
-      crossorigin="anonymous"
-    ></script>
+    
   </body>
 </html>
