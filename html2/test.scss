@@ -1,7 +1,52 @@
-$mainColor:#2a4cb2;
-$basicSize:16px;
+// 다른 파일에서 가지고오기
+@use "reset" // 버튼을 여러개 만들어야할때 @extend문법
+  // %:임시 class
+  // 진짜 class도 가능
+  // %임시 클래스는 단독으로 컴파일 되지않음
+  .btn {
+  width: 100px;
+  height: 100px;
+  padding: 20px;
+}
+%btn {
+  width: 100px;
+  height: 100px;
+  padding: 20px;
+}
+.btn-green {
+  @extend .btn;
+  @extend %btn;
+  color: green;
+}
 
-.background{
-    background-color: $mainColor;
-font-size: $basicSize - 2px;
+$mainColor: #2a4cb2;
+$basicSize: 16px;
+
+.background {
+  background-color: $mainColor;
+  font-size: $basicSize - 2px;
+}
+
+// nesting 문법
+// main-bg {
+//   h4 {
+//   }
+// }
+
+// @mixin문법 : 긴 코드를 짧은 단어로 축약할때 씀
+@mixin 작명($num) {
+  font-size: $num;
+  #{$구멍2}: -1px;
+}
+
+h2 {
+  @include 작명(20px, letter-spacing);
+  //   다른 파일의 변수가지고 오려면 파일명 가지고 와야함
+  color: reset.$mainColor;
+}
+h3 {
+  @include 작명(30px);
+}
+h4 {
+  @include 작명(40px);
 }
