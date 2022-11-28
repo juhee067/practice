@@ -181,7 +181,19 @@ body {
   width: 150px;
   padding: 10px;
 }
+/* :: ':'두번치는 건  ::pseudo-element(내부의 일부분만 스타일줄 때)*/
 
+.pseudo::after{
+  content:'안녕';
+color:red;
+font-size: 30px;
+}
+.explain-container::after{
+  content:'';
+  display: block;
+  clear: both;
+  float: none;
+}
 .subBg {
   position: relative;
   top: -100px;
@@ -478,4 +490,43 @@ td {
 img:hover .overlay는 안되지만 img:hover+.overlay 가능 */
 .over:hover .overlay {
   bottom: 0;
+}
+
+
+/* input */
+/* 숨겨진 요소 스타일줄 때도 :: 사용함 */
+.input-file::file-selector-button{
+  background-color: skyblue;
+  border: none;
+  padding: 20px;
+}
+/* 위에와 동일
+webkit이란 크롬,사파리,엣지 에서만 적용되는 스타일
+*/
+input[type=file]::file-upload-button{
+  background-color: skyblue;
+}
+/* progress bar */
+progress {
+  /*기본 배경은 없애주는게 좋습니다*/
+  -webkit-appearance: none;
+  -moz-appearance : none;
+  appearance: none;
+  background: white;
+/* IE10 호환성용 */
+  color: red;
+}
+progress::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: 2px;
+}
+progress::-webkit-progress-value {
+  background-color: red;
+  border-radius: 2px;
+}
+
+/*파이어폭스 호환성을 위해*/
+progress::-moz-progress-bar {
+  background-color: red;
+  border-radius: 2px;
 }

@@ -30,6 +30,15 @@
     </div>
 
     <div class="test"></div>
+    <!-- 버튼 옆 텍스트(숨겨진 요소: shadow Dom) -->
+    <input type="file" class="input-file">
+    
+    <!-- 실제로는 파일업로드 버튼은 이런식으로 
+    라벨에 스타일을 주고 버튼은 display:none 
+    기본적으로 appearance:none(기본값)해줘야함
+    -->
+    <label for="">안녕</label>
+   <progress value="0.5"></progress>
     <div class="explain-container">
       <div>
         <i class="fa-solid fa-cart-shopping fa-3x"></i>
@@ -75,7 +84,7 @@
     </div>
     <div class="mainBg">
       <h4 class="mainTitle">Buy Our Shoes!NOw on sale</h4>
-      <p class="mainContent">
+      <p class="mainContent pseudo">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis in
         alias, beatae animi atque dolores. Laborum consectetur maxime inventore
         vitae quidem iusto tempora, voluptatem corporis repellat, ullam beatae
