@@ -530,3 +530,78 @@ progress::-moz-progress-bar {
   background-color: red;
   border-radius: 2px;
 }
+/* transform */
+.ani-text{
+  text-align: center;
+  /* transition은 a->b 로 가는 것만 가능*/
+margin-bottom: 100px;
+}
+.ani-text:hover{
+  animation-name: come;
+  animation-duration: 1s;
+  padding-bottom: 200px;
+}
+
+.btn-primary:hover{
+  animation-name: shake;
+  animation-duration: 1s;
+
+}
+.fa-solid:hover{
+  animation-name: plus;
+  animation-duration: 1s;
+}
+/* 성능 좋음 */
+/* 브라우저가 그림 그리는 순서 
+render Tree 만듬->layout잡기->print하기->composite처리 */
+@keyframes come{
+  0%{transform: translateX(0px);}
+  50%{transform: translateX(-100px);}
+  75%{transform: translateX(100px);}
+  100%{transform: translateX(0px);}
+}
+@keyframes shake{
+  0%{transform: rotate(10deg);}
+  50%{transform: rotate(-10deg);}
+  75%{transform: rotate(10deg);}
+
+ 100%{transform: rotate(0deg);}
+  }
+@keyframes plus{
+  0%{transform: rotate(-30deg);}
+  50%{transform: rotate(30deg);
+    transform: scale(1.5);
+ 
+  }
+  75%{transform: rotate(-30deg);}
+
+ 100%{transform: rotate(0deg);}
+  }
+/* grid */
+.grid-container{
+  display: grid;
+  grid-template-columns: 100px 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px;
+  grid-template-areas:
+  "nav nav nav nav"
+  "side . . ."
+  "side . . ."
+
+  
+}
+.grid-container div{
+  border: 1px solid black;
+}
+.grid-nav{
+  /* grid-column:1/5; */
+grid-area: nav;
+ 
+}
+.grid-side{
+  /* grid-row:2/4; */
+  grid-area: side;
+}
+/* .grid-all{
+  grid-column: 2/5;
+  grid-row:2/4
+} */
