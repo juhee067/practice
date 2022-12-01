@@ -3,9 +3,16 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  list-style: none;
 }
 
-* header {
+* .wrap {
+  width: calc(100% - 50px);
+  float: left;
+}
+
+* .wrap header {
+  width: 100%;
   padding: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -15,32 +22,32 @@
           justify-content: space-between;
   background-color: #fff;
   -webkit-filter: drop-shadow(30px 10px 4px #ddd);
-  filter: drop-shadow(0px 2px 4px #ddd);
+  filter: drop-shadow(3px 2px 4px #ddd);
 }
 
-* header .d-flex {
+* .wrap header .d-flex {
   max-width: 15%;
 }
 
-* header .d-flex .form-control {
-  padding: 5px;
+* .wrap header .d-flex .form-control {
+  padding: 10px;
   border: 1px solid #ddd;
   border-radius: 3px 0 0 3px;
 }
 
-* header .d-flex .btn {
-  padding: 5px;
+* .wrap header .d-flex .btn {
+  padding: 10px;
   border: 1px solid #ddd;
   border-radius: 0 3px 3px 0;
   background-color: #000;
   margin-left: -10px;
 }
 
-* header .d-flex .btn i {
+* .wrap header .d-flex .btn i {
   color: #fff;
 }
 
-* header .info {
+* .wrap header .info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -48,13 +55,113 @@
   color: #9c9c9c;
 }
 
-* header .info i {
+* .wrap header .info i {
   font-size: 30px;
   margin: auto;
 }
 
-* header .info p {
+* .wrap header .info p {
   display: inline-block;
   margin: auto;
+}
+
+* .wrap .main {
+  background-color: #f8f8f8;
+  height: calc(100vh - 57px);
+  padding: 20px;
+}
+
+* .wrap .main h2 {
+  margin-bottom: 20px;
+}
+
+* .wrap .main .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 50px;
+  -webkit-filter: drop-shadow(3px 2px 4px #ddd);
+  filter: drop-shadow(3px 2px 4px #ddd);
+}
+
+* .wrap .main .card .cardBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 40px 30px;
+  border-radius: 10px;
+  width: 20%;
+  background-color: #fff;
+}
+
+* .wrap .main .card .cardBox h3 {
+  margin-bottom: 10px;
+}
+
+* .wrap .main .card .cardBox i {
+  font-size: 40px;
+  color: #ddd;
+}
+
+* .wrap .main .graph {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 30px;
+}
+
+* .wrap .main .graph .OverView {
+  width: 80%;
+  height: 500px;
+  background-color: #fff;
+  -webkit-filter: drop-shadow(3px 2px 4px #ddd);
+  filter: drop-shadow(3px 2px 4px #ddd);
+}
+
+* .wrap .main .graph .OverView h4 {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 20px;
+  background-color: #e9e9e9;
+}
+
+* .wrap .main .graph .OverView #myChart {
+  padding: 10px 20px;
+}
+
+* .wrap .main .graph .Task {
+  width: 20%;
+  background-color: #fff;
+  -webkit-filter: drop-shadow(3px 2px 4px #ddd);
+  filter: drop-shadow(3px 2px 4px #ddd);
+}
+
+* .wrap .main .graph .Task h4 {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 20px;
+  background-color: #e9e9e9;
+}
+
+* .wrap .main .graph .Task ul li {
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+* .side {
+  float: left;
+  width: 50px;
+  height: 100vh;
+  background-color: #3d50f7;
+}
+
+* .side ul li {
+  text-align: center;
+  color: #fff;
+  padding-top: 50px;
 }
 /*# sourceMappingURL=pt02.css.map */
