@@ -1,0 +1,35 @@
+header {
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #fff;
+  -webkit-filter: drop-shadow(30px 10px 4px #ddd);
+  filter: drop-shadow(0px 2px 4px #ddd);
+}
+
+header .d-flex {
+  width: 15%;
+}
+
+header .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 50px;
+  color: #9c9c9c;
+}
+
+header .info i {
+  font-size: 30px;
+  margin: auto;
+}
+
+header .info p {
+  display: inline-block;
+  margin: auto;
+}
+/*# sourceMappingURL=pt02.css.map */
