@@ -56,8 +56,20 @@
 }
 
 * .wrap header .info i {
+  position: relative;
   font-size: 30px;
   margin: auto;
+}
+
+* .wrap header .info i::after {
+  content: "5";
+  position: absolute;
+  right: -10px;
+  font-size: 11px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #f00;
+  color: #fff;
 }
 
 * .wrap header .info p {
@@ -88,6 +100,7 @@
 }
 
 * .wrap .main .card .cardBox {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -98,6 +111,17 @@
   border-radius: 10px;
   width: 20%;
   background-color: #fff;
+}
+
+* .wrap .main .card .cardBox::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background-color: #fa5f44;
+  border-radius: 10px 0 0 10px;
 }
 
 * .wrap .main .card .cardBox h3 {
@@ -136,6 +160,7 @@
 
 * .wrap .main .graph .Task {
   width: 20%;
+  height: 200px;
   background-color: #fff;
   -webkit-filter: drop-shadow(3px 2px 4px #ddd);
   filter: drop-shadow(3px 2px 4px #ddd);

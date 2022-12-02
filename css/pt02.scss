@@ -41,8 +41,19 @@
         gap: 50px;
         color: #9c9c9c;
         i {
+          position: relative;
           font-size: 30px;
           margin: auto;
+          &::after {
+            content: "5";
+            position: absolute;
+            right: -10px;
+            font-size: 11px;
+            padding: 5px;
+            border-radius: 5px;
+            background-color: #f00;
+            color: #fff;
+          }
         }
         p {
           display: inline-block;
@@ -67,12 +78,23 @@
         filter: drop-shadow(3px 2px 4px #ddd);
 
         .cardBox {
+          position: relative;
           display: flex;
           justify-content: space-between;
           padding: 40px 30px;
           border-radius: 10px;
           width: 20%;
           background-color: #fff;
+          &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background-color: rgb(250, 95, 68);
+            border-radius: 10px 0 0 10px;
+          }
           h3 {
             margin-bottom: 10px;
           }
@@ -103,6 +125,7 @@
 
         .Task {
           width: 20%;
+          height: 200px;
           background-color: #fff;
           -webkit-filter: drop-shadow(3px 2px 4px #ddd);
           filter: drop-shadow(3px 2px 4px #ddd);
