@@ -77,15 +77,15 @@
         data.product.forEach((a, i) => {
           $(".product-list").append(
             ` <div class="col-md-3">
-              <div draggable='true' data-id='${a.id}'>  
-                  <img src="${a.photo}">
-        <h4>상품명 : ${a.title}</h4>
-        <h4>${a.brand}</h4>
-        <p>가격 :${a.price} </p></div>
-    <button class='add' data-id='${a.id}'>담기</button>
-        
-      </div>
-        </div>  `
+                <div draggable='true' data-id='${a.id}'>
+                    <img src="${a.photo}">
+          <h4>상품명 : ${a.title}</h4>
+          <h4>${a.brand}</h4>
+          <p>가격 :${a.price} </p></div>
+      <button class='add' data-id='${a.id}'>담기</button>
+
+        </div>
+          </div>  `
           );
         });
         // ==============
@@ -98,15 +98,14 @@
             return a.id == productId;
           });
           if (order == -1) {
-            let currentProduct = products.find((a) => {
+            let currentOrder = products.find((a) => {
               return a.id == productId;
             });
-            order.count = 1;
-            cart.push(currentProduct);
+            currentOrder.count = 1;
+            cart.push(currentOrder);
           } else {
-            let a = cart[order].count++;
+            cart[productId].count++;
           }
-
           // ==============
           // 밑에 담기
           // ================
@@ -114,18 +113,37 @@
           cart.forEach((a, i) => {
             $(".basket").append(
               ` <div class="col-md-3">
-              <div draggable='true' data-id='${a.id}'>  
-                  <img src="${a.photo}">
-        <h4>상품명 : ${a.title}</h4>
-        <h4>${a.brand}</h4>
-        <p>가격 :${a.price} </p></div>
-        <input type='number' value='${a.count}'></input>
-    <button class='add' data-id='${a.id}'>담기</button>
-        
-      </div>
-        </div>  `
+                <div draggable='true' data-id='${a.id}'>
+                    <img src="${a.photo}">
+          <h4>상품명 : ${a.title}</h4>
+          <h4>${a.brand}</h4>
+          <p>가격 :${a.price} </p></div>
+          <input type='number' value='${a.count}'class="item-count></input>
+      <button class='add' data-id='${a.id}'>담기</button>
+
+        </div>
+          </div>  `
             );
           });
+          // ==============
+          // 계산하기
+          // ================
+          cal();
+          $(".item-count").on("input", function () {
+            cal();
+          });
+          function cal() {
+            let finalPrice = 0;
+
+            for (let i = 0; i < $(".item-count").length; i++) {
+              var price = $(".item-count").eq(i).val();
+              var count = $(".item-count").eq(i).siblings("p").text();
+              finalPrice += parseFloat(price * count);
+            }
+
+            console.log("총 가격", finalPrice);
+            $(".final-price").html("합계 " + finalPrice);
+          }
         });
       });
     </script>
