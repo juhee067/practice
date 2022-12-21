@@ -1,14 +1,24 @@
-.main-bg {
+
+*{
+  outline:1px solid #f00
+}
+body{
+  background-color: #20465B;
+}
+.me-auto{
+  margin:20px auto;
+}
+.me-auto .menu{
+  margin: 0 20px;
+}
+/* main-bg */
+.main-bg{
   height: 300px;
-  background-image: url(./bg.png);
+  letter-spacing: -0.8em;
+  background-image: url('./img/bg.png');
+  /* html에서 이미지 넣는 방법
+  import 작명 from '이미지 경로'
+  */
   background-size: cover;
   background-position: center;
-}
-
-.start {
-  opacity: 0;
-}
-.end {
-  opacity: 1;
-  transition: opacity 0.5s;
 }
