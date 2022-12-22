@@ -3,7 +3,9 @@ import { Navbar, Container, Nav, NavItem } from "react-bootstrap";
 
 import Product from "./components/Product";
 import data from "./data/data";
+import { useState } from "react";
 function App() {
+  let [shoes] = useState(data);
   return (
     <div className="App">
       <Navbar variant="dark">
@@ -30,10 +32,8 @@ function App() {
       <div className="main-bg"></div>{" "}
       <div className="container">
         <div className="row">
-          {data.map((item) => {
-            return (
-              <Product title={item.title} price={item.price} key={item.id} />
-            );
+          {shoes.map((a, i) => {
+            return <Product shoes={shoes[i]} item={i} />;
           })}
         </div>
       </div>{" "}
