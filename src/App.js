@@ -4,6 +4,8 @@ import { Navbar, Container, Nav, NavItem } from "react-bootstrap";
 import Product from "./components/Product";
 import data from "./data/data";
 import { useState } from "react";
+import { Routes, Route, Link } from "react-router-dom";
+import Item from "./components/Item";
 function App() {
   let [shoes] = useState(data);
   return (
@@ -29,14 +31,30 @@ function App() {
           </Nav>
         </Container>
       </Navbar>
-      <div className="main-bg"></div>{" "}
-      <div className="container">
-        <div className="row">
-          {shoes.map((a, i) => {
-            return <Product shoes={shoes[i]} item={i} />;
-          })}
-        </div>
-      </div>{" "}
+
+      <Link to="/">홈</Link>
+      <Link to="/detail">상세페이지</Link>
+      <Link to="/about">어바웃</Link>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <div>
+              {" "}
+              <div className="main-bg"></div>{" "}
+              <div className="container">
+                <div className="row">
+                  {shoes.map((a, i) => {
+                    return <Product shoes={shoes[i]} item={i} />;
+                  })}
+                </div>
+              </div>{" "}
+            </div>
+          }
+        />
+        <Route path="/detail" element={<div>보여질 영역 : 상세페이지</div>} />
+        <Route path="/about" element={<Item />} />
+      </Routes>
     </div>
   );
 }
