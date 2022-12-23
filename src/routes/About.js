@@ -1,13 +1,15 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 
-const Event = () => {
+const About = () => {
   return (
     <div>
-      <h4>오늘의 이벤트</h4>
+      <h1> About: 회사정보임</h1>
+
       <Outlet></Outlet>
+      {/* 구멍 */}
     </div>
   );
 };
 
-export default Event;
+export default About;

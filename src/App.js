@@ -4,19 +4,34 @@ import { Navbar, Container, Nav, NavItem } from "react-bootstrap";
 import Product from "./components/Product";
 import data from "./data/data";
 import { useState } from "react";
-import { Routes, Route, Link } from "react-router-dom";
-import Item from "./components/Item";
+import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
+import Item from "./routes/Item";
+import About from "./routes/About";
 function App() {
-  let [shoes] = useState(data);
+  let [shoes, setShoes] = useState(data);
+  let navigate = useNavigate();
+  //페이지 이동을 도와주는 함수
   return (
     <div className="App">
       <Navbar variant="dark">
         <Container>
           <Nav className="me-auto">
-            <Nav.Link className="menu" href="#Letter">
-              Letter
+            <Nav.Link
+              className="menu"
+              onClick={() => {
+                navigate("/detail");
+              }}
+            >
+              Detail
             </Nav.Link>
-            <Nav.Link className="menu" href="#Gift">
+            <Nav.Link
+              className="menu"
+              onClick={() => {
+                navigate(1);
+                // (1)앞으로 한페이지 이동해주세요
+                // (-1)뒤로 한페이지 이동해주세요
+              }}
+            >
               Gift
             </Nav.Link>
             <Nav.Link className="menu" href="#Home">
@@ -48,12 +63,36 @@ function App() {
                     return <Product shoes={shoes[i]} item={i} />;
                   })}
                 </div>
+                <div>
+                  <button
+                    onClick={() => {
+                      let itemArray = [...shoes];
+                      itemArray = itemArray.sort((a, b) =>
+                        a.title.localeCompare(b.name)
+                      );
+                      setShoes(itemArray);
+                      console.log(itemArray);
+                    }}
+                  >
+                    가나다정렬
+                  </button>
+                </div>
               </div>{" "}
             </div>
           }
         />
-        <Route path="/detail" element={<div>보여질 영역 : 상세페이지</div>} />
-        <Route path="/about" element={<Item />} />
+        <Route path="/about" element={<About />}>
+          <Route path="member" element={<div>멤버임1</div>} />
+          <Route path="location" element={<div>위치정보임2</div>} />
+        </Route>
+        {/* nested routes :  tag 안에 tag
+        장점 : nested route 접속시엔 element 2개나 보임-> 어디 보여줄지 작성해야함
+여러 유사한 페이지 필요할 때
+        */}
+        <Route path="/detail/:id" element={<Item shoes={shoes} />} />
+
+        <Route path="*" element={<div>없는 페이지에요</div>} />
+        {/* 지정해놓은 라우터 이 외에 모든 것 : 404 페이지 */}
       </Routes>
     </div>
   );
