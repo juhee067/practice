@@ -76,6 +76,12 @@ function App() {
                   >
                     가나다정렬
                   </button>
+                  <button onClick={}></button>
+                  {/* ajax 3가지 방법
+                  1. XMLHttpRequest
+                  2. fetch()
+                  3. axios
+                  */}
                 </div>
               </div>{" "}
             </div>
