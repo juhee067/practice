@@ -7,6 +7,7 @@ import { useState } from "react";
 import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
 import Item from "./routes/Item";
 import About from "./routes/About";
+import axios from "axios";
 function App() {
   let [shoes, setShoes] = useState(data);
   let navigate = useNavigate();
@@ -76,7 +77,40 @@ function App() {
                   >
                     가나다정렬
                   </button>
-                  <button onClick={}></button>
+                  <button
+                    onClick={() => {
+                      // 로딩중 ui 띄우기
+                      // 원래는 서버와 문자만 주고받을 수 있다
+                      // "{ name: "kim" }" 따옴표 쳐놓으면 array,object도 주고받기 가능 : json 문법
+                      // axios는 알아서 json으로 문법 변경해줌
+                      // fetch 사용 할 경우 :
+                      // fetch('url')
+                      // .then(result=>result.json())->object/array을 json으로 변환과정필요
+                      // .then(data=>{})
+                      axios
+                        .get("https://codingapple1.github.io/shop/data2.json")
+                        .then((result) => {
+                          console.log(result);
+                          // 실제 데이터만 출력해보고 싶다 : result.data
+                          let plusItem = [...shoes, ...result.data];
+                          setShoes(plusItem);
+                          // 로딩중 ui 숨기기
+                        });
+                      // 서버로 데이터 전송하는 post
+                      axios.post("/url", { name: "kim" });
+                      // 동시에 ajax요청 여러개 하려면
+                      // Promise.all([axios.get("/url1")], [axios.get("/url2")]);
+                      // .then(()=>{})
+                      // ajax 요청 실패할 경우 : catch
+                      // .catch(() => {
+                      //   console.log("실패");
+
+                      //   // 로딩중 ui 숨기기
+                      // });
+                    }}
+                  >
+                    데이터 요청
+                  </button>
                   {/* ajax 3가지 방법
                   1. XMLHttpRequest
                   2. fetch()
