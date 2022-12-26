@@ -22,3 +22,13 @@ body{
   background-size: cover;
   background-position: center;
 }
+
+/* 멋진 animation만들기 */
+.start {
+  opacity: 0;
+}
+
+.end {
+  opacity: 1;
+  transition: opacity 0.5s;
+}
