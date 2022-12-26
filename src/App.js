@@ -3,14 +3,17 @@ import { Navbar, Container, Nav, NavItem } from "react-bootstrap";
 
 import Product from "./components/Product";
 import data from "./data/data";
-import { useState } from "react";
+import { createContext, useState } from "react";
 import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
 import Item from "./routes/Item";
 import About from "./routes/About";
 import axios from "axios";
+// context는 state 보관함
+export let Context1 = createContext();
 function App() {
   let [shoes, setShoes] = useState(data);
   let navigate = useNavigate();
+  let [stack] = useState([10, 11, 12]);
   //페이지 이동을 도와주는 함수
   return (
     <div className="App">
@@ -85,7 +88,7 @@ function App() {
                       // axios는 알아서 json으로 문법 변경해줌
                       // fetch 사용 할 경우 :
                       // fetch('url')
-                      // .then(result=>result.json())->object/array을 json으로 변환과정필요
+                      // .then(result=>result.json()) -> object/array을 json으로 변환과정필요
                       // .then(data=>{})
                       axios
                         .get("https://codingapple1.github.io/shop/data2.json")
@@ -129,7 +132,16 @@ function App() {
         장점 : nested route 접속시엔 element 2개나 보임-> 어디 보여줄지 작성해야함
 여러 유사한 페이지 필요할 때
         */}
-        <Route path="/detail/:id" element={<Item shoes={shoes} />} />
+        <Route
+          path="/detail/:id"
+          element={
+            // context로 원하는 컴포넌트 감싸기
+            <Context1.Provider value={{ stack, shoes }}>
+              {" "}
+              <Item shoes={shoes} />
+            </Context1.Provider>
+          }
+        />
 
         <Route path="*" element={<div>없는 페이지에요</div>} />
         {/* 지정해놓은 라우터 이 외에 모든 것 : 404 페이지 */}

@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Nav } from "react-bootstrap";
+import { Context1 } from "./../App.js";
 
 const Item = (props) => {
+  let { stack, shoes } = useContext(Context1);
   // 유저가 url파라미터에 입력한 거 가져오기위해 사용
   let { id } = useParams();
   useEffect(() => {
@@ -29,13 +31,20 @@ const Item = (props) => {
 
   let [tap, setTap] = useState(0);
   // useState(0)-> 0번째 내용이 보이는 상태
+  let [item, setItem] = useState("start");
+  useEffect(() => {
+    setItem("end");
+    return () => {
+      setItem("");
+    };
+  });
   useEffect(() => {
     if (isNaN(text) == true) {
       alert("그러지마세요");
     }
   }, [text]);
   return (
-    <div className="container">
+    <div className={`container ${item}`}>
       <div className="alert alert-warning">
         {time === true ? <h1>2초이내구매.</h1> : null}
       </div>
@@ -104,7 +113,7 @@ const Item = (props) => {
       {/* {tap == 0 ? <div>내용0</div> : null}
       {tap == 1 ? <div>내용1</div> : null}
       {tap == 2 ? <div>내용2</div> : null} */}
-
+      {/* 중첩 props shoes={props.shoes} */}
       <TapContent tap={tap} />
     </div>
   );
@@ -120,8 +129,11 @@ const Item = (props) => {
 //     return <div>내용2</div>;
 //   }
 // }
+// 중첩 props : function TapContent({ tap, shoes }) {
 function TapContent({ tap }) {
+  let { stack, shoes } = useContext(Context1);
   let [fade, setFade] = useState("");
+  // react automatic batching 기능 : 변경하는 함수들이 근처에 있으면 하나로 합쳐서 딱한번만 state변경해줌
   useEffect(() => {
     // end를 붙이는 시점을 뒤로 미룬다
     setTimeout(() => {
@@ -137,7 +149,13 @@ function TapContent({ tap }) {
     // 변수를 문자 중간에 변경시키고 싶으면  {} 넣으면 됨
     <div className={`start ${fade}`}>
       {[<div>내용0</div>, <div>내용1</div>, <div>내용2</div>][tap]}
+      {/* 중첩 props : <div>{shoes[0].title}</div> */}
     </div>
   );
 }
 export default Item;
+// spa 단점 : 컴포넌트간 state 공유 어려움
+// props 싫으면
+// 1. context Api (리액트 기본문법)
+// : props 전송없이 state 공유가능 , 잘안씀 (재활용이 어려워서)
+// 2. redux등 외부라이브러리
