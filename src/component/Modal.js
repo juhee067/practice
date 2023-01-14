@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-const Modal = () => {
+const Modal = (props) => {
   return (
     <div className="modal">
       <div className="title">
@@ -13,9 +13,9 @@ const Modal = () => {
       </div>
       <button className="writingBtn">글쓰기</button>
       <button
-      // onClick={() => {
-      //   newPost();
-      // }}
+        onClick={() => {
+          props.newPost();
+        }}
       >
         취소
       </button>

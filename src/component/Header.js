@@ -6,9 +6,7 @@ const Header = () => {
   // newPost
   let [post, setPost] = useState(false);
   const newPost = () => {
-    if (post == false) {
-      return setPost(true);
-    }
+    setPost(!post);
   };
   return (
     <div className="header">
@@ -16,7 +14,7 @@ const Header = () => {
         {" "}
         <a href="#">
           <button onClick={() => newPost()}>새 게시물</button>
-          {post == true ? <Modal /> : null}
+          {post == true ? <Modal newPost={newPost} /> : null}
         </a>
       </div>
     </div>
