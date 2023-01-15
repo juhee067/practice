@@ -7,14 +7,18 @@ const View = () => {
       id: 0,
       title: "첫 게시물 제목",
       content: "내용",
-      good: false,
+      good: "0",
       star: false,
     },
   ]);
-  const currenTimer = () => {
-    const date = new Date();
+
+  //  goodBtn
+
+  const goodBtn = (index) => {
+    let copy = [...posting];
+    copy[index].good++;
+    setPosting(copy);
   };
-  currenTimer();
   return (
     <div className="view">
       <div className="container">
@@ -40,12 +44,17 @@ const View = () => {
                 </div>
                 <div className="icon">
                   {" "}
-                  <span className="good">
-                    <FaRegThumbsUp />
-                  </span>
-                  <span className="find">
+                  <div className="good">
+                    <FaRegThumbsUp
+                      onClick={() => {
+                        goodBtn(index);
+                      }}
+                    />
+                    <span className="goodCount">{posting[index].good}</span>
+                  </div>
+                  <div className="find">
                     <FaRegStar />
-                  </span>
+                  </div>
                 </div>
               </div>
             </div>
