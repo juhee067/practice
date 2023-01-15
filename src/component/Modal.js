@@ -6,8 +6,9 @@ const Modal = (props) => {
   let [input, setInput] = useState("");
   let [textarea, setTextarea] = useState("");
   const addContent = () => {
-    let copy = [...props.posting];
-    console.log(copy);
+    if (input == "" || textarea == "") {
+      alert("입력해주세요");
+    }
   };
   return (
     <div className="modal">
@@ -24,6 +25,7 @@ const Modal = (props) => {
       <div className="writing">
         {" "}
         <textarea
+          ref={titleInputRef}
           value={textarea}
           placeholder="글쓰기"
           cols="70"

@@ -8,7 +8,7 @@ const View = () => {
       title: "첫 게시물 제목",
       content: "내용",
       good: "0",
-      star: false,
+      isOn: false,
     },
   ]);
 
@@ -22,13 +22,15 @@ const View = () => {
   //즐겨찾기 구현
   const checkStarBtn = (index) => {
     let copy = [...posting];
-    copy[index].star = !copy[index].star;
-    // star이 true일 때 class 'on'을 붙이고 아니면 떼라
+    copy[index].isOn = !copy[index].isOn;
+    // isOn이 true일 때 class 'on'을 붙이고 아니면 떼라
+    // 너무 복잡해보임 다른 방법을 찾아보자
     {
-      copy[index].star == true
+      copy[index].isOn == true
         ? document.querySelector(".checkStar").classList.add("on")
         : document.querySelector(".checkStar").classList.remove("on");
     }
+
     setPosting(copy);
   };
   return (
