@@ -19,6 +19,18 @@ const View = () => {
     copy[index].good++;
     setPosting(copy);
   };
+  //즐겨찾기 구현
+  const checkStarBtn = (index) => {
+    let copy = [...posting];
+    copy[index].star = !copy[index].star;
+    // star이 true일 때 class 'on'을 붙이고 아니면 떼라
+    {
+      copy[index].star == true
+        ? document.querySelector(".checkStar").classList.add("on")
+        : document.querySelector(".checkStar").classList.remove("on");
+    }
+    setPosting(copy);
+  };
   return (
     <div className="view">
       <div className="container">
@@ -53,7 +65,14 @@ const View = () => {
                     <span className="goodCount">{posting[index].good}</span>
                   </div>
                   <div className="find">
-                    <FaRegStar />
+                    <FaRegStar
+                      className="checkStar"
+                      onClick={() => {
+                        // 에러가 발생한 지점에서 코드를 더 실행하지않고 이후는 멈춰버린다.
+
+                        checkStarBtn(index);
+                      }}
+                    />
                   </div>
                 </div>
               </div>
