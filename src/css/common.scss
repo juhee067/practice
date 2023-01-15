@@ -33,6 +33,7 @@
    
    .sub{
    border: 1px solid #ddd;
+   border-radius: 30px;
    .top{ display: flex; padding: 30px ;
       justify-content: space-between;
       .contentNum{
@@ -51,7 +52,10 @@
       
     }
     .icon {
-      span{    padding-left: 20px;}
+      
+      span{cursor: pointer;
+         font-size: 20px;   
+          padding-left: 30px;}
   
     }
    }

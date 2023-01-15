@@ -1,17 +1,46 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 const Modal = (props) => {
+  const titleInputRef = useRef();
+  let [input, setInput] = useState("");
+  let [textarea, setTextarea] = useState("");
+  const addContent = () => {
+    let copy = [...props.posting];
+    console.log(copy);
+  };
   return (
     <div className="modal">
       <div className="title">
-        <input placeholder="제목"></input>
+        <input
+          placeholder="제목"
+          ref={titleInputRef}
+          value={input}
+          onChange={(e) => {
+            setInput(e.target.value);
+          }}
+        ></input>
       </div>
       <div className="writing">
         {" "}
-        <textarea placeholder="글쓰기" cols="70" rows="15"></textarea>
+        <textarea
+          value={textarea}
+          placeholder="글쓰기"
+          cols="70"
+          rows="15"
+          onChange={(e) => {
+            setTextarea(e.target.value);
+          }}
+        ></textarea>
       </div>
-      <button className="writingBtn">글쓰기</button>
+      <button
+        className="writingBtn"
+        onClick={() => {
+          addContent();
+        }}
+      >
+        글쓰기
+      </button>
       <button
         onClick={() => {
           props.newPost();
