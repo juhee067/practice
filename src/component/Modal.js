@@ -8,6 +8,8 @@ const Modal = (props) => {
   const addContent = () => {
     if (input == "" || textarea == "") {
       alert("입력해주세요");
+
+      return titleInputRef.current.focus();
     }
   };
   return (
