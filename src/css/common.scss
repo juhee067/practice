@@ -49,7 +49,6 @@
       justify-content: space-between;
     .mainContent{
       span{padding-right: 20px;}
-      
     }
     .icon {
       display: flex;
@@ -57,11 +56,10 @@
       cursor: pointer;
          font-size: 20px;   
       .goodCount{
-       
            margin-left: 20px;
          }
          .checkStar.on{
-color: #538cff;
+            color: #538cff;
          }
     
   

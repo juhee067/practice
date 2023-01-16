@@ -33,6 +33,15 @@ const View = () => {
 
     setPosting(copy);
   };
+  // 게시물 삭제
+  // 1. 데이터 가지고 오기
+  // 2. 선택한 배열 삭제하기 [splice() ]
+  const deletePosting = (index) => {
+    let copy = [...posting];
+    copy.splice(index, 1);
+    setPosting(copy);
+  };
+
   return (
     <div className="view">
       <div className="container">
@@ -47,7 +56,11 @@ const View = () => {
                 </div>
 
                 <span>
-                  <FaRegTimesCircle />
+                  <FaRegTimesCircle
+                    onClick={() => {
+                      deletePosting();
+                    }}
+                  />
                 </span>
               </div>
               <div className="main">

@@ -1,12 +1,12 @@
 import React from "react";
-import { useState, useRef } from "react";
+import { useRef } from "react";
 
 const Modal = (props) => {
   const titleInputRef = useRef();
-  let [input, setInput] = useState("");
-  let [textarea, setTextarea] = useState("");
+
   const addContent = () => {
-    if (input == "" || textarea == "") {
+    console.log(props.input);
+    if (props.input == "" || props.textarea == "") {
       alert("입력해주세요");
 
       return titleInputRef.current.focus();
@@ -18,9 +18,9 @@ const Modal = (props) => {
         <input
           placeholder="제목"
           ref={titleInputRef}
-          value={input}
+          value={props.input}
           onChange={(e) => {
-            setInput(e.target.value);
+            props.setInput(e.target.value);
           }}
         ></input>
       </div>
@@ -28,12 +28,12 @@ const Modal = (props) => {
         {" "}
         <textarea
           ref={titleInputRef}
-          value={textarea}
+          value={props.textarea}
           placeholder="글쓰기"
           cols="70"
           rows="15"
           onChange={(e) => {
-            setTextarea(e.target.value);
+            props.setTextarea(e.target.value);
           }}
         ></textarea>
       </div>
