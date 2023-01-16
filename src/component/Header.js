@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useRef } from "react";
 import Modal from "./Modal";
 
-const Header = () => {
+const Header = (props) => {
   // newPost
   let [post, setPost] = useState(false);
   const newPost = () => {
@@ -31,7 +31,10 @@ const Header = () => {
           {post == true ? (
             <Modal
               newPost={newPost}
-
+              input={props.input}
+              setInput={props.setInput}
+              textarea={props.textarea}
+              setTextarea={props.setTextarea}
               //getChild={getChild}
             />
           ) : null}

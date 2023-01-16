@@ -11,9 +11,15 @@ function App() {
   // 게시물의 제목과 내용을 아예 밖으로 빼서 props로 전달
   let [input, setInput] = useState("");
   let [textarea, setTextarea] = useState("");
+
   return (
     <div>
-      <Header />
+      <Header
+        input={input}
+        setInput={setInput}
+        textarea={textarea}
+        setTextarea={setTextarea}
+      />
       <View
         input={input}
         setInput={setInput}
