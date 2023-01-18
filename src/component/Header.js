@@ -31,10 +31,6 @@ const Header = (props) => {
           {post == true ? (
             <Modal
               newPost={newPost}
-              input={props.input}
-              setInput={props.setInput}
-              textarea={props.textarea}
-              setTextarea={props.setTextarea}
               //getChild={getChild}
             />
           ) : null}

@@ -34,12 +34,16 @@
    .sub{
    border: 1px solid #ddd;
    border-radius: 30px;
+   opacity: 1;
+  
    .top{ display: flex; padding: 30px ;
       justify-content: space-between;
       .contentNum{
          span{
             padding-right: 20px;
          }
+         // .sub.on{opacity: 0;
+         //    transition: all 1s;}
          
    }}
   

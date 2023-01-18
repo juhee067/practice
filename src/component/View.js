@@ -1,13 +1,13 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { FaRegTimesCircle, FaRegThumbsUp, FaRegStar } from "react-icons/fa";
-const View = () => {
+const View = (props) => {
   //  goodBtn
 
   const goodBtn = (index) => {
     let copy = [...props.posting];
     copy[index].good++;
-    setPosting(copy);
+    props.setPosting(copy);
   };
   //즐겨찾기 구현
   const checkStarBtn = (index) => {
@@ -21,7 +21,7 @@ const View = () => {
         : document.querySelector(".checkStar").classList.remove("on");
     }
 
-    setPosting(copy);
+    props.setPosting(copy);
   };
   // 게시물 삭제
   // 1. 데이터 가지고 오기
@@ -29,9 +29,18 @@ const View = () => {
   const deletePosting = (index) => {
     let copy = [...props.posting];
     copy.splice(index, 1);
-    setPosting(copy);
+    props.setPosting(copy);
   };
-
+  // 부드럽게 만들기
+  const putOn = (index) => {
+    let copy = [...props.posting];
+    copy[index].isPutOn = !copy[index].isPutOn;
+    {
+      copy[index].isPutOn == true
+        ? document.querySelector(".sub").classList.add("on")
+        : document.querySelector(".sub").classList.remove("on");
+    }
+  };
   return (
     <div className="view">
       <div className="container">
@@ -47,8 +56,9 @@ const View = () => {
 
                 <span>
                   <FaRegTimesCircle
-                    onClick={() => {
-                      deletePosting();
+                    onClick={(index) => {
+                      deletePosting(index);
+                      putOn(index);
                     }}
                   />
                 </span>
