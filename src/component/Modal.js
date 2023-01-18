@@ -12,7 +12,7 @@ const Modal = (props) => {
   const textareaInputRef = useRef();
   let [input, setInput] = useState("");
   let [textarea, setTextarea] = useState("");
-
+  let currentId = useRef(1);
   const addContent = () => {
     if (input == "") {
       alert("입력해주세요");
@@ -22,6 +22,20 @@ const Modal = (props) => {
       alert("입력해주세요");
       return textareaInputRef.current.focus();
     }
+
+    let copyData = [...props.posting];
+    copyData.push({
+      id: currentId.current,
+      title: input,
+      content: textarea,
+      good: "0",
+      isOn: false,
+      isPutOn: false,
+    });
+    currentId.current++;
+    props.setPosting(copyData);
+    let copyModal = props.post;
+    props.setPost(!copyModal);
   };
   return (
     <div className="modal">

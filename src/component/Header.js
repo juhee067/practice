@@ -34,6 +34,8 @@ const Header = (props) => {
               posting={props.posting}
               setPosting={props.setPosting}
               //getChild={getChild}
+              post={post}
+              setPost={setPost}
             />
           ) : null}
         </a>
