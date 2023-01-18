@@ -23,7 +23,7 @@ function App() {
 
   return (
     <div>
-      <Header />
+      <Header posting={posting} setPosting={setPosting} />
       <View posting={posting} setPosting={setPosting} />
     </div>
   );

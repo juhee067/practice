@@ -8,14 +8,19 @@ const Modal = (props) => {
   //   3. head(부모)를 거쳐서 와야한다는 것을 알게됨
   // 4. App(조부모)에서 head(부모)에 props를 전달하고 modal(자식)로 props를 전달하니 원하는 데이터를 받을 수 있었음
   //5. 지금 굉장히 구조가 잘못된 선택을 한 것 같다. 빨리 리덕스 툴킷을 배우고 싶다
-  console.log(props);
   const titleInputRef = useRef();
+  const textareaInputRef = useRef();
   let [input, setInput] = useState("");
   let [textarea, setTextarea] = useState("");
+
   const addContent = () => {
-    if (input == "" || textarea == "") {
+    if (input == "") {
       alert("입력해주세요");
       return titleInputRef.current.focus();
+    }
+    if (textarea == "") {
+      alert("입력해주세요");
+      return textareaInputRef.current.focus();
     }
   };
   return (
@@ -34,13 +39,13 @@ const Modal = (props) => {
       <div className="writing">
         {" "}
         <textarea
-          ref={titleInputRef}
+          ref={textareaInputRef}
           value={textarea}
           placeholder="글쓰기"
           cols="70"
           rows="15"
           onChange={(e) => {
-            props.setTextarea(e.target.value);
+            setTextarea(e.target.value);
           }}
         ></textarea>
       </div>

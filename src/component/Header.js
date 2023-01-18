@@ -31,6 +31,8 @@ const Header = (props) => {
           {post == true ? (
             <Modal
               newPost={newPost}
+              posting={props.posting}
+              setPosting={props.setPosting}
               //getChild={getChild}
             />
           ) : null}
