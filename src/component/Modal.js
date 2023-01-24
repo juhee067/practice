@@ -12,7 +12,7 @@ const Modal = (props) => {
   const textareaInputRef = useRef();
   let [input, setInput] = useState("");
   let [textarea, setTextarea] = useState("");
-  let currentId = useRef(1);
+  let currentId = useRef(props.posting.length);
   const addContent = () => {
     if (input == "") {
       alert("입력해주세요");
@@ -24,7 +24,7 @@ const Modal = (props) => {
     }
 
     let copyData = [...props.posting];
-    copyData.push({
+    copyData.unshift({
       id: currentId.current,
       title: input,
       content: textarea,
@@ -33,10 +33,13 @@ const Modal = (props) => {
       isPutOn: false,
     });
     currentId.current++;
+
     props.setPosting(copyData);
+    // 모달 창이 닫히지만 닫히는 대신 아이디 값이 변하지않음
     let copyModal = props.post;
     props.setPost(!copyModal);
   };
+
   return (
     <div className="modal">
       <div className="title">
@@ -44,7 +47,6 @@ const Modal = (props) => {
           placeholder="제목"
           ref={titleInputRef}
           value={input}
-          maxlength="15"
           onChange={(e) => {
             setInput(e.target.value);
           }}

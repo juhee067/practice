@@ -42,16 +42,20 @@
          span{
             padding-right: 20px;
          }
-         // .sub.on{opacity: 0;
-         //    transition: all 1s;}
+
          
-   }}
+   }
+
+}
   
    .main{
       padding: 30px ;
       display: flex;
       justify-content: space-between;
     .mainContent{
+      .title{
+         max-width: 10px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+      }
       span{padding-right: 20px;}
     }
     .icon {
@@ -69,7 +73,11 @@
   
     }
    }
- }}
+ }
+// on 부착하기
+.sub.on{opacity: 0;
+   transition: opacity 0.5s;}
+}
 //  Modal
 .modal{
    padding: 30px;

@@ -9,9 +9,6 @@ const Header = (props) => {
     // post의 값이 클릭할 때마다 반대가 되도록
     setPost(!post);
   };
-  // const getChild = () => {
-  //   sendParent();
-  // };
 
   return (
     <div className="header">
@@ -33,7 +30,6 @@ const Header = (props) => {
               newPost={newPost}
               posting={props.posting}
               setPosting={props.setPosting}
-              //getChild={getChild}
               post={post}
               setPost={setPost}
             />
