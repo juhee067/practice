@@ -32,6 +32,8 @@ const Header = (props) => {
               setPosting={props.setPosting}
               post={post}
               setPost={setPost}
+              postId={props.postId}
+              setPostId={props.setPostId}
             />
           ) : null}
         </a>

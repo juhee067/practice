@@ -12,7 +12,12 @@ const Modal = (props) => {
   const textareaInputRef = useRef();
   let [input, setInput] = useState("");
   let [textarea, setTextarea] = useState("");
-  let currentId = useRef(props.posting.length);
+  const chageId = () => {
+    let copyId = props.postId;
+    copyId++;
+    props.setPostId(copyId);
+    console.log(props.postId);
+  };
   const addContent = () => {
     if (input == "") {
       alert("입력해주세요");
@@ -24,15 +29,15 @@ const Modal = (props) => {
     }
 
     let copyData = [...props.posting];
-    copyData.unshift({
-      id: currentId.current,
+
+    copyData.push({
+      id: props.postId,
       title: input,
       content: textarea,
       good: "0",
       isOn: false,
       isPutOn: false,
     });
-    currentId.current++;
 
     props.setPosting(copyData);
     // 모달 창이 닫히지만 닫히는 대신 아이디 값이 변하지않음
@@ -68,6 +73,7 @@ const Modal = (props) => {
       <button
         className="writingBtn"
         onClick={() => {
+          chageId();
           addContent();
         }}
       >

@@ -11,16 +11,11 @@ const View = (props) => {
     props.setPosting(copy);
   };
   //즐겨찾기 구현
-  const checkStarBtn = (index) => {
+  const checkStarBtn = (id) => {
     let copy = [...props.posting];
-    copy[index].isOn = !copy[index].isOn;
+    copy[id].isOn = !copy[id].isOn;
     // isOn이 true일 때 class 'on'을 붙이고 아니면 떼라
     // 너무 복잡해보임 다른 방법을 찾아보자
-    {
-      copy[index].isOn == true
-        ? document.querySelector(".checkStar").classList.add("on")
-        : document.querySelector(".checkStar").classList.remove("on");
-    }
 
     props.setPosting(copy);
   };
@@ -54,18 +49,18 @@ const View = (props) => {
     <div className="view">
       <div className="container">
         {" "}
-        {props.posting.map((a, index) => {
+        {[...props.posting].reverse().map((a, index) => {
           return (
             <div className={`sub ${fade}`} key={props.posting.id}>
               <div className="top">
                 <div className="contentNum">
-                  <span>{props.posting[index].id + 1}</span>
+                  <span>{a.id + 1}</span>
                   <span>1월 1일</span>
                 </div>
 
                 <span>
                   <FaRegTimesCircle
-                    onClick={(index) => {
+                    onClick={() => {
                       deletePosting(index);
                     }}
                   />
@@ -74,8 +69,8 @@ const View = (props) => {
               <div className="main">
                 <div className="mainContent">
                   {" "}
-                  <span className="title">{props.posting[index].title}</span>
-                  <span>{props.posting[index].content}</span>
+                  <span className="title">{a.title}</span>
+                  <span>{a.content}</span>
                 </div>
                 <div className="icon">
                   {" "}
@@ -91,10 +86,11 @@ const View = (props) => {
                   </div>
                   <div className="find">
                     <FaRegStar
-                      className="checkStar"
+                      className={`checkStar ${a.isOn === true ? "on" : null}`}
                       onClick={() => {
                         // 에러가 발생한 지점에서 코드를 더 실행하지않고 이후는 멈춰버린다.
-                        checkStarBtn(index);
+
+                        checkStarBtn(a.id);
                       }}
                     />
                   </div>

@@ -20,10 +20,15 @@ function App() {
       isPutOn: false,
     },
   ]);
-
+  const [postId, setPostId] = useState(posting.length);
   return (
     <div>
-      <Header posting={posting} setPosting={setPosting} />
+      <Header
+        posting={posting}
+        setPosting={setPosting}
+        postId={postId}
+        setPostId={setPostId}
+      />
       <View posting={posting} setPosting={setPosting} />
     </div>
   );
