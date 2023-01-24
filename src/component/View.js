@@ -11,9 +11,11 @@ const View = (props) => {
     props.setPosting(copy);
   };
   //즐겨찾기 구현
-  const checkStarBtn = (id) => {
+  const checkStarBtn = (a) => {
     let copy = [...props.posting];
-    copy[id].isOn = !copy[id].isOn;
+    const mathId = copy.find((el) => el.id === a);
+
+    mathId.isOn = !mathId.isOn;
     // isOn이 true일 때 class 'on'을 붙이고 아니면 떼라
     // 너무 복잡해보임 다른 방법을 찾아보자
 
@@ -23,12 +25,13 @@ const View = (props) => {
   // 1. 데이터 가지고 오기
   // 2. 선택한 배열 삭제하기 [splice() ]
 
-  const deletePosting = (index) => {
+  const deletePosting = (id) => {
     // 배열 삭제되는 거랑 on 붙는 거랑 중첩되는 거 어떻게 하지..?
     let copy = [...props.posting];
-    copy.splice(index, 1);
+    copy[id].isPutOn = !copy[id].isPutOn;
+    copy.splice(id, 1);
+
     props.setPosting(copy);
-    // setFade("on");
   };
   // 게시물 삭제 부드럽게 만들기
   // useEffect 사용할 때 함수가 대문자이어야함
@@ -49,9 +52,12 @@ const View = (props) => {
     <div className="view">
       <div className="container">
         {" "}
-        {[...props.posting].reverse().map((a, index) => {
+        {props.posting.map((a, index) => {
           return (
-            <div className={`sub ${fade}`} key={props.posting.id}>
+            <div
+              className={`sub ${a.isPutOn === true ? "on" : null}`}
+              key={props.posting.id}
+            >
               <div className="top">
                 <div className="contentNum">
                   <span>{a.id + 1}</span>
@@ -91,6 +97,8 @@ const View = (props) => {
                         // 에러가 발생한 지점에서 코드를 더 실행하지않고 이후는 멈춰버린다.
 
                         checkStarBtn(a.id);
+                        console.log(a.id);
+                        console.log(index);
                       }}
                     />
                   </div>

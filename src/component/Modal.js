@@ -30,7 +30,7 @@ const Modal = (props) => {
 
     let copyData = [...props.posting];
 
-    copyData.push({
+    copyData.unshift({
       id: props.postId,
       title: input,
       content: textarea,
