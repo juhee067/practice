@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 const Modal = (props) => {
   //  if (props.input == "" || props.textarea == "")에서 props.input 이 undefined임
@@ -10,6 +10,7 @@ const Modal = (props) => {
   //5. 지금 굉장히 구조가 잘못된 선택을 한 것 같다. 빨리 리덕스 툴킷을 배우고 싶다
   const titleInputRef = useRef();
   const textareaInputRef = useRef();
+  const focusInputRef = useRef();
   let [input, setInput] = useState("");
   let [textarea, setTextarea] = useState("");
   const chageId = () => {
@@ -44,7 +45,14 @@ const Modal = (props) => {
     let copyModal = props.post;
     props.setPost(!copyModal);
   };
-
+  //   const modalPop = () => {
+  //     {
+  //       props.post == true ? textareaInputRef.current.focus() : null;
+  //     }
+  //   };
+  useEffect(() => {
+    titleInputRef.current.focus();
+  }, []);
   return (
     <div className="modal">
       <div className="title">

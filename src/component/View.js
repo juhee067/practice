@@ -107,6 +107,8 @@ const View = (props) => {
             </div>
           );
         })}
+        <div className="likeCollect">a</div>
+        <div className="startCollect">b</div>
       </div>
     </div>
   );
