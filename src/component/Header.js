@@ -23,7 +23,8 @@ const Header = (props) => {
           >
             새 게시물
           </button>
-
+          <button>좋아요 모아보기</button>
+          <button>즐겨찾기 모아보기</button>{" "}
           {/* post true일때 모달이 열린다. modal창의 취소 버튼 클릭시 닫히는 걸 고려하여 함수 전달 */}
           {post == true ? (
             <Modal

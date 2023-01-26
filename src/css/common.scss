@@ -1,5 +1,6 @@
 * {
    // outline: 1px solid #f00;
+   .content{display: flex;}
    button{
       cursor: pointer;
       padding: 10px 12px 11px ;
@@ -13,6 +14,7 @@
   }
    .container{width: 100%;
    max-width: 1200px;  
+   
 ;}
 // header
  .header{
@@ -24,7 +26,9 @@
  }
 //  view
  .view{ 
-   
+
+    
+ 
    position: relative;
    width: 70%;
   height: calc(100vh - 80px);
@@ -35,7 +39,7 @@
    border: 1px solid #ddd;
    border-radius: 30px;
    opacity: 1;
-  
+   margin-bottom: 30px;
    .top{ display: flex; padding: 30px ;
       justify-content: space-between;
       .contentNum{
@@ -107,6 +111,22 @@
 button{
    margin-right: 20px;
 }
+}
+.list{
+   padding: 20px ;
+   .top{padding: 20px;
+      border: 1px solid #ddd;
+   border-radius:20px;
+width: 300px;
+margin-bottom: 30px;
+.contentNum{
+   margin-bottom: 20px;span{
+   padding-right: 20px;
+}
+}
+
+}
+   
 }
 
 }

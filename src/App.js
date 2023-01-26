@@ -5,6 +5,7 @@ import "./css/reset.css";
 import "./css/common.scss";
 import Header from "./component/Header";
 import View from "./component/View";
+import List from "./component/List";
 
 function App() {
   // component 데이터 전달에서의 어려움이 있었다.
@@ -29,7 +30,10 @@ function App() {
         postId={postId}
         setPostId={setPostId}
       />
-      <View posting={posting} setPosting={setPosting} />
+      <div className="content">
+        <View posting={posting} setPosting={setPosting} />
+        <List posting={posting} setPosting={setPosting} />
+      </div>
     </div>
   );
 }

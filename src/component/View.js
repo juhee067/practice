@@ -2,7 +2,6 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { FaRegTimesCircle, FaRegThumbsUp, FaRegStar } from "react-icons/fa";
 const View = (props) => {
-  let [fade, setFade] = useState("");
   //  goodBtn
 
   const goodBtn = (index) => {
@@ -97,8 +96,6 @@ const View = (props) => {
                         // 에러가 발생한 지점에서 코드를 더 실행하지않고 이후는 멈춰버린다.
 
                         checkStarBtn(a.id);
-                        console.log(a.id);
-                        console.log(index);
                       }}
                     />
                   </div>
@@ -107,8 +104,6 @@ const View = (props) => {
             </div>
           );
         })}
-        <div className="likeCollect">a</div>
-        <div className="startCollect">b</div>
       </div>
     </div>
   );
