@@ -21,7 +21,11 @@ function App() {
       isPutOn: false,
     },
   ]);
+
   const [postId, setPostId] = useState(posting.length);
+  // list
+  let [list, setList] = useState(false);
+  console.log(posting);
   return (
     <div>
       <Header
@@ -29,10 +33,14 @@ function App() {
         setPosting={setPosting}
         postId={postId}
         setPostId={setPostId}
+        list={list}
+        setList={setList}
       />
       <div className="content">
         <View posting={posting} setPosting={setPosting} />
-        <List posting={posting} setPosting={setPosting} />
+        {list == true ? (
+          <List posting={posting} setPosting={setPosting} />
+        ) : null}
       </div>
     </div>
   );

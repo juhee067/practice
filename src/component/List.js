@@ -1,6 +1,13 @@
 import React from "react";
 
 const List = (props) => {
+  //   let newGoodArray = props.posting.filter((item) => {
+  //     return item.good > 0;
+  //   });
+  //   let newStarArray = props.posting.filter((item) => {
+  //     return item.isOn == true;
+  //   });
+
   return (
     <div className="list">
       {props.posting.map((a, index) => {
