@@ -1,10 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Nav } from "react-bootstrap";
-import { Context1 } from "./../App.js";
 
 const Item = (props) => {
-  let { stack, shoes } = useContext(Context1);
   // 유저가 url파라미터에 입력한 거 가져오기위해 사용
   let { id } = useParams();
   useEffect(() => {
@@ -131,7 +129,6 @@ const Item = (props) => {
 // }
 // 중첩 props : function TapContent({ tap, shoes }) {
 function TapContent({ tap }) {
-  let { stack, shoes } = useContext(Context1);
   let [fade, setFade] = useState("");
   // react automatic batching 기능 : 변경하는 함수들이 근처에 있으면 하나로 합쳐서 딱한번만 state변경해줌
   useEffect(() => {
@@ -158,4 +155,5 @@ export default Item;
 // props 싫으면
 // 1. context Api (리액트 기본문법)
 // : props 전송없이 state 공유가능 , 잘안씀 (재활용이 어려워서)
+// : 안쓰는 이유 : state 변경시 쓸데없는 것까지 재렌더링, 나중에 컴포넌트 재사용이 어려움
 // 2. redux등 외부라이브러리

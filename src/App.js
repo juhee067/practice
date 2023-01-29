@@ -3,13 +3,13 @@ import { Navbar, Container, Nav, NavItem } from "react-bootstrap";
 
 import Product from "./components/Product";
 import data from "./data/data";
-import { createContext, useState } from "react";
+import { useState } from "react";
 import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
 import Item from "./routes/Item";
 import About from "./routes/About";
 import axios from "axios";
 // context는 state 보관함
-export let Context1 = createContext();
+import Cart from "./routes/Cart.js";
 function App() {
   let [shoes, setShoes] = useState(data);
   let navigate = useNavigate();
@@ -132,19 +132,12 @@ function App() {
         장점 : nested route 접속시엔 element 2개나 보임-> 어디 보여줄지 작성해야함
 여러 유사한 페이지 필요할 때
         */}
-        <Route
-          path="/detail/:id"
-          element={
-            // context로 원하는 컴포넌트 감싸기
-            <Context1.Provider value={{ stack, shoes }}>
-              {" "}
-              <Item shoes={shoes} />
-            </Context1.Provider>
-          }
-        />
+        <Route path="/detail/:id" element={<Item shoes={shoes} />} />
 
         <Route path="*" element={<div>없는 페이지에요</div>} />
         {/* 지정해놓은 라우터 이 외에 모든 것 : 404 페이지 */}
+        {/* 장바구니페이지 만들기 */}
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </div>
   );
