@@ -11,7 +11,7 @@ let user = createSlice({
   },
 });
 // 만든 함수 빼기
-let { changeName } = user.actions;
+export let { changeName } = user.actions;
 let cart = createSlice({
   name: "cart",
   initialState: [
