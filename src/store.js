@@ -3,7 +3,15 @@ import { configureStore, createSlice } from "@reduxjs/toolkit";
 let user = createSlice({
   name: "user",
   initialState: "kim",
+  //   state 수정 함수 만들기
+  reducer: {
+    changeName(state) {
+      return "john" + state;
+    },
+  },
 });
+// 만든 함수 빼기
+let { changeName } = user.actions;
 let cart = createSlice({
   name: "cart",
   initialState: [
