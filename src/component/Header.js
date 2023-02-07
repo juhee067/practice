@@ -16,12 +16,11 @@ const Header = (props) => {
 
   const newGoodArray = () => {
     props.setList(!copyList);
-    console.log(copyData);
     let newCopyData = copyData.filter((item) => {
       return item.good > 0;
     });
     // 데이터 전달이 되지않은 듯함
-    props.setPosting(newCopyData);
+    props.setView(newCopyData);
   };
 
   const newStarArray = () => {
@@ -29,7 +28,7 @@ const Header = (props) => {
     let newCopyData = copyData.filter((item) => {
       return item.isOn === true;
     });
-    props.setPosting(newCopyData);
+    props.setView(newCopyData);
   };
 
   return (

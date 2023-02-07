@@ -1,7 +1,7 @@
 import React from "react";
-import { useState, useRef, useEffect } from "react";
 import moment from "moment";
 import "moment/locale/ko";
+import { useState, useRef, useEffect } from "react";
 
 const Modal = (props) => {
   //  if (props.input == "" || props.textarea == "")에서 props.input 이 undefined임

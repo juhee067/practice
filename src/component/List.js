@@ -10,9 +10,9 @@ const List = (props) => {
 
   return (
     <div className="list">
-      {props.posting.map((a, index) => {
+      {props.view.map((a, index) => {
         return (
-          <div className="top" key={props.posting.id}>
+          <div className="top" key={props.view.id}>
             <div className="contentNum">
               <span>{a.id + 1}</span>
               <span>1월 1일</span>
