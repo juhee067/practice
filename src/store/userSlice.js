@@ -4,9 +4,9 @@ let user = createSlice({
   name: "user",
   initialState: { name: "kim", age: 20 },
   //   state 수정 함수 만들기
-  reducer: {
-    changeName(state) {
-      state.name = "park";
+  reducers: {
+    changeName(user) {
+      user.name = "park";
     },
     changeAge(state, action) {
       // payload 꼭 써야함

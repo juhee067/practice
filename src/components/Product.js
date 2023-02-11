@@ -8,7 +8,6 @@ const Product = (props) => {
             src={process.env.PUBLIC_URL + '이미지.jpg'}
             */}
         <Link to="/detail/0">
-          {" "}
           <img
             src={
               "https://codingapple1.github.io/shop/shoes" +
@@ -16,6 +15,7 @@ const Product = (props) => {
               ".jpg"
             }
             width="80%"
+            alt="img"
           />
         </Link>
 

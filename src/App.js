@@ -1,10 +1,10 @@
 import "./App.css";
-import { Navbar, Container, Nav, NavItem } from "react-bootstrap";
+import { Navbar, Container, Nav } from "react-bootstrap";
 
 import Product from "./components/Product";
 import data from "./data/data";
 import { useState } from "react";
-import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
+import { Routes, Route, Link, useNavigate } from "react-router-dom";
 import Item from "./routes/Item";
 import About from "./routes/About";
 import axios from "axios";
@@ -13,7 +13,7 @@ import Cart from "./routes/Cart.js";
 function App() {
   let [shoes, setShoes] = useState(data);
   let navigate = useNavigate();
-  let [stack] = useState([10, 11, 12]);
+
   //페이지 이동을 도와주는 함수
   return (
     <div className="App">
@@ -23,7 +23,7 @@ function App() {
             <Nav.Link
               className="menu"
               onClick={() => {
-                navigate("/detail");
+                navigate("/detail/1");
               }}
             >
               Detail
@@ -38,8 +38,8 @@ function App() {
             >
               Gift
             </Nav.Link>
-            <Nav.Link className="menu" href="#Home">
-              Home
+            <Nav.Link className="menu" href="/cart">
+              cart
             </Nav.Link>
             <Nav.Link className="menu" href="#Writing">
               Writing a Letter

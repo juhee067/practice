@@ -1,8 +1,12 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Nav } from "react-bootstrap";
-
+import { addItem } from "./../store";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 const Item = (props) => {
+  let navigate = useNavigate();
+  let dispatch = useDispatch();
   // 유저가 url파라미터에 입력한 거 가져오기위해 사용
   let { id } = useParams();
   useEffect(() => {
@@ -23,7 +27,7 @@ const Item = (props) => {
   // [실행조건]-> [state] 얘가 변할때마다 실행
   let [count, setCount] = useState(0);
   let [time, setTime] = useState(true);
-  const ItemId = props.shoes.find((e) => e.id == id);
+  const itemId = props.shoes.find((e) => e.id === id);
   // 숫자말고 다른 걸 입력했을 때 alert 창 띄우기
   let [text, setText] = useState(true);
 
@@ -31,13 +35,14 @@ const Item = (props) => {
   // useState(0)-> 0번째 내용이 보이는 상태
   let [item, setItem] = useState("start");
   useEffect(() => {
-    setItem("end");
     return () => {
+      // return 밖에 있을 때 가벼운 오류 뜸
+      setItem("end");
       setItem("");
     };
   });
   useEffect(() => {
-    if (isNaN(text) == true) {
+    if (isNaN(text) === true) {
       alert("그러지마세요");
     }
   }, [text]);
@@ -61,17 +66,28 @@ const Item = (props) => {
             onChange={(e) => {
               setText(e.target.value);
             }}
-          ></input>
+          />
           <img
             src="https://codingapple1.github.io/shop/shoes1.jpg"
             width="100%"
+            alt="img"
           />
         </div>
         <div className="col-md-6">
-          <h4 className="pt-5">{ItemId.title}</h4>
-          <p>{ItemId.content}</p>
-          <p>{ItemId.price}</p>
-          <button className="btn btn-danger">주문하기</button>
+          <h4 className="pt-5">{itemId?.title}</h4>
+          <p>{itemId?.content}</p>
+          <p>{itemId?.price}</p>
+
+          <button
+            className="btn btn-danger"
+            onClick={() => {
+              dispatch(addItem({ id: 1, name: "Red Knit", count: 1 }));
+              navigate("/cart");
+            }}
+          >
+            {" "}
+            주문하기
+          </button>
         </div>
         {/* url 파라미터에 이상한 거 입력하면 id라는 변수가 이상하면 상품없다는 ul 보여주면 된다. */}
       </div>
