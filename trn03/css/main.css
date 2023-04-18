@@ -1,0 +1,97 @@
+* {
+    outline: 1px solid #f00;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+@media (max-width:768px) {
+    html {
+        font-size: 10px;
+    }
+
+    body {
+        font-size: 1.6rem;
+    }
+}
+
+.Wrapper {}
+
+.container {
+    display: flex;
+    width: 120rem;
+    margin: 0 auto;
+}
+
+
+
+.TopBanner {
+    background: #f8f8f8;
+    padding: 3rem 0;
+}
+
+.TopBanner .container {
+    position: relative;
+    display: block;
+
+}
+
+.TopBanner h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+}
+
+.TopBanner p {
+    font-size: 1.5rem;
+    font-weight: 300;
+
+}
+
+.TopBanner a {
+    display: inline-block;
+    border: 1px solid #333;
+    padding: 2px 2rem 5px 2rem;
+    transform: translateY(-2px);
+    margin: 0 0 0 2rem;
+}
+
+.TopBanner i {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+}
+
+.header {
+    line-height: 10rem;
+    background: #f7f7f7;
+}
+
+.header h1 {
+    font-size: 0;
+}
+
+
+.gnb {
+    margin: 0 0 0 auto;
+}
+
+.gnb a {
+    display: block;
+}
+
+.gnb>ul {
+    display: flex;
+    gap: 30px;
+
+}
+
+#searchForm {
+    margin: 0 0 0 30px;
+}
