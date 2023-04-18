@@ -1,0 +1,30 @@
+@import url('https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.top_banner {
+  background: #f9f9f9;
+  overflow: hidden;
+  height: 74px;
+  transition: 0.5s;
+}
+
+.top_banner.on {
+  height: 0;
+}
+
+.tabCotent2>div {
+  display: none;
+}
+
+.tabCotent2>div.on {
+  display: block;
+}

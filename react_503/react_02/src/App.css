@@ -1,0 +1,142 @@
+.Wrap {}
+
+.top_banner {
+  position: relative;
+  background: #f1f1f1;
+}
+
+.top_banner .container {
+  width: 1200px;
+  margin: 0 auto;
+  height: 100px;
+  overflow: hidden;
+  transition: height 0.5s;
+}
+
+.top_banner .container.on {
+  height: 0;
+}
+
+.top_banner h2 {
+  font-size: 21px;
+  font-weight: 700;
+  margin: 30px 0 10px 0;
+}
+
+.top_banner p {
+  font-size: 15px;
+  font-weight: 300;
+  margin: 0 0 10px 0;
+}
+
+.top_banner i {
+  position: absolute;
+  left: 50%;
+  bottom: -16px;
+  margin: 0 0 0 600px;
+  transform: translateX(-100%);
+  background: #fff;
+  z-index: 999;
+}
+
+.top_banner i.on {
+  transform: translateX(-100%) rotate(180deg);
+}
+
+.mainVisual figure {
+  position: relative;
+  height: 600px;
+}
+
+.mainVisual .itm01 {
+  background: url(./img/mainvisual01.jpg) no-repeat center center/cover;
+}
+
+.mainVisual .itm02 {
+  background: url(./img/mainvisual02.jpg) no-repeat center center/cover;
+}
+
+.mainVisual .itm03 {
+  background: url(./img/mainvisual03.jpg) no-repeat center center/cover;
+}
+
+.mainVisual .inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1200px;
+  color: #fff;
+  text-shadow: 0 0 3px #000;
+}
+
+.mainVisual figure .inner h2 {
+  font-size: 50px;
+  font-weight: 700;
+  margin: 0 0 15px 0;
+  transform: translateY(100px);
+  opacity: 0;
+}
+
+.mainVisual figure.on .inner h2 {
+  transform: translateY(0);
+  opacity: 1;
+  transition: 0.5s;
+}
+
+.mainVisual figure .inner p {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.4;
+  transform: translateY(100px);
+  opacity: 0;
+}
+
+.mainVisual figure.on .inner p {
+  transform: translateY(0);
+  opacity: 1;
+  transition: 0.5s 0.5s;
+}
+
+.mainVisual {
+  position: relative;
+}
+
+.mainVisual .slick-dots {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.mainVisual .slick-dots li {
+  display: inline-block;
+  margin: 0 4px;
+}
+
+.mainVisual .slick-dots button {
+  font-size: 12px;
+  background: #f00;
+  color: #fff;
+  width: 20px;
+  height: 20px;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  line-height: 0;
+}
+
+.mainVisual .slick-dots li.slick-active button {
+  background: #333;
+}
+
+.customer {
+  padding: 100px 0;
+}
+
+.customer>ul {
+  display: flex;
+  gap: 30px;
+  width: 1200px;
+  margin: 0 auto;
+}
