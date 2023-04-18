@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="date"></div>
+    <script>
+        const print = document.querySelector('.date');
+        const 날짜함수 = () => {
+            const date = new Date();
+            const week = ['일', '월', '화', '수', '목', '금', '토',]
+
+            let year = date.getFullYear();
+            let month = date.getMonth() + 1;
+            let day = date.getDate();
+            let days = date.getDay();
+            let time = date.getHours();
+            let minutes = date.getMinutes();
+            let seconds = date.getSeconds();
+
+            print.innerHTML = `${year}년 ${month}월 ${days}일 ${week[days]}요일 ${time}시 ${minutes}분 ${seconds}초 `;
+            // print.innerHTML = second + '초';
+        }
+
+        setInterval(날짜함수, 1000)
+    </script>
+</body>
+
+</html>
