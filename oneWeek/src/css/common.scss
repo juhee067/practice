@@ -1,0 +1,131 @@
+* {
+   // outline: 1px solid #f00;
+   .content{display: flex;}
+   button{
+      cursor: pointer;
+      padding: 10px 12px 11px ;
+      color: #fff;
+      border-radius: 3px;
+      background-color: #538cff;
+      border: none;
+      margin-left: 30px;
+  }
+  input{
+   padding: 10px;
+  }
+   .container{width: 100%;
+   max-width: 1200px;  
+   
+;}
+// header
+ .header{
+    line-height: 80px;
+    border-bottom: 1px solid #ddd;
+
+ 
+  
+ }
+//  view
+ .view{ 
+
+    
+ 
+   position: relative;
+   width: 70%;
+  height: calc(100vh - 80px);
+   padding: 20px ;
+   border-right: 1px solid;
+   
+   .sub{
+   border: 1px solid #ddd;
+   border-radius: 30px;
+   opacity: 1;
+   margin-bottom: 30px;
+   .top{ display: flex; padding: 30px ;
+      justify-content: space-between;
+      .contentNum{
+         span{
+            padding-right: 20px;
+         }
+
+         
+   }
+
+}
+  
+   .main{
+      padding: 30px ;
+      display: flex;
+      justify-content: space-between;
+    .mainContent{
+      .title{
+         display: block;
+         width: 70px; 
+         overflow: hidden;
+          white-space: nowrap;
+           text-overflow: ellipsis;
+      }
+    span{margin-bottom: 10px;}
+     
+    }
+    .icon {
+      display: flex;
+      gap: 50px;
+      cursor: pointer;
+         font-size: 20px;   
+      .goodCount{
+           margin-left: 20px;
+         }
+         .checkStar.on{
+            color: #538cff;
+         }
+    
+  
+    }
+   }
+ }
+// on 부착하기
+.sub.on{opacity: 0;
+   transition: opacity 0.5s;}
+}
+//  Modal
+.modal{
+   padding: 30px;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%,-50%);
+   background-color: #fff;
+   width: 700px;
+   
+   z-index: 999;
+   border: 1px solid #ddd;
+   .title{
+      font-size: 20px;
+      margin-bottom: 30px;
+   }
+   textarea{
+      padding: 10px;
+      resize: none;
+
+   }
+
+}
+.list{
+   padding: 20px ;
+   .top{padding: 20px;
+      border: 1px solid #ddd;
+   border-radius:20px;
+width: 300px;
+margin-bottom: 30px;
+.contentNum{
+   margin-bottom: 20px;span{
+   padding-right: 20px;
+}
+}
+
+}
+   
+}
+
+}
