@@ -1,0 +1,226 @@
+/* *{outline: 1px solid #f00;} */
+.container {
+    max-width: 768px;
+    width: 100%;
+    margin: 0 auto;
+
+}
+
+.container form {
+    margin: 0 auto;
+
+}
+
+header h2 {
+    font-size: 50px;
+    text-align: center;
+    padding: 50px 0;
+}
+
+form {
+    width: 768px;
+}
+
+
+table .essential {
+    text-align: right;
+    font-size: 15px;
+}
+
+form td {
+    padding: 20px 0 20px 20px;
+}
+
+
+/* 필수사항 별 */
+.star {
+    font-size: 15px;
+    color: #f00;
+
+}
+
+
+
+/* 분류 */
+
+.info table {
+
+    border-spacing: 30px;
+    border: 2px solid #ddd;
+    margin-bottom: 50px;
+
+}
+
+
+
+.info table td {
+    padding-right: 30px;
+
+}
+
+
+
+
+
+.info #ablank {
+    border: 1px solid #ddd;
+    padding: 5px;
+    width: 100%;
+    padding: 10px;
+}
+
+.info #sblank {
+    border: 1px solid #ddd;
+    padding: 5px;
+    width: 40%;
+    padding: 10px;
+}
+
+#search {
+    border: 1px solid #ddd;
+    width: 40%;
+    padding: 10px;
+}
+
+.sc {
+    display: flex;
+    justify-content: space-between;
+}
+
+#btn {
+    border: none;
+    background-color: rgb(102, 102, 255);
+    color: #fff;
+    padding: 10px 40px;
+    cursor: pointer;
+}
+
+/* 리스트 */
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    align-items: center
+}
+
+.head {
+    font-size: 14px;
+}
+
+.condition {
+    width: 15%;
+}
+
+.writer {
+    width: 15%;
+}
+
+.date {
+    width: 20%;
+}
+
+.view {
+    width: 15%;
+}
+
+thead th {
+    font-size: 15px;
+}
+
+.right #select_btn {
+
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+
+#list thead {
+    background: #ddd;
+    border-bottom: 2px solid #000;
+
+
+}
+
+#list thead th {
+    padding: 10px;
+    ;
+}
+
+#list thead th~th {
+    border-left: 1px solid #fff;
+}
+
+#list tbody {
+    text-align: center;
+
+}
+
+#list tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+
+    ;
+}
+
+#list tbody td~td {
+    border-left: 1px solid #ddd;
+}
+
+/* 번호 */
+
+#list tfoot {
+
+    text-align: center;
+
+}
+
+#list tfoot .Num {
+
+    padding: 30px 0;
+
+}
+
+#list tfoot .Num a {
+
+    margin: 0 10px;
+
+}
+
+#list tfoot .Num .leftBtn {
+
+    display: inline;
+}
+
+#list tfoot .Num .txt_point {
+
+    color: rgb(102, 102, 255);
+    border-bottom: 2px solid rgb(102, 102, 255);
+
+
+}
+
+#list tfoot .arrow {
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+
+#list tfoot .radius-right {
+    border-radius: 10px 0 0 10px;
+}
+
+#list tfoot .radius-left {
+    border-radius: 0 10px 10px 0;
+}
+
+/* 질문 등록 */
+.quest_btn {
+    display: block;
+    background-color: rgb(102, 102, 255);
+    color: #fff;
+    padding: 10px 40px;
+    cursor: pointer;
+    margin: 40px auto;
+    text-align: center;
+    padding: 20px 0;
+    width: 20%;
+}
