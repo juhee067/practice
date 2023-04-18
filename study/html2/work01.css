@@ -1,0 +1,46 @@
+.sh-list li {
+  list-style: none;
+  border: 1px solid #ddd;
+  width: 300px;
+}
+
+.sh-list li:active {
+  color: #fff;
+  background: #617bda;
+}
+
+.well {
+  color: #fff;
+  background-color: green;
+}
+
+.heads {
+  color: #fff;
+  background-color: blue;
+}
+
+.Warninig {
+  color: #fff;
+  background-color: yellow;
+}
+
+.row {
+  background-color: #617bda;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.row div {
+  border: 1px solid #fff;
+}
+
+.two, .col-6 {
+  display: inline;
+  width: 50%;
+}
+
+.three, .col-4 {
+  display: inline;
+  width: 33.3%;
+}
+/*# sourceMappingURL=work01.css.map */

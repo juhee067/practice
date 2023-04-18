@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+
+  <body class="dark">
+    <header></header>
+    <nav class="navbar navbar-light bg-light">
+      <div class="gage"></div>
+      <div class="container-fluid">
+        <span class="navbar-brand">Navbar</span>
+        <span class="badge bg-dark">Dark 🔄</span>
+        <button class="navbar-toggler" type="button">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- class 부착식으로 개발하면
+- 애니메이션 추가쉬움
+- 나중에 재사용 편리
+ -->
+
+    <div class="black-bg">
+      <div class="white-bg">
+        <h4>로그인하세요</h4>
+        <form action="success.html">
+          <!--form은 서버로 유저정보를 전송하려고 쓰는 것임-->
+          <!-- 모든 브라우저는 이벤트 버블링이 일어남 
+        이벤트 버블링 : 이벤트가 상위 html로 퍼지는 현상-->
+          <div class="my-3">
+            <input type="text" class="form-control" id="email" />
+          </div>
+          <div class="my-3">
+            <input type="password" class="form-control" id="password" />
+          </div>
+          <button type="submit" class="btn btn-primary" id="submit">
+            전송
+          </button>
+          <button type="button" class="btn btn-danger" id="close">닫기</button>
+        </form>
+      </div>
+    </div>
+    <ul class="list-group">
+      <li class="list-group-item">An item</li>
+      <li class="list-group-item">A second item</li>
+      <li class="list-group-item">A third item</li>
+      <li class="list-group-item">A fourth item</li>
+      <li class="list-group-item">And a fifth one</li>
+    </ul>
+    <div class="main-bg">
+      <h4>Shirts on Sale</h4>
+      <button id="login" class="btn btn-danger">로그인</button>
+    </div>
+    <div style="height: 1000px"></div>
+
+    <div class="lorem" style="width: 200px; height: 100px; overflow-y: scroll">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam error, illo
+      maiores eligendi ipsum eaque? Lorem ipsum dolor sit amet consectetur
+      adipisicing elit. Ullam error, illo maiores eligendi ipsum eaque? Lorem
+      ipsum dolor sit amet consectetur adipisicing elit. Ullam error, illo
+      maiores eligendi ipsum eaque? Lorem ipsum dolor sit amet consectetur
+      adipisicing elit. Ullam error, illo maiores eligendi ipsum eaque?
+    </div>
+
+    <!-- one-way UI 애니메이션
+A 상태 -> B 상태
+1. 시작스타일
+2. 최종스타일
+3. 시작 스타일에다가 transition추가
+-->
+    <!-- level02 -->
+    <div class="alert alert-danger">
+      <span class="ms">5</span>초 이내 구매시 사은품 증정!
+    </div>
+    <div style="overflow: hidden">
+      <div class="slide-container">
+        <div class="slide-box">
+          <img src="../img/car1.png" alt="" />
+        </div>
+        <div class="slide-box">
+          <img src="../img/car2.png" alt="" />
+        </div>
+        <div class="slide-box">
+          <img src="../img/car3.png" alt="" />
+        </div>
+        <div class="slide-box">
+          <img src="../img/car2.png" alt="" />
+        </div>
+        <div class="slide-box">
+          <img src="../img/car1.png" alt="" />
+        </div>
+      </div>
+    </div>
+    <button class="slide-1">1</button>
+    <button class="slide-2">2</button>
+    <button class="slide-3">3</button>
+    <button class="next">다음</button>
+    <button class="previous">이전</button>
+
+    <!-- level01 -->
+    <script>
+      //document.querySelector(".list-group");
+      // 맨위에 나오는 한개만 찾아줌
+      //document.querySelectorAll(".list-group");
+      // 다 찾아줌
+      //document.querySelectorAll(".list-group")[3];
+      // 인덱스쓰면 지정해서 찾아짐
+      //   document.querySelector(".hello").innerText = "바보";
+      //   $(".hello").html("바보");
+      document
+        .getElementsByClassName("navbar-toggler")[0]
+        .addEventListener("click", function () {
+          document
+            .getElementsByClassName("list-group")[0]
+            .classList.toggle("show");
+        });
+      // jQuery 표현식
+      //   $("navbar-toggler").on("click", function () {
+      //     $("list-group")[0].classList.toggle("show");
+      //   });
+      // 모달창 띄우기
+      $("#login").on("click", function () {
+        $(".black-bg").addClass("show-modal");
+      });
+      // 모달창 닫기
+      $(".black-bg").on("click", function (e) {
+        // 제이쿼리는  e.target == $(".black-bg") 이렇게 비교하면 구조가 달라 결과값이 다르게 나온다
+        // $(e.target) == $(".black-bg")
+        if (e.target == document.querySelector(".black-bg")) {
+          $(".black-bg").removeClass("show-modal");
+        }
+      });
+      //js 버전 모달창 닫기
+      // document.querySelector('.black-bg').addEventListener('click', function () {
+      //   document.querySelector('.black-bg').classList.remove('show-modal')
+      // })
+
+      //이벤트 버블링 해결 책 :콜백함수에 e넣기
+      // e.target : 유저가 실제로 누른거
+      // e.currentTarget : 이벤트리스너 달린 곳 -> this
+      // e.preventDefalut() : 기본동작 막아주세요
+      // e.stopPropagation() : 내 상위요소로 이벤트 버블링 막아주세요
+
+      // input에 입력된게 없으면 alert 띄우기
+      // 유저가 input에 입력한 값
+      // js표현 document.getElementById().value
+      // jquery 표현 $('').val()
+
+      // (1)
+      // document.getElementById("submit").addEventListener("click", function () {
+      //   if ($("#email").val() == "") {
+      //     alert("아이디를 입력해주세요");
+      //   }
+      // (2)
+      document.querySelector("form").addEventListener("submit", function (e) {
+        var enter = document.getElementById("email").value;
+        var pwenter = document.getElementById("password").value;
+        const regExp =
+          /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+        const pwExp = /[A-Z]/;
+        if (enter == "") {
+          alert("아이디를 입력해주세요");
+          e.preventDefault();
+        }
+        // if (regExp.test(enter) = false) {
+        //   alert("아이디를 형식에 맞게 입력해주세요");
+        //   e.preventDefault();
+        // }
+        // if ($("#password").val() == "") {
+        //   alert("비번을 입력해주세요");
+        // }
+        // if ($("#password").val().length < 6) {
+        //   alert("비번을 7자 이상으로해주세요");
+        // }
+        if (pwExp.test(pwenter) == false) {
+          alert("대문자 포함해주세요");
+        }
+      });
+
+      // input에서 일어나는 input 이벤트
+      // document
+      //   .getElementById("email")
+      //   .addEventListener("??", function () {});
+      //   ?? : input (여기 유저가 입력한 값이 변할 때 실행됨)
+      //    : change (input에 입력한 값이 바뀌고 포커스를 잃을 때 발생)
+
+      // 비교 연산자
+      // != 다름
+      // === 엄격한 비교(타입까지 동일해야함), == 느슨한 비교
+      // && 둘 다참이면 참, || 둘 중에 하나만 참이어도 참
+
+      //darkmode
+      var count = 0;
+      document
+        .getElementsByClassName("badge")[0]
+        .addEventListener("click", function () {
+          count++;
+          //변수에 +1 하는 법
+          //변수++
+          //변수+=1
+          //변수=변수+1
+          if (count % 2 == 0) {
+            $(".badge").html("dark");
+          } else {
+            $(".badge").html("light");
+          }
+        }); // 변수 개념 심화
+      var name = "kim";
+      // 선언 : 변수를 만들어 쓰겠습니다 var name
+      // 할당 : 변수에 자료 넣기 = "kim"
+      // 선언 따로 할당 따로 가능 var name; 후에 name = 'kim'; 가능
+      // 만약에 var name; 선언만 했을 때 'undefinded' 정의 되지않음이 뜬다
+      // let은 재 선언 불가능/ 재할당은 가능 let name ='kim'; 후에 let name = 'park' (x)
+      // const는 재 선언/ 재 할당 불가능
+    </script>
+
+    <!-- level02 -->
+    <script>
+      // setTimeout(function(){실행할코드},ms) : x초 후에 코드 실행
+      // setTimeout(function () {
+      //   // document.querySelector(".alert").hide;
+      //   $(".alert").hide();
+      // }, 5000);
+      //setInterval(function(){실행할코드},ms) : x초 마다 코드 실행
+      let countNum = 5;
+      setInterval(function () {
+        countNum--;
+        if (countNum >= 0) {
+          document.querySelector(".ms").innerHTML = countNum;
+        } else {
+          $(".alert").hide();
+        }
+      }, 1000);
+
+      // if var function 자바스크립트 문법
+      // document.querySelector(), setTimeout(),alert() 브라우저 사용법
+      // 다른 함수를 콜백함수에도 넣을 수 있음
+      //function 함수(){} -> setTimeout(함수,ms)
+
+      // 문자 검사하는 쉬운방법
+      // (1) includes
+      //'abc'.includes('a') -> 있으면  true
+      // (2) 정규식
+      // /a/.test('abcde') -> 있으면 true
+      // 장점 : 범위 가능 /[a-z]/, /\s/(아무문자하나,특수기호 포함)
+      // : 시작/끝 문자 검사 /^a/(a로 시작), /a$/(a가 끝),/a|b/(a또는b 포함)
+      // aaa@bbb.ccc 이메일 정규식 표현 /\S+@\S+\.\S+/
+
+      $(".slide-1").on("click", function () {
+        $(".slide-container").css("transform", "translateX(0)");
+      });
+      $(".slide-2").on("click", function () {
+        $(".slide-container").css("transform", "translateX(-100vw)");
+      });
+
+      $(".slide-3").on("click", function () {
+        $(".slide-container").css("transform", "translateX(-200vw)");
+      });
+      var now = 1;
+
+      $(".next").on("click", function () {
+        console.log(now);
+        $(".slide-container").css("transform", "translateX(-" + now + "00vw)");
+        now += 1;
+      });
+
+      $(".previous").on("click", function () {
+        now--;
+        console.log(now);
+        $(".slide-container").css("transform", "translateX(-" + now + "00vw)");
+      });
+
+      // $(".previous").on("click", function () {
+      //   $(".slide-container").css("transform", "translateX(-" + now + "00vw)");
+      //   now--;
+      //   console.log(now);
+      // });
+      // $(".previous").on("click", function () {
+      //   $(".slide-container").css("transform", "translateX(+" + now + "00vw)");
+      //   now += 1;
+      // });
+
+      // return
+      console.log(vat(5555));
+      function vat(a) {
+        let num = (a * 1.1).toFixed(2);
+        return num;
+      }
+
+      //return 용도 : 자료를 넣으면 다른 자료가 나오는 변환기를 만들고 싶을 때
+      // 소수점 반올림하는 법 -> 숫자.toFixed(몇자리) *근데 문자로 변환이 됨
+      // parseFloat() (실수로 변경) or parseInt() (정수로 변경)을 사용하면 숫자로 변경
+
+      //Q.scroll01
+      window.addEventListener("scroll", function () {
+        // window.screenY : 얼마나 스크롤을 내렸는가
+        // window.scrollTo(0,100) : 강제로 스크롤하기
+        // window.scrollBy(0,100) : 현재 위치에서 강제로 스크롤하기
+        if (window.scrollY >= 100) {
+          //($(window).scrollTop() >= 100)
+          // document.getElementsByClassName('navbar-brand')[0].style.fontSize = "15px";
+          // document.querySelector('.navbar-brand').style.fontSize = "15px";
+          $(".navbar-brand").css("fontSize", "15px");
+        } else {
+          $(".navbar-brand").css("fontSize", "30px");
+        }
+      });
+
+      $(".lorem").on("scroll", function () {
+        let scroll = document.querySelector(".lorem");
+        //Q.scroll02
+        if (scroll.scrollTop + scroll.clientHeight == scroll.scrollHeight) {
+          alert(" 다읽었습니다!");
+        }
+      });
+
+      //현재 스크롤바 위치 출력
+      //scrollTop만 쓰면 얼마나 내렸는지 출력 = screenY
+      //scrollTop(위치) 위치쓰면 스크롤바 이동
+      $(window).on("scroll", function () {
+        $(window).scrollTop();
+      });
+
+      document.querySelector(".lorem").addEventListener("scroll", function () {
+        // 내가 내린 높이
+        document.querySelector(".lorem").scrollTop;
+        // 스크롤 높이
+        document.querySelector(".lorem").scrollHeight;
+        //눈에 보이는 높이
+        document.querySelector(".lorem").clientHeight;
+      });
+
+      //회원 약관 다읽으면 완료 다읽었습니다 뜨게
+      //div의 스크롤바 내린 양 +  눈에보이는 div 높이 == div의 실제 높이 (그래도 오차가 발생하긴 함)
+      //window의 경우에는 screenY , 일반 div박스의 경우 scrollTop
+      // 스크롤 한 높이랑(scrollTop)과 스크롤의 본체 높이(scrollHeight) 다르다
+      // 이유는 스크롤 한 높이는 실제로는 본체 높이가 아니다 그렇기 때문에 스크롤바 내린 양에 + 100(눈에보이는 div 높이) 해줘야 함
+
+      // scroll 응용 문제
+      // 까만색의 가로로 긴 div 박스 하나 만들고
+
+      // 페이지를 1% 읽으면 div 박스 길이는 1%
+
+      // 페이지를 50%정도 읽으면 div 박스 길이는 50%
+
+      // 페이지 다 읽으면 div 박스 길이는 100%
+      window.addEventListener("scroll", function () {
+        let html = document.querySelector("html");
+        if (
+          $("html").height() * 0.01 <=
+          html.scrollTop <
+          $("html").height() * 0.5
+        ) {
+          $(".gage").css("width", "1%");
+        } else if (
+          $("html").height() * 0.5 <
+          html.scrollTop <
+          $("html").height() * 1
+        ) {
+          $(".gage").css("width", "50%");
+        } else if (html.scrollTop + html.clientHeight == html.scrollHeight) {
+          $(".gage").css("width", "100%");
+        }
+        // else { $('.gage').css('width', '0%') }
+        console.log();
+      });
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

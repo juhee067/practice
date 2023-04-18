@@ -1,0 +1,661 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: "gulim";
+  transform: rotate(0.03deg);
+}
+
+.profile {
+  width: 100px;
+  display: block;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+}
+
+#special {
+  text-align: center;
+}
+
+.point {
+  color: red;
+}
+
+.box {
+  width: 300px;
+  background-color: aqua;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 10px;
+  box-shadow: 5px 5px black;
+}
+
+/* layout */
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.header {
+  width: 100%;
+  height: 50px;
+  background-color: red;
+}
+
+.leftMenu {
+  display: inline-block;
+  width: 20%;
+  height: 400px;
+  background-color: cornflowerblue;
+  /* 상하 정렬 : va는 inline-block이나 inline 요소에만 적용가능 */
+  vertical-align: top;
+  /* float: left; */
+}
+
+.right {
+  display: inline-block;
+  width: 80%;
+  height: 400px;
+  background-color: coral;
+  /* float: left; */
+}
+
+.footer {
+  width: 100%;
+  height: 100px;
+  background-color: grey;
+  /* clear: both; */
+}
+
+/* 03layout1_pt */
+
+.aside {
+  width: 60%;
+  height: 200px;
+  float: left;
+}
+
+.aside .profileImg .img {
+  float: left;
+}
+
+.aside .profileImg .name {
+  float: left;
+  margin-left: 20px;
+}
+
+.aside .profileImg .name h3 {
+  margin: 0;
+  font-size: 15px;
+}
+
+.aside .profileImg .name p {
+  margin: 0;
+  font-size: 12px;
+}
+
+.aside .profileImg img {
+  width: 50px;
+  border-radius: 50%;
+}
+
+.aside .intro {
+  clear: both;
+  padding-top: 5px;
+}
+
+.article {
+  width: 30%;
+  height: 200px;
+  float: right;
+}
+
+.article img {
+  /* article에 width가 있기 때문에 그 넓이를 상속받으면 된다 */
+  width: 100%;
+  height: 100%;
+}
+
+/* navBar */
+.navBar li {
+  display: inline-block;
+  width: 60px;
+  text-align: center;
+  background-color: #eee;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.navBar li a {
+  font-size: 16px;
+  text-decoration: none;
+}
+
+/* 04layout2 */
+
+.mainBg {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background-image: url(../img/shoes.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 1px;
+  text-align: center;
+  /* 배경 채워지는 위치 */
+}
+
+.mainTitle {
+  color: white;
+  font-size: 40px;
+
+  /* margin이 text에 안붙고 배경에 붙어 내려온다
+  margin collapse 현상 : 박스 2개가 위쪽 테두리에 겹쳐짐
+  이런 경우에는 margin도 합쳐짐-> 부모박스에 패딩을 주면됨
+  */
+}
+
+.mainContent {
+  color: #fff;
+}
+
+.mainBtn {
+  /* position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  가운데 오게 하는 공식
+  */
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 150px;
+  padding: 10px;
+}
+/* :: ':'두번치는 건  ::pseudo-element(내부의 일부분만 스타일줄 때)*/
+
+.pseudo::after{
+  content:'안녕';
+color:red;
+font-size: 30px;
+}
+.explain-container::after{
+  content:'';
+  display: block;
+  clear: both;
+  float: none;
+}
+.subBg {
+  position: relative;
+  top: -100px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 80%;
+  max-width: 600px;
+  background-color: #ddd;
+  padding: 20px;
+  text-align: center;
+  /* padding, border 포함 width가 조정됨 */
+}
+
+.subBg .subTitle {
+  font-size: 20px;
+}
+
+.subBg .subContent {
+  font-size: 15px;
+}
+
+/* input */
+.formpt {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  padding: 50px;
+}
+
+/* 지정해서 인풋 스타일 지정시 
+input[type=email] {
+  padding: 20px;
+  font-size: 20px;
+  border: 2px solid black;
+  border-radius: 5px;
+}*/
+.base {
+  background-color: black;
+}
+
+.formpt {
+  background-color: #fff;
+}
+
+.formpt input {
+  padding: 10px;
+  font-size: 20px;
+  border: 1px solid ddd;
+}
+
+.formpt .w100 {
+  padding: 10px;
+}
+
+.formpt .name {
+  width: 50%;
+  float: left;
+  padding: 10px;
+}
+
+input[type="email"] {
+  width: 100%;
+}
+
+input[type="text"] {
+  display: inline-block;
+  width: 100%;
+}
+
+.check {
+  margin-top: 30px;
+}
+
+input[type="checkbox"] {
+  margin-top: 10px;
+}
+
+input[type="submit"] {
+  float: right;
+  border: none;
+  background-color: rgb(255, 191, 0);
+  color: #fff;
+  padding: 5px 20px;
+}
+
+.formpt h4 {
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.formpt .name {
+  display: inline-block;
+}
+
+textarea {
+  width: 100%;
+  resize: none;
+}
+
+/* cart.html */
+table {
+  border-collapse: collapse;
+  /* table 기본적인 틈 없애기 */
+}
+
+td {
+  border-bottom: 2px solid #ddd;
+  padding: 20px;
+}
+/* table */
+.tableBg {
+  width: 80%;
+  padding: 30px;
+  background-color: rgb(147, 203, 218);
+}
+
+.shop {
+  background-color: #fff;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  border-radius: 5px;
+  /*  가끔 radius 안먹을 때가 있다 그것은 border-collapse 와 함께하면 그렇다
+  top과 left에만 radius를 넣던지 그림자를 이용하든지
+   */
+}
+.shop thead {
+  border-bottom: 2px solid #ddd;
+}
+.tableBg h2 {
+  font-size: 25px;
+  font-weight: 500;
+  color: rgb(3, 77, 77);
+}
+
+.tableBg .title th {
+  font-size: 15px;
+  padding: 10px;
+}
+
+.total {
+  text-align: right;
+}
+
+.cellLong {
+  width: 700px;
+  /* 최대한 이만큼 차지해주세요 */
+}
+
+/* flex */
+.flex-item {
+  width: 100px;
+  height: 100px;
+  background: grey;
+  margin: 5px;
+}
+.flex-item:nth-child(2) {
+  /* 배수를 차지해주세요 */
+  /* nav만들때 사용 */
+  flex-grow: 2;
+}
+
+.flex-container {
+  display: flex;
+  /* width가 크면 밑으로 보내고 싶을때 */
+  /* flex-wrap: wrap; */
+  /* 상하정렬 */
+  align-items: center;
+  /* 좌우정렬 */
+  justify-content: space-between;
+}
+.flex-container .logo {
+  background: grey;
+}
+.flex-container .item {
+  background: grey;
+}
+.flex-container ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+/* 반응형웹 */
+.test {
+  /* vw:브라우저 폭에 비례 */
+  /* rem: html태그 폰트 사이즈에 비례 ex)10rem 기본폰트사이즈의 10배 */
+  /* rem 사용이유 : rem으로 크기지정하면 기본 font-size커져도 모든게 같이 커짐 */
+  /* em : 내폰트사이즈의 x배 */
+  width: 100rem;
+  /* vh:브라우저 높이에 비례 */
+
+  background-color: grey;
+}
+/* 미디어쿼리 문법 사용 : 항상 밑에있어야 작동 잘됨*/
+/* 단위 :
+1200,992,768,576px 사용 */
+@media screen and (max-width: 1200px) {
+  .mainTitle {
+    font-size: 30px;
+  }
+  .flex-container {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .mainTitle {
+    font-size: 20px;
+  }
+  .flex-container {
+    font-size: 8px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .mainTitle {
+    font-size: 20px;
+  }
+  .flex-container {
+    font-size: 8px;
+  }
+}
+
+/* 반응형 숙제 */
+.explain-container {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.explain-container div {
+  width: 25%;
+}
+
+@media screen and (max-width: 1200px) {
+  .explain-container div {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 576px) {
+  .explain-container div {
+    width: 100%;
+  }
+}
+
+/* icon */
+.explain-container i {
+  background-color: burlywood;
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  padding-top: 25px;
+  color: #fff;
+}
+
+/* transiton  */
+
+.shop-bg {
+  background-color: #eee;
+  padding: 20px;
+}
+.shop-bg .shop-container {
+  display: flex;
+  width: 90%;
+  margin: auto;
+}
+
+.shop-item {
+  width: 33%;
+  padding: 15px;
+}
+.shop-item img {
+  width: 100%;
+}
+.over {
+  overflow: hidden;
+}
+.overlay {
+  position: absolute;
+  bottom: -50%;
+  width: 100%;
+  height: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 50px;
+  transition: all 1s;
+  /* transition-timing-function: ; 내가 속도 조절 가능*/
+}
+.overlay p {
+  font-size: 50px;
+  color: #fff;
+}
+/* 띄어쓰기는 내 자식에서만 해당된다
++는 형제 요소 선택
+img:hover .overlay는 안되지만 img:hover+.overlay 가능 */
+.over:hover .overlay {
+  bottom: 0;
+}
+
+
+/* input */
+/* 숨겨진 요소 스타일줄 때도 :: 사용함 */
+.input-file::file-selector-button{
+  background-color: skyblue;
+  border: none;
+  padding: 20px;
+}
+/* 위에와 동일
+webkit이란 크롬,사파리,엣지 에서만 적용되는 스타일
+*/
+input[type=file]::file-upload-button{
+  background-color: skyblue;
+}
+/* progress bar */
+progress {
+  /*기본 배경은 없애주는게 좋습니다*/
+  -webkit-appearance: none;
+  -moz-appearance : none;
+  appearance: none;
+  background: white;
+/* IE10 호환성용 */
+  color: red;
+}
+progress::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: 2px;
+}
+progress::-webkit-progress-value {
+  background-color: red;
+  border-radius: 2px;
+}
+
+/*파이어폭스 호환성을 위해*/
+progress::-moz-progress-bar {
+  background-color: red;
+  border-radius: 2px;
+}
+/* transform */
+.ani-text{
+  text-align: center;
+  /* transition은 a->b 로 가는 것만 가능*/
+margin-bottom: 100px;
+}
+.ani-text:hover{
+  animation-name: come;
+  animation-duration: 1s;
+  padding-bottom: 200px;
+}
+
+.btn-primary:hover{
+  animation-name: shake;
+  animation-duration: 1s;
+
+}
+.fa-solid:hover{
+  animation-name: plus;
+  animation-duration: 1s;
+}
+/* 성능 좋음 */
+/* 브라우저가 그림 그리는 순서 
+render Tree 만듬->layout잡기->print하기->composite처리 */
+@keyframes come{
+  0%{transform: translateX(0px);}
+  50%{transform: translateX(-100px);}
+  75%{transform: translateX(100px);}
+  100%{transform: translateX(0px);}
+}
+@keyframes shake{
+  0%{transform: rotate(10deg);}
+  50%{transform: rotate(-10deg);}
+  75%{transform: rotate(10deg);}
+
+ 100%{transform: rotate(0deg);}
+  }
+@keyframes plus{
+  0%{transform: rotate(-30deg);}
+  50%{transform: rotate(30deg);
+    transform: scale(1.5);
+ 
+  }
+  75%{transform: rotate(-30deg);}
+
+ 100%{transform: rotate(0deg);}
+  }
+/* grid */
+.grid-container{
+  display: grid;
+  grid-template-columns: 100px 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px;
+  grid-template-areas:
+  "nav nav nav nav"
+  "side . . ."
+  "side . . ."
+
+  
+}
+.grid-container div{
+  border: 1px solid black;
+}
+.grid-nav{
+  grid-column:1/5;
+/* grid-area: nav; */
+ 
+}
+.grid-side{
+grid-row: 2/4;
+  /* grid-area: side; */
+}
+.grid-all{
+  grid-column: 2/5;
+  grid-row:2/4
+}
+
+
+/* grid layout */
+.grid-container2{
+  display: grid;
+  grid-template-columns:100px 100px 100px ;
+  grid-template-rows: 100px 100px 100px;
+}
+.grid-container2 img{
+  width: 100%;
+}
+.grid-main{
+  grid-column: 1/3;
+  grid-row: 1/3;
+
+}
+/* mobile */
+@media screen and (max-width:768px){
+  .grid-side{grid-column: 1/5;
+    grid-row: 2/3;}
+  .grid-all{
+    grid-column: 1/5;
+  }
+  .grid-container2{
+    display: grid;
+    grid-template-columns:100px  ;
+    grid-template-rows: 100px 100px 100px 100px 100px 100px;
+  }
+  .grid-main{
+    grid-column: 1/1;
+    grid-row: 1/1;
+  
+  }
+}
+
+/* 3D animation */
+.flip-out{width: 300px;
+height: 300px;}
+.flip-inner{
+  position: relative;
+  width: 100%;
+height: 100%;}
+
+/* 앞뒤배치는 position:absolute */
+.front{
+  position: absolute;
+  width: 100%;
+}
+p{
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  transform: rotateY(180deg);
+}

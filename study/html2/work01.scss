@@ -1,0 +1,54 @@
+// Q01
+.sh-list{
+
+li {list-style: none;
+    border: 1px solid #ddd;
+    width: 300px;
+    &:active{
+    color: #fff;
+    background: #617bda;
+    // 클릭한 그 부분만 바뀌게?
+}
+}
+
+
+}
+//Q02
+@mixin bg($color) {
+    color:#fff;
+    background-color: $color;
+}
+.well{
+    @include bg(green)
+}
+.heads{
+    @include bg(blue)
+}
+.Warninig{
+    @include bg(yellow)
+}
+
+.row{
+
+    background-color: #617bda;
+    color: #fff;
+    border: 1px solid #fff;
+   
+}
+.row div{
+ 
+    border: 1px solid #fff;
+}
+.two{
+    display: inline;
+    width: 50%;
+}
+.three{
+    display: inline;
+    width: 33.3%;
+}
+.col-6{
+    @extend .two
+};
+.col-4{
+    @extend .three}

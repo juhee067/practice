@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>369게임</title>
+  </head>
+  <body>
+    <form></form>
+    <script>
+      // Q1
+      function three(a) {
+        if (a % 3 == 0) {
+          console.log("박수");
+        } else {
+          console.log("통과");
+        }
+      }
+      three(6);
+      three(12);
+      three(11);
+      // Q2
+      function threeUp(a) {
+        if (a % 9 == 0) {
+          console.log("박수X2");
+        } else if (a % 3 == 0) {
+          console.log("박수");
+        } else {
+          console.log("통과");
+        }
+      }
+      threeUp(6);
+      threeUp(9);
+      threeUp(11);
+
+      //Q3
+
+      function test(a, b) {
+        if (a > 40 && b > 40 && a + b >= 120) {
+          console.log("합격");
+        } else {
+          console.log("불합격");
+        }
+      }
+      test(70, 70);
+      test(30, 100);
+      test(50, 50);
+
+      // 응용 Q4
+      function testLast(num) {
+        let last = String(num);
+        let lastNum = last.charAt(last.length - 1);
+        if (lastNum == "3" || lastNum == "6" || lastNum == "9") {
+          console.log("박수");
+        } else {
+          console.log("pass");
+        }
+      }
+      testLast(14);
+      testLast(19);
+
+      // 응용 Q5
+      function testAlert(num) {
+        if (0 < num && num < 100) {
+          alert("잘했어");
+        } else if (num >= 100) {
+          alert("장난치지마");
+        }
+      }
+      // testAlert(90);
+    </script>
+  </body>
+</html>

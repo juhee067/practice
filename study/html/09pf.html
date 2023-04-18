@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../fontawesome/css/all.css" />
+    <link rel="stylesheet" href="../css/pt02.css" />
+  </head>
+  <body>
+    <div class="side">
+      <ul>
+        <li><i class="fa-solid fa-house"></i></li>
+        <li><i class="fa-solid fa-music"></i></li>
+        <li><i class="fa-solid fa-hand-holding-heart"></i></li>
+        <li><i class="fa-solid fa-chart-pie"></i></li>
+      </ul>
+    </div>
+    <div class="wrap">
+      <header>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" />
+          <button class="btn" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+        <div class="info">
+          <i class="fa-sharp fa-solid fa-bell"></i
+          ><i class="fa-solid fa-envelope"></i>
+          <p>MiniPark</p>
+        </div>
+      </header>
+
+      <section class="main">
+        <div class="dashBoard">
+          <h2>Dashboard</h2>
+          <div class="card">
+            <div class="cardBox">
+              <div class="text">
+                <h3>Earnings (Monthly)</h3>
+                <p>$400,000</p>
+              </div>
+              <div class="icon">
+                <i class="fa-solid fa-user"></i>
+              </div>
+            </div>
+            <div class="cardBox">
+              <div class="text">
+                <h3>Earnings (Monthly)</h3>
+                <p>$400,000</p>
+              </div>
+              <div class="icon">
+                <i class="fa-solid fa-user"></i>
+              </div>
+            </div>
+            <div class="cardBox">
+              <div class="text">
+                <h3>Earnings (Monthly)</h3>
+                <p>$400,000</p>
+              </div>
+              <div class="icon">
+                <i class="fa-solid fa-user"></i>
+              </div>
+            </div>
+            <div class="cardBox">
+              <div class="text">
+                <h3>Earnings (Monthly)</h3>
+                <p>$400,000</p>
+              </div>
+              <div class="icon">
+                <i class="fa-solid fa-user"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="graph">
+          <div class="OverView">
+            <h4>Earnings OverView</h4>
+            <canvas id="myChart"></canvas>
+          </div>
+          <div class="Task">
+            <h4>Task</h4>
+            <ul>
+              <li>Borrowed ITems</li>
+              <li>Trello requests</li>
+              <li>Marked Comments</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      var ctx = document.getElementById("myChart").getContext("2d");
+      var myChart = new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+          datasets: [
+            {
+              label: "# of Votes",
+              data: [12, 19, 3, 5, 2, 3],
+              backgroundColor: "rgba(255, 99, 132, 0.2)",
+              borderColor: "rgba(255, 99, 132, 1)",
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

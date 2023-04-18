@@ -1,0 +1,5 @@
+1. git difftool : 시각적으로 깃수정한 것을 보여줌(추천x,확장프로그램사용추천(git graph))
+-> 종료 ":q"
+
+2. git log --oneline --all : 깃 커밋 내역
+3. git difftool 커밋아이디 : 특정커밋 비교가능

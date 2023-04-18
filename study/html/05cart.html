@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="../css/main.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div>
+      <!-- 행(가로 tr)과 열(세로 td) 먼저 그리기 -->
+
+      <table>
+        <thead>
+          <tr>
+            <th>1</th>
+            <td>2</td>
+            <td>3</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>1</th>
+            <td>2</td>
+            <td>3</td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- 글씨간의 세로정렬할때 vertical-align 씀 -->
+      <!-- but table안에서 세로정렬할 때 v-a(top/middle/bottom)가능 -->
+      <!-- <div>
+            <span style="font-size: 50px;">greetiongs </span><span
+                style="font-size: 20px; vertical-align: middle;">안녕</span>
+        </div>
+        <div> <img src="https://mdn.mozillademos.org/files/12245/frame_image.svg" width="32" height="32"> <span
+                style="vertical-align:top;">image
+                with a
+                default alignment.</span>
+        </div> -->
+
+      <!-- 일반 div로 표만들기
+            <div style="display: table;">
+                <div style="display: table-row;">
+                  <div style="display: table-cell;">
+            </div> 
+            </div> 
+            </div> 
+        -->
+      <div class="tableBg">
+        <h2>Your shopping cart</h2>
+        <table class="shop">
+          <thead>
+            <tr class="title">
+              <th></th>
+              <th class="cellLong">ITEM</th>
+              <th>AMOUNT</th>
+              <th>PRICE</th>
+              <th>TOTAL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+                <td><img src="../img/item1.png" alt="" style="width: 50px" /></td>
+              <td>
+                
+                <div class="content">
+                  <h2>SONY</h2>
+                  <p>FE 70 - 200 mm F2.8 GM OSS</p>
+                </div>
+              </td>
+              <td>1</td>
+              <td>1979.00</td>
+              <td>1979.00</td>
+            </tr>
+           <tr>
+                <td><img src="../img/item1.png" alt="" style="width: 50px" /></td>
+              <td>
+                
+                <div class="content">
+                  <h2>SONY</h2>
+                  <p>FE 70 - 200 mm F2.8 GM OSS</p>
+                </div>
+              </td>
+              <td>1</td>
+              <td>1979.00</td>
+              <td>1979.00</td>
+            </tr>
+            <tfoot>  
+                  <tr class="total">
+              <td colspan="4">1979.00</td>
+            </tr></tfoot>
+        
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 반응형 할때 꼭필요 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>04layout2</title>
+    <link href="../css/main.css" rel="stylesheet" />
+    <!-- font awesome -->
+    <link rel="stylesheet" href="../fontawesome/css/all.css" />
+    <!-- 
+        링크전송했을때 보여지는 사이트 설명,제목,이미지 
+        <meta property="og:image" content="/이미지경로.jpg">
+  <meta property="og:description" content="사이트설명">
+  <meta property="og:title" content="사이트제목"> -->
+    <!--   파비콘
+    <link rel="icon" href="아이콘경로.ico" type="image/x-icon"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  </head>
+
+  <body style="margin: 0px">
+    <div class="flex-container">
+      <div class="logo">Logo</div>
+      <div class="item">
+        <ul>
+          <li>product</li>
+          <li>serdvic</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="test"></div>
+    <!-- 버튼 옆 텍스트(숨겨진 요소: shadow Dom) -->
+    <input type="file" class="input-file">
+    
+    <!-- 실제로는 파일업로드 버튼은 이런식으로 
+    라벨에 스타일을 주고 버튼은 display:none 
+    기본적으로 appearance:none(기본값)해줘야함
+    -->
+    <label for="">안녕</label>
+   <progress value="0.5"></progress>
+    <div class="explain-container">
+      <div>
+        <i class="fa-solid fa-cart-shopping fa-3x"></i>
+        <h4>제목</h4>
+        <p>내용</p>
+      </div>
+      <div>
+        <i class="fa-solid fa-cart-shopping fa-3x"></i>
+        <h4>제목</h4>
+        <p>내용</p>
+      </div>
+      <div>
+        <i class="fa-solid fa-cart-shopping fa-3x"></i>
+        <h4>제목</h4>
+        <p>내용</p>
+      </div>
+      <div>
+        <i class="fa-solid fa-cart-shopping fa-3x"></i>
+        <h4>제목</h4>
+        <p>내용</p>
+      </div>
+
+      <div style="float: none; clear: both"></div>
+    </div>
+    <!-- transition -->
+    <div class="shop-bg">
+      <div class="shop-container">
+        <div class="shop-item">
+          <div class="over" style="position: relative">
+            <div class="overlay">
+              <p>60%</p>
+            </div>
+            <img src="../img/product1-1.jpg" alt="" />
+          </div>
+        </div>
+        <div class="shop-item">
+          <img src="../img/product2.jpg" alt="" />
+        </div>
+        <div class="shop-item">
+          <img src="../img/product3.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+    <div class="mainBg">
+      <h4 class="mainTitle">Buy Our Shoes!NOw on sale</h4>
+      <p class="mainContent pseudo">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis in
+        alias, beatae animi atque dolores. Laborum consectetur maxime inventore
+        vitae quidem iusto tempora, voluptatem corporis repellat, ullam beatae
+        eos est, illum facere similique fuga pariatur consequuntur cumque odit
+        quod! A veniam vitae iusto dicta, recusandae optio similique
+        exercitationem inventore corporis.
+      </p>
+      <button class="mainBtn">구매하기</button>
+    </div>
+    <div class="subBg">
+      <h4 class="subTitle">Buy Our Shoes!</h4>
+      <p class="subContent">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis in
+        alias, beatae animi atque dolores. Laborum consectetur maxime inventore
+        vitae quidem iusto tempora, voluptatem corporis repellat, ullam beatae
+        eos est, illum facere similique fuga pariatur consequuntur cumque odit
+        quod! A veniam vitae iusto dicta, recusandae optio similique
+        exercitationem inventore corporis.
+      </p>
+    </div>
+    <br />
+    <!-- max-width는 박스 전체 크기를 말하는 것이 아니라 박스자체의 크기만을 말한다 -->
+    <div class="subBg" style="padding: 5 0px">
+      <h4 class="subTitle">Buy Our Shoes!</h4>
+      <p class="subContent">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis in
+        alias, beatae animi atque dolores. Laborum consectetur maxime inventore
+        vitae quidem iusto tempora, voluptatem corporis repellat, ullam beatae
+        eos est, illum facere similique fuga pariatur consequuntur cumque odit
+        quod! A veniam vitae iusto dicta, recusandae optio similique
+        exercitationem inventore corporis.
+      </p>
+    </div>
+    <form action="">
+      <input type="text" class="textInput" name="age" />
+      <!-- name은 서버개발시 필요하다 -->
+      <input type="submit" />
+      <button type="submit">전송</button>
+      <!-- 전송버튼은 두가지 -->
+      <select>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+      </select>
+      <textarea name="" id="" cols="30" rows="10"></textarea>
+      <!-- <input type="password">
+        <input type="email">
+        <input type="date">
+        <input type="checkbox">
+        <input type="radio"> -->
+    </form>
+    <div class="base">
+      <div class="formpt">
+        <form action="">
+          <div class="w100">
+            <h2>contact us</h2>
+            <h4>Your Email</h4>
+            <input type="email" placeholder="email@example.com" />
+          </div>
+          <div class="name">
+            <h4>First name</h4>
+            <input type="text" />
+          </div>
+          <div class="name">
+            <h4>Last name</h4>
+            <input type="text" />
+          </div>
+          <div class="w100">
+            <h4>Message</h4>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <div class="check">
+              <input type="checkbox" />
+              <label for="Subscribe">Subscribe</label>
+              <input type="submit" />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="ani-text">배영은은 내 매니저입니다.</div>
+    <button type="button" class="btn btn-primary">흔들버튼</button>
+    <span><i class="fa-solid fa-plus"></i></span>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <script
+    src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+    crossorigin="anonymous"
+  ></script>
+    <style>
+      body {
+        background-color: #ddd;
+      }
+      .container {
+        max-width: 1600px;
+        width: 100%;
+      }
+      .d-flex {
+        margin: 30px 0;
+      }
+      .cardBox{
+        display: flex;
+       justify-content:space-between;
+      
+      }
+      .card {
+        padding: 10px;
+        margin-bottom: 50px;
+      
+      }
+   
+      .card img {
+        width: 50%;
+        margin: 0 auto;
+      }
+      .cart{
+  width: 100%;
+  height: 400px;
+  background-color: rgb(175, 175, 175);
+  padding: 20px;
+}
+.bB{
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  height:400px;
+  background-color: black;
+}
+    </style>
+  </head>
+  <body>
+    <!-- 메뉴 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand text-white" href="#">집꾸미기</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active text-white" aria-current="page" href="#"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">스토어</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">시공견적</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- main -->
+    <div class="container">
+      <!-- 검색창 -->
+      <form class="d-flex">
+        <input
+          class="form-control me-2 w-auto"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+          id="search"
+        />
+      </form>
+      <!-- card box-->
+      <div class="cardBox">
+        
+        </div>
+      </div>
+      <div class="cart">
+        <h3>장바구니</h3>
+        <div class="bB" id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      </div>
+    </div>
+    
+    <script>
+      let products=[]
+  //  상대 경로의 경우 get에 그냥 상대경로 작성하면 된다
+        $.get("../img/store.json")
+          .then((data)=>{ products=data.products;
+      products.forEach((a,i)=>{
+             let info= `
+             <div class="card"  id="drag${i}" style="width: 18rem"  draggable="true" ondragstart="drag(event)">
+             <img src="../img/${a.photo}" class="card-img-top" alt="..."  />
+          <div class="card-body">
+            <h5 class="card-title">${a.title}</h5>
+            <p class="card-text">${a.brand}</p>
+            <p class="card-price"> 가격 : ${a.price}</p>
+            <button class="btn btn-primary" id="${a.id}" >담기</button>
+            </div>`
+
+            $('.cardBox').append(info);
+          }) 
+          
+          })
+          .fail(function () {
+            console.log("실패");
+          });
+      
+          // 검색기능01
+//           function search (){
+// let search = document.getElementById('search').value.toLowerCase();
+// let list= document.getElementsByClassName('card');
+// console.log(list.length)
+// for(let i =0; i<list.length; i++){
+//   title=list[i].getElementsByClassName('card-title');
+//   text=list[i].getElementsByClassName('card-text');
+//   if(title[0].innerHTML.toLowerCase().indexOf(search)!=-1||
+//   text[0].innerHTML.toLowerCase().indexOf(search)!=-1
+//   ){
+//     list[i].style.display="block"
+//   }else{
+//     list[i].style.display='none'
+//   }
+
+// }
+//        }
+
+// 검색기능02
+$('#search').on('input',function(){
+  let searchValue=$('#search').val();
+
+  let newProducts= products.filter((a)=>{
+    return a.title.includes(searchValue)|| a.brand.includes(searchValue)
+  })
+  $('.cardBox').html('');
+  newProducts.forEach((a,i)=>{
+             let info= `
+             <div class="card" id="drag${i}" style="width: 18rem" draggable="true" ondragstart="drag(event)">
+             <img src="../img/${a.photo}" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">${a.title}</h5>
+            <p class="card-text">${a.brand}</p>
+            <p class="card-price"> 가격 : ${a.price}</p>
+            <button class="btn btn-primary" id="${a.id}">담기</button>
+            </div>`
+
+            $('.cardBox').append(info);
+          }) 
+
+$('.card-body h5').each
+
+
+})
+
+// drag
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  //  DataTransfer 객체는 드래그 앤 드롭 동작에 관한 정보를 가지고 있게 됩니다
+  ev.dataTransfer.setData("text", ev.target.id);
+
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  
+  ev.target.appendChild(document.getElementById(data));
+}
+// 담기
+window.onload = function(){
+  let card = document.querySelector('.btn');
+    card.addEventListener('click',function(e){
+       let cart = document.querySelector('#div1');
+       let data=e.target.id
+  
+       cart.appendChild(document.getElementById(data));
+    })} 
+    
+
+
+
+    </script>
+    
+  </body>
+</html>
